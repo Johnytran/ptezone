@@ -15,7 +15,8 @@
 		EB3F00DF26479FFD0026CC31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB3F00DE26479FFD0026CC31 /* Assets.xcassets */; };
 		EB3F00E226479FFD0026CC31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB3F00E026479FFD0026CC31 /* LaunchScreen.storyboard */; };
 		EB3F00F02647A4F60026CC31 /* welcome_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3F00EF2647A4F60026CC31 /* welcome_bg.png */; };
-		EB421914280ACB5400B94D02 /* EZYGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB421913280ACB5400B94D02 /* EZYGradientView.swift */; };
+		EB421914280ACB5400B94D02 /* HomeGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB421913280ACB5400B94D02 /* HomeGradientView.swift */; };
+		EB42191A280BA07000B94D02 /* MainMenuGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB421919280BA07000B94D02 /* MainMenuGradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		EB3F00E126479FFD0026CC31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB3F00E326479FFD0026CC31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB3F00EF2647A4F60026CC31 /* welcome_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = welcome_bg.png; path = ../../../images/welcome_bg.png; sourceTree = "<group>"; };
-		EB421913280ACB5400B94D02 /* EZYGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZYGradientView.swift; sourceTree = "<group>"; };
+		EB421913280ACB5400B94D02 /* HomeGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeGradientView.swift; sourceTree = "<group>"; };
+		EB421919280BA07000B94D02 /* MainMenuGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,8 @@
 		EB3F00D426479FFB0026CC31 /* PTEzone */ = {
 			isa = PBXGroup;
 			children = (
-				EB421913280ACB5400B94D02 /* EZYGradientView.swift */,
+				EB421913280ACB5400B94D02 /* HomeGradientView.swift */,
+				EB421919280BA07000B94D02 /* MainMenuGradientView.swift */,
 				EB3F00EA2647A0770026CC31 /* images */,
 				EB3F00D526479FFB0026CC31 /* AppDelegate.swift */,
 				EB3F00D726479FFB0026CC31 /* SceneDelegate.swift */,
@@ -157,9 +160,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB3F00DA26479FFB0026CC31 /* ViewController.swift in Sources */,
-				EB421914280ACB5400B94D02 /* EZYGradientView.swift in Sources */,
+				EB421914280ACB5400B94D02 /* HomeGradientView.swift in Sources */,
 				EB3F00D626479FFB0026CC31 /* AppDelegate.swift in Sources */,
 				EB3F00D826479FFB0026CC31 /* SceneDelegate.swift in Sources */,
+				EB42191A280BA07000B94D02 /* MainMenuGradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

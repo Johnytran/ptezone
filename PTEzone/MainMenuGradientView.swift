@@ -1,56 +1,13 @@
-// EZYGradientView.swift
-//
-// Copyright (c) 2016 Shashank Pali
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+
 
 import UIKit
 
 @IBDesignable
 
-open class EZYGradientView: UIView
+open class MainMenuGradientView: UITabBar
 {
   
-  //MARK:- Properties
-  /// First color of gradient i.e. it appears on top when angleº set to 0.0.
-  @IBInspectable open var firstColor: UIColor = UIColor.white
-    {
-    didSet
-    {
-      if gradientLayer != nil
-      {
-        self.updateColors()
-      }
-    }
-  }
   
-  /// Second color of gradient i.e. it appears in bottom when angleº set to 0.0.
-  @IBInspectable open var secondColor: UIColor = UIColor.white
-    {
-    didSet
-    {
-      if gradientLayer != nil
-      {
-        self.updateColors()
-      }
-    }
-  }
   
   /// Angleº will describe the tilt of gradient.
   @IBInspectable open var angleº: Float = 45.0
@@ -104,32 +61,7 @@ open class EZYGradientView: UIView
     }
   }
   
-  /// Is blur allow to add visual effect on gradient view. Can't be change during run-time.
-  @IBInspectable open var isBlur: Bool = false
-    {
-    didSet
-    {
-      if gradientLayer != nil
-      {
-        self.checkBlurStatusAndUpdateOpacity()
-      }
-    }
-  }
-  /// Blur opacity will describe the transparency of blur. It's value ranges from 0.0 to 1.0 default is 0.0. It is suggested to set EZYGradientView background color as clear color for better results.
-  @IBInspectable open var blurOpacity: Float = 0.0
-    {
-    didSet
-    {
-      assert(blurOpacity >= 0 || blurOpacity <= 1, "Blur Opacity: Valid range is from 0.0 to 1.0")
-      if gradientLayer != nil
-      {
-        self.checkBlurStatusAndUpdateOpacity()
-      }
-    }
-  }
   
-	fileprivate var blurView: UIVisualEffectView?
-  open var blurLayer: CALayer?
   open var gradientLayer: CAGradientLayer?
   
   //MARK:- Designated Initializer
@@ -159,14 +91,18 @@ open class EZYGradientView: UIView
     self.updateColors()
     self.updatePoints()
     self.updateLocation()
-    self.checkBlurStatusAndUpdateOpacity()
+    gradientLayer!.shadowColor = UIColor(red: 227/255.0, green: 106/255.0, blue: 255/255.0, alpha: 1.0).cgColor
+    gradientLayer!.shadowOpacity = 1
+    gradientLayer!.shadowOffset = .zero
+    gradientLayer!.shadowRadius = 10
+    
   }
   /**
    Step 1
    */
   fileprivate func updateColors()
   {
-    gradientLayer!.colors = [UIColor(red: 192/255.0, green: 105/255.0, blue: 224/255.0, alpha: 1.0).cgColor, UIColor(red: 82/255.0, green: 48/255.0, blue: 255/255.0, alpha: 1.0).cgColor]
+    gradientLayer!.colors = [UIColor(red: 255/255.0, green: 167/255.0, blue: 255/255.0, alpha: 1.0).cgColor, UIColor(red: 227/255.0, green: 106/255.0, blue: 255/255.0, alpha: 1.0).cgColor]
   }
   /**
    Step 2
@@ -185,37 +121,7 @@ open class EZYGradientView: UIView
     let colorLoc = locations()
 	gradientLayer!.locations = [NSNumber(value: colorLoc.0), NSNumber(value: colorLoc.1)]
   }
-  /**
-   Step 4
-   */
-  fileprivate func checkBlurStatusAndUpdateOpacity()
-  {
-    if isBlur
-    {
-      if blurView == nil
-      {
-        let blurEffect = UIBlurEffect(style: .light)
-        blurView = UIVisualEffectView(effect: blurEffect)
-        blurView?.frame = self.bounds
-        blurLayer = blurView?.layer
-      }
-      gradientLayer!.colors = [blurColor(firstColor), blurColor(secondColor)]
-      self.layer.insertSublayer(blurLayer!, below: gradientLayer)
-    }
-    else
-    {
-      blurLayer?.removeFromSuperlayer()
-      blurLayer = nil
-      blurView = nil
-    }
-  }
   
-  //MARK:- Helpers
-  
-  fileprivate func blurColor(_ color: UIColor) -> CGColor
-  {
-    return color.withAlphaComponent(CGFloat(0.9 - (blurOpacity / 2))).cgColor
-  }
   
   fileprivate func startEndPoints() -> (CGPoint, CGPoint)
   {
