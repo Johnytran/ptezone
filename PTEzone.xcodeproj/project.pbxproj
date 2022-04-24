@@ -17,6 +17,7 @@
 		EB3F00F02647A4F60026CC31 /* welcome_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = EB3F00EF2647A4F60026CC31 /* welcome_bg.png */; };
 		EB421914280ACB5400B94D02 /* HomeGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB421913280ACB5400B94D02 /* HomeGradientView.swift */; };
 		EB42191A280BA07000B94D02 /* MainMenuGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB421919280BA07000B94D02 /* MainMenuGradientView.swift */; };
+		EB80B56F28155C9500CFA29C /* VerticalMenuGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B56E28155C9500CFA29C /* VerticalMenuGradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EB3F00EF2647A4F60026CC31 /* welcome_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = welcome_bg.png; path = ../../../images/welcome_bg.png; sourceTree = "<group>"; };
 		EB421913280ACB5400B94D02 /* HomeGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeGradientView.swift; sourceTree = "<group>"; };
 		EB421919280BA07000B94D02 /* MainMenuGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuGradientView.swift; sourceTree = "<group>"; };
+		EB80B56E28155C9500CFA29C /* VerticalMenuGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalMenuGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				EB421913280ACB5400B94D02 /* HomeGradientView.swift */,
+				EB80B56E28155C9500CFA29C /* VerticalMenuGradientView.swift */,
 				EB421919280BA07000B94D02 /* MainMenuGradientView.swift */,
 				EB3F00EA2647A0770026CC31 /* images */,
 				EB3F00D526479FFB0026CC31 /* AppDelegate.swift */,
@@ -163,6 +166,7 @@
 				EB421914280ACB5400B94D02 /* HomeGradientView.swift in Sources */,
 				EB3F00D626479FFB0026CC31 /* AppDelegate.swift in Sources */,
 				EB3F00D826479FFB0026CC31 /* SceneDelegate.swift in Sources */,
+				EB80B56F28155C9500CFA29C /* VerticalMenuGradientView.swift in Sources */,
 				EB42191A280BA07000B94D02 /* MainMenuGradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="v6N-Vh-DB2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,85 +8,134 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Mock Test-->
+        <scene sceneID="A7U-HZ-rZU">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PTEzone" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="HomeGradientView" customModule="PTEzone" customModuleProvider="target">
+                <viewController id="zXg-8m-xoy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CHS-IG-aWA" customClass="HomeGradientView" customModule="PTEzone" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tabBar contentMode="right" semanticContentAttribute="forceLeftToRight" translatesAutoresizingMaskIntoConstraints="NO" id="kDZ-L5-cJ6" customClass="MainMenuGradientView" customModule="PTEzone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="776" width="414" height="120"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="vaL-k2-VaA"/>
-                                </constraints>
-                                <items>
-                                    <tabBarItem title="Practice" image="practice" selectedImage="practice_on" id="Wza-Wj-lUl">
-                                        <color key="badgeColor" systemColor="systemGreenColor"/>
-                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="2"/>
-                                    </tabBarItem>
-                                    <tabBarItem title="Mock Test" image="mock" selectedImage="mock_on" id="bLR-jH-v1g">
-                                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="2"/>
-                                    </tabBarItem>
-                                </items>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" red="0.18823529410000001" green="0.20784313730000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="selectedImageTintColor" red="0.18823529410000001" green="0.20784313730000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="angleº">
-                                        <real key="value" value="44"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </tabBar>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="uue-KP-g1i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="kDZ-L5-cJ6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ULT-oG-CQF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kDZ-L5-cJ6" secondAttribute="bottom" constant="-34" id="aKr-pb-kEy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kDZ-L5-cJ6" secondAttribute="trailing" id="s71-fK-x23"/>
-                        </constraints>
                         <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                <real key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
                                 <real key="value" value="0.5"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
                                 <real key="value" value="0.80000000000000004"/>
                             </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Mock Test" image="mock" selectedImage="mock_on" id="e5y-iQ-xSd">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTD-V2-ham" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-464" y="459"/>
+        </scene>
+        <!--Practice-->
+        <scene sceneID="rDo-Sp-MF8">
+            <objects>
+                <viewController id="WtV-LA-U8z" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M3K-ce-qgt" customClass="HomeGradientView" customModule="PTEzone" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fuk-Nu-RQP" customClass="VerticalMenuGradientView" customModule="PTEzone" customModuleProvider="target">
+                                <rect key="frame" x="10" y="529" width="67" height="273"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="63W-US-lmh"/>
+                                    <constraint firstAttribute="height" constant="273" id="LKE-eY-bP4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IGb-rE-3ci"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fuk-Nu-RQP" firstAttribute="leading" secondItem="IGb-rE-3ci" secondAttribute="leading" constant="10" id="TDT-A1-1An"/>
+                            <constraint firstItem="IGb-rE-3ci" firstAttribute="bottom" secondItem="Fuk-Nu-RQP" secondAttribute="bottom" constant="11" id="WPa-TC-srZ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="angleº">
                                 <real key="value" value="30"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                <real key="value" value="0.80000000000000004"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Practice" image="practice" selectedImage="practice_on" id="QSA-sM-oiE">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
+                    </tabBarItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tx7-3W-MYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="61.607142857142854"/>
+            <point key="canvasLocation" x="-463.768115942029" y="-202.23214285714286"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="k7D-fc-veX">
+            <objects>
+                <tabBarController id="v6N-Vh-DB2" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pLL-F7-Gxh" customClass="MainMenuGradientView" customModule="PTEzone" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                <real key="value" value="44"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBar>
+                    <connections>
+                        <segue destination="WtV-LA-U8z" kind="relationship" relationship="viewControllers" id="2Uv-qd-UMR"/>
+                        <segue destination="zXg-8m-xoy" kind="relationship" relationship="viewControllers" id="qCU-1b-wYd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jxb-xt-3is" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1354" y="101"/>
         </scene>
     </scenes>
     <designables>
-        <designable name="kDZ-L5-cJ6">
+        <designable name="Fuk-Nu-RQP">
+            <size key="intrinsicContentSize" width="-1" height="49"/>
+        </designable>
+        <designable name="pLL-F7-Gxh">
             <size key="intrinsicContentSize" width="-1" height="83"/>
         </designable>
     </designables>
     <resources>
         <image name="mock" width="50" height="40"/>
-        <image name="mock_on" width="108" height="87"/>
+        <image name="mock_on" width="50" height="40"/>
         <image name="practice" width="50" height="40"/>
         <image name="practice_on" width="50" height="40"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
