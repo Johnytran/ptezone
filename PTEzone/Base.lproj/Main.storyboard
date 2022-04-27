@@ -47,10 +47,52 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fuk-Nu-RQP" customClass="VerticalMenuGradientView" customModule="PTEzone" customModuleProvider="target">
                                 <rect key="frame" x="10" y="529" width="67" height="273"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLO-cU-K4y">
+                                        <rect key="frame" x="13" y="18" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="MI4-pk-0nw"/>
+                                            <constraint firstAttribute="width" constant="40" id="Ojf-K2-RfO"/>
+                                        </constraints>
+                                        <state key="normal" image="listening"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNm-MY-mMY">
+                                        <rect key="frame" x="13" y="80" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="XLa-6J-os3"/>
+                                            <constraint firstAttribute="height" constant="40" id="cUb-hm-Trc"/>
+                                        </constraints>
+                                        <state key="normal" image="reading"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KE9-LS-mw8">
+                                        <rect key="frame" x="13" y="204" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="frh-yw-ZNF"/>
+                                            <constraint firstAttribute="width" constant="40" id="mBV-WB-dLP"/>
+                                        </constraints>
+                                        <state key="normal" image="speaking"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpv-ea-GAy">
+                                        <rect key="frame" x="13" y="143" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="iZC-fl-hJQ"/>
+                                        </constraints>
+                                        <state key="normal" image="writting"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="tLO-cU-K4y" firstAttribute="leading" secondItem="Fuk-Nu-RQP" secondAttribute="leading" constant="13" id="0Ax-OM-Yd2"/>
+                                    <constraint firstItem="KE9-LS-mw8" firstAttribute="top" secondItem="lpv-ea-GAy" secondAttribute="bottom" constant="21" id="2bi-XI-Wbb"/>
+                                    <constraint firstItem="lpv-ea-GAy" firstAttribute="leading" secondItem="Fuk-Nu-RQP" secondAttribute="leading" constant="13" id="5Ed-Tc-8b4"/>
                                     <constraint firstAttribute="width" constant="67" id="63W-US-lmh"/>
+                                    <constraint firstItem="KE9-LS-mw8" firstAttribute="leading" secondItem="Fuk-Nu-RQP" secondAttribute="leading" constant="13" id="A9Q-iS-q8L"/>
+                                    <constraint firstItem="gNm-MY-mMY" firstAttribute="leading" secondItem="Fuk-Nu-RQP" secondAttribute="leading" constant="13" id="J6Z-oC-eDL"/>
                                     <constraint firstAttribute="height" constant="273" id="LKE-eY-bP4"/>
+                                    <constraint firstItem="gNm-MY-mMY" firstAttribute="top" secondItem="tLO-cU-K4y" secondAttribute="bottom" constant="22" id="Lg3-GC-wxl"/>
+                                    <constraint firstItem="tLO-cU-K4y" firstAttribute="top" secondItem="Fuk-Nu-RQP" secondAttribute="top" constant="18" id="Lzg-Av-fO3"/>
+                                    <constraint firstItem="lpv-ea-GAy" firstAttribute="top" secondItem="gNm-MY-mMY" secondAttribute="bottom" constant="23" id="RNs-pn-VMm"/>
+                                    <constraint firstAttribute="bottom" secondItem="KE9-LS-mw8" secondAttribute="bottom" constant="29" id="cyl-Tn-ZET"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="angleº">
@@ -130,10 +172,14 @@
         </designable>
     </designables>
     <resources>
+        <image name="listening" width="88" height="89"/>
         <image name="mock" width="50" height="40"/>
         <image name="mock_on" width="50" height="40"/>
         <image name="practice" width="50" height="40"/>
         <image name="practice_on" width="50" height="40"/>
+        <image name="reading" width="88" height="89"/>
+        <image name="speaking" width="88" height="89"/>
+        <image name="writting" width="88" height="89"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
