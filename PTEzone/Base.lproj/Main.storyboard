@@ -37,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="-464" y="459"/>
         </scene>
-        <!--Practice-->
+        <!--PracticeHome-->
         <scene sceneID="rDo-Sp-MF8">
             <objects>
-                <viewController id="WtV-LA-U8z" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="WtV-LA-U8z" userLabel="PracticeHome" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M3K-ce-qgt" customClass="HomeGradientView" customModule="PTEzone" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,6 +55,9 @@
                                             <constraint firstAttribute="width" constant="40" id="Ojf-K2-RfO"/>
                                         </constraints>
                                         <state key="normal" image="listening"/>
+                                        <connections>
+                                            <segue destination="VuK-sU-2iV" kind="show" id="Q4K-8w-UND"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNm-MY-mMY">
                                         <rect key="frame" x="13" y="80" width="40" height="40"/>
@@ -63,6 +66,9 @@
                                             <constraint firstAttribute="height" constant="40" id="cUb-hm-Trc"/>
                                         </constraints>
                                         <state key="normal" image="reading"/>
+                                        <connections>
+                                            <segue destination="DHv-VF-38G" kind="show" id="MkQ-4U-iYJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KE9-LS-mw8">
                                         <rect key="frame" x="13" y="204" width="40" height="40"/>
@@ -71,6 +77,9 @@
                                             <constraint firstAttribute="width" constant="40" id="mBV-WB-dLP"/>
                                         </constraints>
                                         <state key="normal" image="speaking"/>
+                                        <connections>
+                                            <segue destination="vlH-gj-Xxc" kind="show" id="W1w-Wm-OBx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpv-ea-GAy">
                                         <rect key="frame" x="13" y="143" width="40" height="40"/>
@@ -78,6 +87,9 @@
                                             <constraint firstAttribute="width" constant="40" id="iZC-fl-hJQ"/>
                                         </constraints>
                                         <state key="normal" image="writting"/>
+                                        <connections>
+                                            <segue destination="HIc-BT-JAW" kind="show" id="cjy-mS-zWm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -125,13 +137,199 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Practice" image="practice" selectedImage="practice_on" id="QSA-sM-oiE">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Practice" id="je5-M6-5Ep"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tx7-3W-MYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-463.768115942029" y="-202.23214285714286"/>
+            <point key="canvasLocation" x="446.37681159420293" y="-202.23214285714286"/>
+        </scene>
+        <!--Listening-->
+        <scene sceneID="kWn-eA-bSv">
+            <objects>
+                <viewController title="Listening" modalTransitionStyle="crossDissolve" id="VuK-sU-2iV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C0E-QD-PHc" customClass="HomeGradientView" customModule="PTEzone" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jwf-E3-4z4" customClass="VerticalMenuGradientView" customModule="PTEzone" customModuleProvider="target">
+                                <rect key="frame" x="10" y="529" width="67" height="273"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lub-QJ-iut">
+                                        <rect key="frame" x="13" y="18" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="bOE-sh-bhm"/>
+                                            <constraint firstAttribute="height" constant="40" id="c11-f6-DfG"/>
+                                        </constraints>
+                                        <state key="normal" image="listening_hov"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u1-dT-UfM">
+                                        <rect key="frame" x="13" y="80" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="nLU-ab-C8d"/>
+                                            <constraint firstAttribute="width" constant="40" id="o6e-tr-x3i"/>
+                                        </constraints>
+                                        <state key="normal" image="reading"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoP-s3-LiX">
+                                        <rect key="frame" x="13" y="204" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="edg-CM-aBI"/>
+                                            <constraint firstAttribute="width" constant="40" id="elS-J2-qRW"/>
+                                        </constraints>
+                                        <state key="normal" image="speaking"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJV-hd-Gc9">
+                                        <rect key="frame" x="13" y="143" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="L9T-Kq-dVI"/>
+                                        </constraints>
+                                        <state key="normal" image="writting"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="5u1-dT-UfM" firstAttribute="top" secondItem="lub-QJ-iut" secondAttribute="bottom" constant="22" id="1HN-5n-ify"/>
+                                    <constraint firstItem="lub-QJ-iut" firstAttribute="leading" secondItem="jwf-E3-4z4" secondAttribute="leading" constant="13" id="2yi-O4-1qQ"/>
+                                    <constraint firstItem="YJV-hd-Gc9" firstAttribute="leading" secondItem="jwf-E3-4z4" secondAttribute="leading" constant="13" id="8XN-SQ-8KC"/>
+                                    <constraint firstItem="5u1-dT-UfM" firstAttribute="leading" secondItem="jwf-E3-4z4" secondAttribute="leading" constant="13" id="Au4-CU-KVe"/>
+                                    <constraint firstAttribute="height" constant="273" id="Dvq-DQ-f36"/>
+                                    <constraint firstAttribute="bottom" secondItem="YoP-s3-LiX" secondAttribute="bottom" constant="29" id="gYu-L4-jez"/>
+                                    <constraint firstItem="YoP-s3-LiX" firstAttribute="top" secondItem="YJV-hd-Gc9" secondAttribute="bottom" constant="21" id="gg5-kf-8RC"/>
+                                    <constraint firstItem="YoP-s3-LiX" firstAttribute="leading" secondItem="jwf-E3-4z4" secondAttribute="leading" constant="13" id="l2v-7D-yg0"/>
+                                    <constraint firstItem="lub-QJ-iut" firstAttribute="top" secondItem="jwf-E3-4z4" secondAttribute="top" constant="18" id="piH-vf-RDm"/>
+                                    <constraint firstAttribute="width" constant="67" id="rWc-1u-RPH"/>
+                                    <constraint firstItem="YJV-hd-Gc9" firstAttribute="top" secondItem="5u1-dT-UfM" secondAttribute="bottom" constant="23" id="vTL-28-H4e"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Tsn-ar-AWq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jwf-E3-4z4" firstAttribute="leading" secondItem="Tsn-ar-AWq" secondAttribute="leading" constant="10" id="2Je-f5-RLk"/>
+                            <constraint firstItem="Tsn-ar-AWq" firstAttribute="bottom" secondItem="jwf-E3-4z4" secondAttribute="bottom" constant="11" id="Xij-gW-lnU"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                <real key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                <real key="value" value="0.80000000000000004"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" title="Listening" id="TSM-8f-hJi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d38-re-vJF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-465" y="-958"/>
+        </scene>
+        <!--Reading-->
+        <scene sceneID="inN-5h-Ko7">
+            <objects>
+                <viewController title="Reading" modalTransitionStyle="crossDissolve" id="DHv-VF-38G" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MVw-kI-Kg3" customClass="HomeGradientView" customModule="PTEzone" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mew-Ug-eAw" customClass="VerticalMenuGradientView" customModule="PTEzone" customModuleProvider="target">
+                                <rect key="frame" x="10" y="529" width="67" height="273"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjh-LL-Qap">
+                                        <rect key="frame" x="13" y="18" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="VHd-Ph-IuV"/>
+                                            <constraint firstAttribute="width" constant="40" id="ycP-1y-hJW"/>
+                                        </constraints>
+                                        <state key="normal" image="listening"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wS3-PP-Bcd">
+                                        <rect key="frame" x="13" y="80" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="2Ko-UC-prc"/>
+                                            <constraint firstAttribute="height" constant="40" id="tiQ-Nc-hTR"/>
+                                        </constraints>
+                                        <state key="normal" image="reading_hov"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzY-OG-8nD">
+                                        <rect key="frame" x="13" y="204" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="CQR-Tr-iwe"/>
+                                            <constraint firstAttribute="width" constant="40" id="uTN-4K-53m"/>
+                                        </constraints>
+                                        <state key="normal" image="speaking"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5m-xR-j0h">
+                                        <rect key="frame" x="13" y="143" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="B6E-GO-G8f"/>
+                                        </constraints>
+                                        <state key="normal" image="writting"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="1f3-A6-3kZ"/>
+                                    <constraint firstItem="hjh-LL-Qap" firstAttribute="top" secondItem="Mew-Ug-eAw" secondAttribute="top" constant="18" id="4ho-g8-qXH"/>
+                                    <constraint firstItem="hzY-OG-8nD" firstAttribute="leading" secondItem="Mew-Ug-eAw" secondAttribute="leading" constant="13" id="8US-T8-Noj"/>
+                                    <constraint firstItem="hjh-LL-Qap" firstAttribute="leading" secondItem="Mew-Ug-eAw" secondAttribute="leading" constant="13" id="AXC-mU-413"/>
+                                    <constraint firstAttribute="bottom" secondItem="hzY-OG-8nD" secondAttribute="bottom" constant="29" id="Bbe-PV-vhn"/>
+                                    <constraint firstAttribute="height" constant="273" id="EvE-GV-Nki"/>
+                                    <constraint firstItem="hzY-OG-8nD" firstAttribute="top" secondItem="u5m-xR-j0h" secondAttribute="bottom" constant="21" id="Kwn-8m-P2k"/>
+                                    <constraint firstItem="u5m-xR-j0h" firstAttribute="leading" secondItem="Mew-Ug-eAw" secondAttribute="leading" constant="13" id="V3p-qc-0zz"/>
+                                    <constraint firstItem="wS3-PP-Bcd" firstAttribute="top" secondItem="hjh-LL-Qap" secondAttribute="bottom" constant="22" id="YDS-FF-aFj"/>
+                                    <constraint firstItem="wS3-PP-Bcd" firstAttribute="leading" secondItem="Mew-Ug-eAw" secondAttribute="leading" constant="13" id="cmK-HP-1xV"/>
+                                    <constraint firstItem="u5m-xR-j0h" firstAttribute="top" secondItem="wS3-PP-Bcd" secondAttribute="bottom" constant="23" id="ho4-u2-CGm"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="19j-Y3-lbp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mew-Ug-eAw" firstAttribute="leading" secondItem="19j-Y3-lbp" secondAttribute="leading" constant="10" id="1Ll-50-bCc"/>
+                            <constraint firstItem="19j-Y3-lbp" firstAttribute="bottom" secondItem="Mew-Ug-eAw" secondAttribute="bottom" constant="11" id="cyQ-51-7zA"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                <real key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                <real key="value" value="0.80000000000000004"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reading" id="i2g-Rg-G9I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yWK-zh-oQu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="378" y="-958"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="k7D-fc-veX">
@@ -154,7 +352,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="WtV-LA-U8z" kind="relationship" relationship="viewControllers" id="2Uv-qd-UMR"/>
+                        <segue destination="Wgu-97-BuF" kind="relationship" relationship="viewControllers" id="2Uv-qd-UMR"/>
                         <segue destination="zXg-8m-xoy" kind="relationship" relationship="viewControllers" id="qCU-1b-wYd"/>
                     </connections>
                 </tabBarController>
@@ -162,9 +360,231 @@
             </objects>
             <point key="canvasLocation" x="-1354" y="101"/>
         </scene>
+        <!--Practice-->
+        <scene sceneID="XvZ-PT-60h">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wgu-97-BuF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Practice" image="practice" selectedImage="practice_on" id="QSA-sM-oiE">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ASW-RD-upI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92156862745098034" green="0.47058823529411764" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WtV-LA-U8z" kind="relationship" relationship="rootViewController" id="gX4-Pz-cC0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="52M-OX-hwu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-463.768115942029" y="-202.23214285714286"/>
+        </scene>
+        <!--Writing-->
+        <scene sceneID="JhU-x3-eH8">
+            <objects>
+                <viewController title="Writing" modalTransitionStyle="crossDissolve" id="HIc-BT-JAW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5f5-Q9-xDq" customClass="HomeGradientView" customModule="PTEzone" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D61-yt-sKc" customClass="VerticalMenuGradientView" customModule="PTEzone" customModuleProvider="target">
+                                <rect key="frame" x="10" y="529" width="67" height="273"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Em-Mb-oNg">
+                                        <rect key="frame" x="13" y="18" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ESf-gY-6ch"/>
+                                            <constraint firstAttribute="width" constant="40" id="cIX-ui-f4P"/>
+                                        </constraints>
+                                        <state key="normal" image="listening"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9k-y9-cop">
+                                        <rect key="frame" x="13" y="80" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2d0-Dh-FaH"/>
+                                            <constraint firstAttribute="width" constant="40" id="paV-AT-6X4"/>
+                                        </constraints>
+                                        <state key="normal" image="reading"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWH-qN-Hwi">
+                                        <rect key="frame" x="13" y="204" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="4TW-6C-EAD"/>
+                                            <constraint firstAttribute="height" constant="40" id="5HJ-CM-eHG"/>
+                                        </constraints>
+                                        <state key="normal" image="speaking"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpa-xS-A4f">
+                                        <rect key="frame" x="13" y="143" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="TrS-Ii-W0U"/>
+                                        </constraints>
+                                        <state key="normal" image="writting_hov"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="lpa-xS-A4f" firstAttribute="leading" secondItem="D61-yt-sKc" secondAttribute="leading" constant="13" id="8Nw-dt-II2"/>
+                                    <constraint firstItem="2Em-Mb-oNg" firstAttribute="leading" secondItem="D61-yt-sKc" secondAttribute="leading" constant="13" id="ALi-MS-yG3"/>
+                                    <constraint firstAttribute="height" constant="273" id="B9S-NE-Tdb"/>
+                                    <constraint firstItem="x9k-y9-cop" firstAttribute="top" secondItem="2Em-Mb-oNg" secondAttribute="bottom" constant="22" id="G9Q-PD-MR5"/>
+                                    <constraint firstAttribute="width" constant="67" id="UZ6-GE-bo7"/>
+                                    <constraint firstItem="2Em-Mb-oNg" firstAttribute="top" secondItem="D61-yt-sKc" secondAttribute="top" constant="18" id="Vju-TF-Cu1"/>
+                                    <constraint firstItem="x9k-y9-cop" firstAttribute="leading" secondItem="D61-yt-sKc" secondAttribute="leading" constant="13" id="dXk-tN-cA5"/>
+                                    <constraint firstItem="lpa-xS-A4f" firstAttribute="top" secondItem="x9k-y9-cop" secondAttribute="bottom" constant="23" id="fNs-jW-xC8"/>
+                                    <constraint firstItem="vWH-qN-Hwi" firstAttribute="leading" secondItem="D61-yt-sKc" secondAttribute="leading" constant="13" id="pcd-UD-Yjb"/>
+                                    <constraint firstAttribute="bottom" secondItem="vWH-qN-Hwi" secondAttribute="bottom" constant="29" id="qaV-YY-XSs"/>
+                                    <constraint firstItem="vWH-qN-Hwi" firstAttribute="top" secondItem="lpa-xS-A4f" secondAttribute="bottom" constant="21" id="rhx-FU-xJj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6n3-r2-bXb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D61-yt-sKc" firstAttribute="leading" secondItem="6n3-r2-bXb" secondAttribute="leading" constant="10" id="DSh-EV-j3D"/>
+                            <constraint firstItem="6n3-r2-bXb" firstAttribute="bottom" secondItem="D61-yt-sKc" secondAttribute="bottom" constant="11" id="PNV-AP-uF5"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                <real key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                <real key="value" value="0.80000000000000004"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" title="Writting" id="OMc-Op-tRf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yck-Uj-z9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1141" y="-958"/>
+        </scene>
+        <!--Speaking-->
+        <scene sceneID="cy6-L6-sct">
+            <objects>
+                <viewController title="Speaking" modalTransitionStyle="crossDissolve" id="vlH-gj-Xxc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0jU-19-JM6" customClass="HomeGradientView" customModule="PTEzone" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G5a-ca-IX8" customClass="VerticalMenuGradientView" customModule="PTEzone" customModuleProvider="target">
+                                <rect key="frame" x="10" y="529" width="67" height="273"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0C-Jc-Sza">
+                                        <rect key="frame" x="13" y="18" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Iuc-Ab-qQB"/>
+                                            <constraint firstAttribute="height" constant="40" id="aV5-Wu-OHq"/>
+                                        </constraints>
+                                        <state key="normal" image="listening"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vu-j3-JHl">
+                                        <rect key="frame" x="13" y="80" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Ui8-Mz-cXG"/>
+                                            <constraint firstAttribute="width" constant="40" id="tnI-B9-wRL"/>
+                                        </constraints>
+                                        <state key="normal" image="reading"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYM-hx-GGU">
+                                        <rect key="frame" x="13" y="204" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="2tW-fA-3VT"/>
+                                            <constraint firstAttribute="height" constant="40" id="smn-tW-qQT"/>
+                                        </constraints>
+                                        <state key="normal" image="speaking_hov"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bj-jb-fVQ">
+                                        <rect key="frame" x="13" y="143" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="cLz-KQ-rRU"/>
+                                        </constraints>
+                                        <state key="normal" image="writting"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="273" id="4jl-Bx-U3f"/>
+                                    <constraint firstItem="8Vu-j3-JHl" firstAttribute="top" secondItem="I0C-Jc-Sza" secondAttribute="bottom" constant="22" id="H1i-lc-rSh"/>
+                                    <constraint firstItem="SYM-hx-GGU" firstAttribute="top" secondItem="4bj-jb-fVQ" secondAttribute="bottom" constant="21" id="lLm-To-ACr"/>
+                                    <constraint firstItem="I0C-Jc-Sza" firstAttribute="top" secondItem="G5a-ca-IX8" secondAttribute="top" constant="18" id="nln-J1-KNp"/>
+                                    <constraint firstItem="4bj-jb-fVQ" firstAttribute="top" secondItem="8Vu-j3-JHl" secondAttribute="bottom" constant="23" id="o6A-YR-dpV"/>
+                                    <constraint firstItem="4bj-jb-fVQ" firstAttribute="leading" secondItem="G5a-ca-IX8" secondAttribute="leading" constant="13" id="sc5-Qx-Xd6"/>
+                                    <constraint firstAttribute="bottom" secondItem="SYM-hx-GGU" secondAttribute="bottom" constant="29" id="v3j-Z2-uG2"/>
+                                    <constraint firstAttribute="width" constant="67" id="vPi-Mp-gJq"/>
+                                    <constraint firstItem="I0C-Jc-Sza" firstAttribute="leading" secondItem="G5a-ca-IX8" secondAttribute="leading" constant="13" id="xzW-fT-kFM"/>
+                                    <constraint firstItem="8Vu-j3-JHl" firstAttribute="leading" secondItem="G5a-ca-IX8" secondAttribute="leading" constant="13" id="zHo-9a-rVU"/>
+                                    <constraint firstItem="SYM-hx-GGU" firstAttribute="leading" secondItem="G5a-ca-IX8" secondAttribute="leading" constant="13" id="zXO-gE-GWW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                        <real key="value" value="90"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                        <real key="value" value="0.59999999999999998"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cts-02-4Hx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="G5a-ca-IX8" firstAttribute="leading" secondItem="Cts-02-4Hx" secondAttribute="leading" constant="10" id="Q59-jh-RUh"/>
+                            <constraint firstItem="Cts-02-4Hx" firstAttribute="bottom" secondItem="G5a-ca-IX8" secondAttribute="bottom" constant="11" id="kMn-eU-Oe1"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                <real key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                <real key="value" value="0.80000000000000004"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" title="Speaking" id="32b-Hh-Taw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iv2-6e-Grt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1932" y="-958"/>
+        </scene>
     </scenes>
     <designables>
+        <designable name="D61-yt-sKc">
+            <size key="intrinsicContentSize" width="-1" height="49"/>
+        </designable>
         <designable name="Fuk-Nu-RQP">
+            <size key="intrinsicContentSize" width="-1" height="49"/>
+        </designable>
+        <designable name="G5a-ca-IX8">
+            <size key="intrinsicContentSize" width="-1" height="49"/>
+        </designable>
+        <designable name="Mew-Ug-eAw">
+            <size key="intrinsicContentSize" width="-1" height="49"/>
+        </designable>
+        <designable name="jwf-E3-4z4">
             <size key="intrinsicContentSize" width="-1" height="49"/>
         </designable>
         <designable name="pLL-F7-Gxh">
@@ -173,13 +593,17 @@
     </designables>
     <resources>
         <image name="listening" width="88" height="89"/>
+        <image name="listening_hov" width="88" height="89"/>
         <image name="mock" width="50" height="40"/>
         <image name="mock_on" width="50" height="40"/>
         <image name="practice" width="50" height="40"/>
         <image name="practice_on" width="50" height="40"/>
         <image name="reading" width="88" height="89"/>
+        <image name="reading_hov" width="88" height="89"/>
         <image name="speaking" width="88" height="89"/>
+        <image name="speaking_hov" width="88" height="89"/>
         <image name="writting" width="88" height="89"/>
+        <image name="writting_hov" width="88" height="89"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
