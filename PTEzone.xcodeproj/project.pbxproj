@@ -18,6 +18,7 @@
 		EB421914280ACB5400B94D02 /* HomeGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB421913280ACB5400B94D02 /* HomeGradientView.swift */; };
 		EB42191A280BA07000B94D02 /* MainMenuGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB421919280BA07000B94D02 /* MainMenuGradientView.swift */; };
 		EB80B56F28155C9500CFA29C /* VerticalMenuGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B56E28155C9500CFA29C /* VerticalMenuGradientView.swift */; };
+		EB80B574281BF47300CFA29C /* NeumorphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B573281BF47300CFA29C /* NeumorphicView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		EB421913280ACB5400B94D02 /* HomeGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeGradientView.swift; sourceTree = "<group>"; };
 		EB421919280BA07000B94D02 /* MainMenuGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuGradientView.swift; sourceTree = "<group>"; };
 		EB80B56E28155C9500CFA29C /* VerticalMenuGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalMenuGradientView.swift; sourceTree = "<group>"; };
+		EB80B573281BF47300CFA29C /* NeumorphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				EB3F00DE26479FFD0026CC31 /* Assets.xcassets */,
 				EB3F00E026479FFD0026CC31 /* LaunchScreen.storyboard */,
 				EB3F00E326479FFD0026CC31 /* Info.plist */,
+				EB80B573281BF47300CFA29C /* NeumorphicView.swift */,
 			);
 			path = PTEzone;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB3F00DA26479FFB0026CC31 /* ViewController.swift in Sources */,
+				EB80B574281BF47300CFA29C /* NeumorphicView.swift in Sources */,
 				EB421914280ACB5400B94D02 /* HomeGradientView.swift in Sources */,
 				EB3F00D626479FFB0026CC31 /* AppDelegate.swift in Sources */,
 				EB3F00D826479FFB0026CC31 /* SceneDelegate.swift in Sources */,
