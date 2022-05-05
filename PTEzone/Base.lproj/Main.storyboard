@@ -143,34 +143,46 @@
             </objects>
             <point key="canvasLocation" x="446.37681159420293" y="-202.23214285714286"/>
         </scene>
-        <!--Summarise Spoken Text-->
-        <scene sceneID="zpr-sb-7BN">
+        <!--Lis Sum Spo Text-->
+        <scene sceneID="fdx-LL-XvY">
             <objects>
-                <tableViewController title="Summarise Spoken Text" id="ONi-Jd-n9t" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d1w-UE-yKv">
+                <viewController id="yw4-Am-C0U" customClass="LisSumSpoText" customModule="PTEzone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UTg-76-8rG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zGp-yL-f57">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sumCell" id="4T2-zO-AIl">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4T2-zO-AIl" id="wvJ-y9-00Q">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3zX-9k-bgY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="GOe-r7-BLg">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GOe-r7-BLg" id="COS-2x-U4p">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ONi-Jd-n9t" id="kas-pT-ko5"/>
-                            <outlet property="delegate" destination="ONi-Jd-n9t" id="zCZ-rv-VJE"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Summarise Spoken Text" id="c35-Yi-Edp"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NHh-2o-rKB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="3zX-9k-bgY" firstAttribute="bottom" secondItem="zGp-yL-f57" secondAttribute="bottom" id="1KN-ny-Ngh"/>
+                            <constraint firstItem="zGp-yL-f57" firstAttribute="top" secondItem="3zX-9k-bgY" secondAttribute="top" id="9um-IJ-Nq8"/>
+                            <constraint firstItem="3zX-9k-bgY" firstAttribute="trailing" secondItem="zGp-yL-f57" secondAttribute="trailing" id="HcU-jS-mJK"/>
+                            <constraint firstItem="zGp-yL-f57" firstAttribute="leading" secondItem="3zX-9k-bgY" secondAttribute="leading" id="TM5-lw-lDe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VnP-cn-e1N"/>
+                    <connections>
+                        <outlet property="tableSum" destination="zGp-yL-f57" id="UlT-Gg-bcq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jK5-VM-4b0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-465" y="-1648"/>
+            <point key="canvasLocation" x="286.95652173913044" y="-1642.6339285714284"/>
         </scene>
         <!--Listening-->
         <scene sceneID="kWn-eA-bSv">
@@ -248,7 +260,7 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <segue destination="ONi-Jd-n9t" kind="show" id="0Vf-b0-QDR"/>
+                                            <segue destination="yw4-Am-C0U" kind="show" id="9gv-OY-ZUF"/>
                                         </connections>
                                     </button>
                                 </subviews>
