@@ -146,7 +146,7 @@
         <!--Lis Sum Spo Text-->
         <scene sceneID="fdx-LL-XvY">
             <objects>
-                <viewController id="yw4-Am-C0U" customClass="LisSumSpoText" customModule="PTEzone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="yw4-Am-C0U" customClass="LisSumSpoText" customModule="PTEzone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UTg-76-8rG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,6 +154,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zGp-yL-f57">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.8980392157" green="0.44705882349999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sumCell" id="4T2-zO-AIl">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -161,7 +162,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4T2-zO-AIl" id="wvJ-y9-00Q">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="1" green="0.75686274509999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.75686274509803919" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -178,11 +181,46 @@
                     <navigationItem key="navigationItem" id="VnP-cn-e1N"/>
                     <connections>
                         <outlet property="tableSum" destination="zGp-yL-f57" id="UlT-Gg-bcq"/>
+                        <segue destination="sgK-Tw-rS7" kind="show" id="sla-Os-h8i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jK5-VM-4b0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="286.95652173913044" y="-1642.6339285714284"/>
+        </scene>
+        <!--Detail Lis Sum Spo Text-->
+        <scene sceneID="OSt-Zp-DjV">
+            <objects>
+                <viewController id="sgK-Tw-rS7" customClass="DetailLisSumSpoText" customModule="PTEzone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7xt-JK-VGG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvM-86-Bwx">
+                                <rect key="frame" x="0.0" y="88" width="414" height="125"/>
+                                <color key="backgroundColor" red="1" green="0.55055388379666936" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="3dv-gR-drV"/>
+                                </constraints>
+                                <string key="text">Summarise the lecture in 50 - 70 words in 10 minutes. Your response will be judged on the quality of your writing and on how well your response presents the key points presented in the lecture.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vcp-u7-Y6Z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lvM-86-Bwx" firstAttribute="leading" secondItem="Vcp-u7-Y6Z" secondAttribute="leading" id="I5g-CA-UKe"/>
+                            <constraint firstItem="Vcp-u7-Y6Z" firstAttribute="trailing" secondItem="lvM-86-Bwx" secondAttribute="trailing" id="UIT-py-k3N"/>
+                            <constraint firstItem="lvM-86-Bwx" firstAttribute="top" secondItem="Vcp-u7-Y6Z" secondAttribute="top" id="f7u-kQ-QJn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mf1-g8-pgf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w4s-yy-7tx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1246.376811594203" y="-1643.3035714285713"/>
         </scene>
         <!--Listening-->
         <scene sceneID="kWn-eA-bSv">
