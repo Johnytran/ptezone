@@ -9,5 +9,10 @@ import UIKit
 
 class DetailLisSumSpoText: UIViewController{
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+
+    }
     
 }

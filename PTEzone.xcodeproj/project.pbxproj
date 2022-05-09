@@ -21,6 +21,7 @@
 		EB80B574281BF47300CFA29C /* NeumorphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B573281BF47300CFA29C /* NeumorphicView.swift */; };
 		EB80B5772823C20A00CFA29C /* LisSumSpoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B5762823C20900CFA29C /* LisSumSpoText.swift */; };
 		EB80B57A2827D52B00CFA29C /* DetailLisSumSpoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B5792827D52B00CFA29C /* DetailLisSumSpoText.swift */; };
+		EB80B57D28288DCF00CFA29C /* CornerGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B57C28288DCF00CFA29C /* CornerGradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		EB80B573281BF47300CFA29C /* NeumorphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicView.swift; sourceTree = "<group>"; };
 		EB80B5762823C20900CFA29C /* LisSumSpoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisSumSpoText.swift; sourceTree = "<group>"; };
 		EB80B5792827D52B00CFA29C /* DetailLisSumSpoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLisSumSpoText.swift; sourceTree = "<group>"; };
+		EB80B57C28288DCF00CFA29C /* CornerGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerGradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +74,9 @@
 		EB3F00D426479FFB0026CC31 /* PTEzone */ = {
 			isa = PBXGroup;
 			children = (
-				EB421913280ACB5400B94D02 /* HomeGradientView.swift */,
 				EB80B56E28155C9500CFA29C /* VerticalMenuGradientView.swift */,
+				EB80B57C28288DCF00CFA29C /* CornerGradientView.swift */,
+				EB421913280ACB5400B94D02 /* HomeGradientView.swift */,
 				EB421919280BA07000B94D02 /* MainMenuGradientView.swift */,
 				EB3F00EA2647A0770026CC31 /* images */,
 				EB3F00D526479FFB0026CC31 /* AppDelegate.swift */,
@@ -176,6 +179,7 @@
 				EB80B5772823C20A00CFA29C /* LisSumSpoText.swift in Sources */,
 				EB421914280ACB5400B94D02 /* HomeGradientView.swift in Sources */,
 				EB80B57A2827D52B00CFA29C /* DetailLisSumSpoText.swift in Sources */,
+				EB80B57D28288DCF00CFA29C /* CornerGradientView.swift in Sources */,
 				EB3F00D626479FFB0026CC31 /* AppDelegate.swift in Sources */,
 				EB3F00D826479FFB0026CC31 /* SceneDelegate.swift in Sources */,
 				EB80B56F28155C9500CFA29C /* VerticalMenuGradientView.swift in Sources */,

@@ -42,9 +42,12 @@ class LisSumSpoText: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let destination = DetailLisSumSpoText() // Your destination
-        navigationController?.pushViewController(destination, animated: true)
+//        let destination = DetailLisSumSpoText() // Your destination
+//        navigationController?.pushViewController(destination, animated: true)
+        self.performSegue(withIdentifier: "dlsst", sender: self)
     }
+    
 
+    
 }
 

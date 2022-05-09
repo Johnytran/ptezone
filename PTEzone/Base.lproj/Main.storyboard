@@ -181,42 +181,129 @@
                     <navigationItem key="navigationItem" id="VnP-cn-e1N"/>
                     <connections>
                         <outlet property="tableSum" destination="zGp-yL-f57" id="UlT-Gg-bcq"/>
-                        <segue destination="sgK-Tw-rS7" kind="show" id="sla-Os-h8i"/>
+                        <segue destination="sgK-Tw-rS7" kind="show" identifier="dlsst" id="jiI-6L-Ntk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jK5-VM-4b0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="286.95652173913044" y="-1642.6339285714284"/>
         </scene>
-        <!--Detail Lis Sum Spo Text-->
+        <!--Summarise Spoken Text-->
         <scene sceneID="OSt-Zp-DjV">
             <objects>
                 <viewController id="sgK-Tw-rS7" customClass="DetailLisSumSpoText" customModule="PTEzone" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7xt-JK-VGG">
+                    <view key="view" contentMode="scaleToFill" id="7xt-JK-VGG" customClass="HomeGradientView" customModule="PTEzone" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvM-86-Bwx">
-                                <rect key="frame" x="0.0" y="88" width="414" height="125"/>
-                                <color key="backgroundColor" red="1" green="0.55055388379666936" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dt8-Pn-DtZ" customClass="CornerGradientView" customModule="PTEzone" customModuleProvider="target">
+                                <rect key="frame" x="20" y="103" width="374" height="149"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvM-86-Bwx">
+                                        <rect key="frame" x="8" y="0.0" width="358" height="149"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Summarise the lecture in 50 - 70 words in 10 minutes. Your response will be judged on the quality of your writing and on how well your response presents the key points presented in the lecture.</string>
+                                                <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="10" headIndent="10" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="3dv-gR-drV"/>
+                                    <constraint firstItem="lvM-86-Bwx" firstAttribute="top" secondItem="Dt8-Pn-DtZ" secondAttribute="top" id="2Zk-Dc-EpC"/>
+                                    <constraint firstItem="lvM-86-Bwx" firstAttribute="leading" secondItem="Dt8-Pn-DtZ" secondAttribute="leading" constant="8" id="QBL-80-oLi"/>
+                                    <constraint firstAttribute="bottom" secondItem="lvM-86-Bwx" secondAttribute="bottom" id="WLc-Q6-kxc"/>
+                                    <constraint firstAttribute="height" constant="149" id="XcZ-wV-bKn"/>
+                                    <constraint firstAttribute="trailing" secondItem="lvM-86-Bwx" secondAttribute="trailing" constant="8" id="xdB-Q7-HdL"/>
                                 </constraints>
-                                <string key="text">Summarise the lecture in 50 - 70 words in 10 minutes. Your response will be judged on the quality of your writing and on how well your response presents the key points presented in the lecture.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAg-EJ-Zk5" customClass="CornerGradientView" customModule="PTEzone" customModuleProvider="target">
+                                <rect key="frame" x="20" y="275" width="374" height="44"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="xqb-lA-2pd">
+                                        <rect key="frame" x="27" y="19" width="261" height="4"/>
+                                        <color key="progressTintColor" red="0.73421066999999995" green="0.1213334959" blue="0.70776366769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="trackTintColor" red="0.8980392157" green="0.44705882349999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </progressView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vj2-JB-6PZ">
+                                        <rect key="frame" x="318" y="0.0" width="38" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="Nty-4g-aFr"/>
+                                            <constraint firstAttribute="width" constant="38" id="vgO-t7-HpL"/>
+                                        </constraints>
+                                        <state key="normal" image="replay"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="xqb-lA-2pd" firstAttribute="top" secondItem="hAg-EJ-Zk5" secondAttribute="top" constant="19" id="7BH-Ng-eEd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Vj2-JB-6PZ" secondAttribute="trailing" constant="18" id="9tu-e7-XJF"/>
+                                    <constraint firstItem="Vj2-JB-6PZ" firstAttribute="top" secondItem="hAg-EJ-Zk5" secondAttribute="top" id="Ahf-9Z-SRc"/>
+                                    <constraint firstItem="xqb-lA-2pd" firstAttribute="leading" secondItem="hAg-EJ-Zk5" secondAttribute="leading" constant="27" id="Arx-ty-sJ6"/>
+                                    <constraint firstAttribute="bottom" secondItem="xqb-lA-2pd" secondAttribute="bottom" constant="21" id="Zz4-cp-xWd"/>
+                                    <constraint firstAttribute="height" constant="44" id="akm-Fk-d76"/>
+                                    <constraint firstItem="Vj2-JB-6PZ" firstAttribute="leading" secondItem="xqb-lA-2pd" secondAttribute="trailing" constant="30" id="dNZ-Gd-CQU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vcp-u7-Y6Z"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lvM-86-Bwx" firstAttribute="leading" secondItem="Vcp-u7-Y6Z" secondAttribute="leading" id="I5g-CA-UKe"/>
-                            <constraint firstItem="Vcp-u7-Y6Z" firstAttribute="trailing" secondItem="lvM-86-Bwx" secondAttribute="trailing" id="UIT-py-k3N"/>
-                            <constraint firstItem="lvM-86-Bwx" firstAttribute="top" secondItem="Vcp-u7-Y6Z" secondAttribute="top" id="f7u-kQ-QJn"/>
+                            <constraint firstItem="hAg-EJ-Zk5" firstAttribute="top" secondItem="lvM-86-Bwx" secondAttribute="bottom" constant="23" id="Fs8-Vm-PId"/>
+                            <constraint firstItem="Vcp-u7-Y6Z" firstAttribute="trailing" secondItem="Dt8-Pn-DtZ" secondAttribute="trailing" constant="20" id="b4G-98-MkC"/>
+                            <constraint firstItem="Vcp-u7-Y6Z" firstAttribute="trailing" secondItem="hAg-EJ-Zk5" secondAttribute="trailing" constant="20" id="fXL-sT-lY6"/>
+                            <constraint firstItem="hAg-EJ-Zk5" firstAttribute="leading" secondItem="Vcp-u7-Y6Z" secondAttribute="leading" constant="20" id="mM3-yw-46s"/>
+                            <constraint firstItem="Dt8-Pn-DtZ" firstAttribute="top" secondItem="Vcp-u7-Y6Z" secondAttribute="top" constant="15" id="ng8-QZ-yXM"/>
+                            <constraint firstItem="Dt8-Pn-DtZ" firstAttribute="leading" secondItem="Vcp-u7-Y6Z" secondAttribute="leading" constant="20" id="srE-FV-s1a"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                <real key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                <real key="value" value="0.80000000000000004"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
-                    <navigationItem key="navigationItem" id="Mf1-g8-pgf"/>
+                    <navigationItem key="navigationItem" title="Summarise Spoken Text" id="Mf1-g8-pgf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4s-yy-7tx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -828,6 +915,7 @@
         <image name="practice" width="50" height="40"/>
         <image name="practice_on" width="50" height="40"/>
         <image name="reading" width="88" height="89"/>
+        <image name="replay" width="170" height="170"/>
         <image name="speaking" width="88" height="89"/>
         <image name="writting" width="88" height="89"/>
         <systemColor name="systemBackgroundColor">
