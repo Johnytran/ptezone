@@ -27,6 +27,14 @@ class LisSumSpoText: UIViewController, UITableViewDelegate, UITableViewDataSourc
         // This view controller itself will provide the delegate methods and row data for the table view.
         tableSum.delegate = self
         tableSum.dataSource = self
+        self.registerTableViewCells()
+    }
+    
+    private func registerTableViewCells() {
+        let customCell = UINib(nibName: "LisSumTableViewCell",
+                                  bundle: nil)
+        self.tableSum.register(customCell,
+                                forCellReuseIdentifier: "LisSumTableViewCell")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,16 +42,16 @@ class LisSumSpoText: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.tableSum.dequeueReusableCell(withIdentifier: cellReuseIdentifier)! as UITableViewCell
-                
-        // set the text from the data model
-        cell.textLabel?.text = self.listSum[indexPath.row]
+        if let cell = tableSum.dequeueReusableCell(withIdentifier: "LisSumTableViewCell") as? LisSumTableViewCell {
+            cell.lblTitle?.text = self.listSum[indexPath.row]
+            
+            return cell
+        }
         
-        return cell
+        return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let destination = DetailLisSumSpoText() // Your destination
-//        navigationController?.pushViewController(destination, animated: true)
+
         self.performSegue(withIdentifier: "dlsst", sender: self)
     }
     
