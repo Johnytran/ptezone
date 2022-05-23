@@ -20,10 +20,10 @@
 		EB80B56F28155C9500CFA29C /* VerticalMenuGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B56E28155C9500CFA29C /* VerticalMenuGradientView.swift */; };
 		EB80B574281BF47300CFA29C /* NeumorphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B573281BF47300CFA29C /* NeumorphicView.swift */; };
 		EB80B5772823C20A00CFA29C /* LisSumSpoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B5762823C20900CFA29C /* LisSumSpoText.swift */; };
-		EB80B57A2827D52B00CFA29C /* DetailLisSumSpoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B5792827D52B00CFA29C /* DetailLisSumSpoText.swift */; };
 		EB80B57D28288DCF00CFA29C /* CornerGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B57C28288DCF00CFA29C /* CornerGradientView.swift */; };
 		EB80B598282D02E200CFA29C /* LisSumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B596282D02E200CFA29C /* LisSumTableViewCell.swift */; };
 		EB80B599282D02E200CFA29C /* LisSumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB80B597282D02E200CFA29C /* LisSumTableViewCell.xib */; };
+		EB80B5A02835015F00CFA29C /* LisDetailSST.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B59F2835015F00CFA29C /* LisDetailSST.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +42,10 @@
 		EB80B56E28155C9500CFA29C /* VerticalMenuGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalMenuGradientView.swift; sourceTree = "<group>"; };
 		EB80B573281BF47300CFA29C /* NeumorphicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphicView.swift; sourceTree = "<group>"; };
 		EB80B5762823C20900CFA29C /* LisSumSpoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisSumSpoText.swift; sourceTree = "<group>"; };
-		EB80B5792827D52B00CFA29C /* DetailLisSumSpoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLisSumSpoText.swift; sourceTree = "<group>"; };
 		EB80B57C28288DCF00CFA29C /* CornerGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerGradientView.swift; sourceTree = "<group>"; };
 		EB80B596282D02E200CFA29C /* LisSumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisSumTableViewCell.swift; sourceTree = "<group>"; };
 		EB80B597282D02E200CFA29C /* LisSumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LisSumTableViewCell.xib; sourceTree = "<group>"; };
+		EB80B59F2835015F00CFA29C /* LisDetailSST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LisDetailSST.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +113,8 @@
 		EB80B58D282CFCFE00CFA29C /* SummariseSpoken */ = {
 			isa = PBXGroup;
 			children = (
+				EB80B59F2835015F00CFA29C /* LisDetailSST.swift */,
 				EB80B5762823C20900CFA29C /* LisSumSpoText.swift */,
-				EB80B5792827D52B00CFA29C /* DetailLisSumSpoText.swift */,
 				EB80B596282D02E200CFA29C /* LisSumTableViewCell.swift */,
 				EB80B597282D02E200CFA29C /* LisSumTableViewCell.xib */,
 			);
@@ -210,7 +210,7 @@
 				EB80B574281BF47300CFA29C /* NeumorphicView.swift in Sources */,
 				EB80B5772823C20A00CFA29C /* LisSumSpoText.swift in Sources */,
 				EB421914280ACB5400B94D02 /* HomeGradientView.swift in Sources */,
-				EB80B57A2827D52B00CFA29C /* DetailLisSumSpoText.swift in Sources */,
+				EB80B5A02835015F00CFA29C /* LisDetailSST.swift in Sources */,
 				EB80B57D28288DCF00CFA29C /* CornerGradientView.swift in Sources */,
 				EB3F00D626479FFB0026CC31 /* AppDelegate.swift in Sources */,
 				EB3F00D826479FFB0026CC31 /* SceneDelegate.swift in Sources */,

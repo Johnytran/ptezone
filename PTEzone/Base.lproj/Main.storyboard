@@ -191,7 +191,7 @@
         <!--Summarise Spoken Text-->
         <scene sceneID="OSt-Zp-DjV">
             <objects>
-                <viewController id="sgK-Tw-rS7" customClass="DetailLisSumSpoText" customModule="PTEzone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sgK-Tw-rS7" customClass="LisDetailSST" customModule="PTEzone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7xt-JK-VGG" customClass="HomeGradientView" customModule="PTEzone" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -463,6 +463,9 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="Summarise Spoken Text" id="Mf1-g8-pgf"/>
+                    <connections>
+                        <outlet property="progressView" destination="xqb-lA-2pd" id="csf-SE-PwI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4s-yy-7tx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1060,9 +1063,6 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="Fuk-Nu-RQP">
-            <size key="intrinsicContentSize" width="-1" height="49"/>
-        </designable>
         <designable name="pLL-F7-Gxh">
             <size key="intrinsicContentSize" width="-1" height="83"/>
         </designable>
