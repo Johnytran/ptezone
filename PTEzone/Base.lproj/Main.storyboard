@@ -341,8 +341,8 @@
                                         <color key="textColor" red="1" green="0.062745098040000002" blue="0.67450980390000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLJ-Ma-3QI">
-                                        <rect key="frame" x="134" y="16" width="64.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLJ-Ma-3QI">
+                                        <rect key="frame" x="134" y="16" width="69" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Esg-js-ojE"/>
                                         </constraints>
@@ -351,7 +351,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-og-0pm">
-                                        <rect key="frame" x="277" y="11" width="74" height="30"/>
+                                        <rect key="frame" x="281.5" y="11" width="69.5" height="30"/>
                                         <color key="backgroundColor" red="0.8980392157" green="0.44705882349999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="drs-qT-05w"/>
