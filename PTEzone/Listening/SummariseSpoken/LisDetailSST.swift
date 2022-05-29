@@ -11,7 +11,7 @@ import AVFoundation
 class LisDetailSST: UIViewController{
     
     var player:AVPlayer!
-    
+    var observer: NSKeyValueObservation?
     
     @IBOutlet weak var progressView: UIProgressView!
     
@@ -26,6 +26,12 @@ class LisDetailSST: UIViewController{
         do {
 
             let playerItem = AVPlayerItem(url: url as URL)
+            // Register as an observer of the player item's status property
+                self.observer = playerItem.observe(\.status, options:  [.new, .old], changeHandler: { (playerItem, change) in
+                    if playerItem.status == .readyToPlay {
+                        print("ready")
+                    }
+                })
 
             self.player = try AVPlayer(playerItem:playerItem)
             player!.volume = 1.0
