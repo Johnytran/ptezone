@@ -15,24 +15,46 @@ class LisDetailSST: UIViewController{
     
     @IBOutlet weak var progressView: UIProgressView!
     
+    @IBOutlet weak var loadingLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.play(url: URL(string: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3")! as NSURL)
+        download()
     }
-    func play(url:NSURL) {
-        print("playing \(url)")
-
+    func download() {
+        let videoUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
+        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first!
+        let destPath = NSString(string: documentPath).appendingPathComponent("SoundHelix-Song-13.mp3") as String
+        if FileManager.default.fileExists(atPath: destPath) {
+            print("file already exist at \(destPath)")
+            self.playVideo(url: NSURL(fileURLWithPath: destPath))
+            return
+        }
+        URLSession.shared.downloadTask(with: URL(string: videoUrl)!) { (location:URL?, response:URLResponse?, err:Error?) -> Void in
+            if let _ = location {
+                do {
+                    try FileManager.default.moveItem(at: location!, to: URL(fileURLWithPath: destPath))
+                    self.playVideo(url: NSURL(fileURLWithPath: destPath))
+                }catch let error as NSError {
+                    print("move file error: \(error.localizedDescription)")
+                }
+            } else {
+                print("location err: \(String(describing: location))")
+            }
+        }.resume()
+    }
+    func playVideo(url:NSURL) {
+        
         do {
-
-            let playerItem = AVPlayerItem(url: url as URL)
-            // Register as an observer of the player item's status property
-                self.observer = playerItem.observe(\.status, options:  [.new, .old], changeHandler: { (playerItem, change) in
-                    if playerItem.status == .readyToPlay {
-                        print("ready")
-                    }
-                })
-
+            
+            let avAsset = AVAsset(url: url as URL)
+            let playerItem = AVPlayerItem(asset: avAsset)
+            //Register as an observer of the player item's status property
+               self.observer = playerItem.observe(\.status, options:  [.new, .old], changeHandler: { (playerItem, change) in
+                   if playerItem.status == .readyToPlay {
+                    self.loadingLabel.text = "Ready"
+                   }
+               })
+            
             self.player = try AVPlayer(playerItem:playerItem)
             player!.volume = 1.0
             player!.play()
@@ -69,5 +91,16 @@ class LisDetailSST: UIViewController{
 extension AVPlayer {
     var isPlaying: Bool {
         return rate != 0 && error == nil
+    }
+}
+extension String{
+    func uniqueFilename(withPrefix prefix: String? = nil) -> String {
+        let uniqueString = ProcessInfo.processInfo.globallyUniqueString
+        
+        if prefix != nil {
+            return "\(prefix!)-\(uniqueString)"
+        }
+        
+        return uniqueString
     }
 }
