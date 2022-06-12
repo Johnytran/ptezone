@@ -320,51 +320,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Gd-U7-Q8S" customClass="CornerGradientView" customModule="PTEzone" customModuleProvider="target">
-                                <rect key="frame" x="20" y="497" width="374" height="52"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading audio ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qx-1l-icI">
-                                        <rect key="frame" x="23" y="16" width="243" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="0zd-0i-H38"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-og-0pm">
-                                        <rect key="frame" x="287" y="11" width="64" height="30"/>
-                                        <color key="backgroundColor" red="0.8980392157" green="0.44705882349999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="FyK-HU-7lx"/>
-                                            <constraint firstAttribute="height" constant="30" id="drs-qT-05w"/>
-                                        </constraints>
-                                        <size key="titleShadowOffset" width="4" height="4"/>
-                                        <state key="normal" title="Skip">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="09E-z7-xgi"/>
-                                    <constraint firstItem="0gb-og-0pm" firstAttribute="top" secondItem="9Gd-U7-Q8S" secondAttribute="top" constant="11" id="GwU-an-rgZ"/>
-                                    <constraint firstItem="4Qx-1l-icI" firstAttribute="leading" secondItem="9Gd-U7-Q8S" secondAttribute="leading" constant="23" id="RU9-2A-ogv"/>
-                                    <constraint firstItem="4Qx-1l-icI" firstAttribute="top" secondItem="9Gd-U7-Q8S" secondAttribute="top" constant="16" id="lR8-Y8-Lc5"/>
-                                    <constraint firstItem="0gb-og-0pm" firstAttribute="leading" secondItem="4Qx-1l-icI" secondAttribute="trailing" constant="21" id="uXg-jp-Ebd"/>
-                                    <constraint firstAttribute="trailing" secondItem="0gb-og-0pm" secondAttribute="trailing" constant="23" id="ydo-YU-Keq"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KJI-MG-s9G" customClass="CornerGradientView" customModule="PTEzone" customModuleProvider="target">
-                                <rect key="frame" x="20" y="589" width="374" height="68"/>
+                                <rect key="frame" x="20" y="521" width="374" height="68"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cea-u2-rBz">
                                         <rect key="frame" x="14" y="16" width="154" height="37"/>
@@ -407,27 +364,33 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                                        <real key="value" value="33"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vcp-u7-Y6Z"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
+                            <constraint firstItem="KJI-MG-s9G" firstAttribute="top" secondItem="xY4-Yj-loD" secondAttribute="bottom" constant="52" id="8iE-XL-5qX"/>
                             <constraint firstItem="hAg-EJ-Zk5" firstAttribute="top" secondItem="lvM-86-Bwx" secondAttribute="bottom" constant="23" id="Fs8-Vm-PId"/>
                             <constraint firstItem="IT6-7n-Lmo" firstAttribute="top" secondItem="hAg-EJ-Zk5" secondAttribute="bottom" constant="30" id="GpF-WL-Fix"/>
                             <constraint firstItem="IT6-7n-Lmo" firstAttribute="leading" secondItem="Vcp-u7-Y6Z" secondAttribute="leading" constant="20" id="Hy8-h8-Als"/>
                             <constraint firstItem="Vcp-u7-Y6Z" firstAttribute="trailing" secondItem="IT6-7n-Lmo" secondAttribute="trailing" constant="20" id="Yxh-ux-dAy"/>
                             <constraint firstItem="Vcp-u7-Y6Z" firstAttribute="trailing" secondItem="Dt8-Pn-DtZ" secondAttribute="trailing" constant="20" id="b4G-98-MkC"/>
-                            <constraint firstItem="Vcp-u7-Y6Z" firstAttribute="trailing" secondItem="9Gd-U7-Q8S" secondAttribute="trailing" constant="20" id="cRG-YM-sjW"/>
                             <constraint firstItem="Vcp-u7-Y6Z" firstAttribute="trailing" secondItem="KJI-MG-s9G" secondAttribute="trailing" constant="20" id="eWD-al-rFf"/>
                             <constraint firstItem="Vcp-u7-Y6Z" firstAttribute="trailing" secondItem="hAg-EJ-Zk5" secondAttribute="trailing" constant="20" id="fXL-sT-lY6"/>
-                            <constraint firstItem="KJI-MG-s9G" firstAttribute="top" secondItem="9Gd-U7-Q8S" secondAttribute="bottom" constant="40" id="gUM-ja-Uk4"/>
                             <constraint firstItem="hAg-EJ-Zk5" firstAttribute="leading" secondItem="Vcp-u7-Y6Z" secondAttribute="leading" constant="20" id="mM3-yw-46s"/>
                             <constraint firstItem="Dt8-Pn-DtZ" firstAttribute="top" secondItem="Vcp-u7-Y6Z" secondAttribute="top" constant="15" id="ng8-QZ-yXM"/>
-                            <constraint firstItem="9Gd-U7-Q8S" firstAttribute="top" secondItem="IT6-7n-Lmo" secondAttribute="bottom" constant="20" id="rq5-1y-atu"/>
                             <constraint firstItem="KJI-MG-s9G" firstAttribute="leading" secondItem="Vcp-u7-Y6Z" secondAttribute="leading" constant="20" id="s5K-bs-vct"/>
                             <constraint firstItem="Dt8-Pn-DtZ" firstAttribute="leading" secondItem="Vcp-u7-Y6Z" secondAttribute="leading" constant="20" id="srE-FV-s1a"/>
-                            <constraint firstItem="9Gd-U7-Q8S" firstAttribute="leading" secondItem="Vcp-u7-Y6Z" secondAttribute="leading" constant="20" id="zE1-49-flA"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="angleº">
@@ -443,7 +406,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Summarise Spoken Text" id="Mf1-g8-pgf"/>
                     <connections>
-                        <outlet property="loadingLabel" destination="4Qx-1l-icI" id="wgH-zh-2UH"/>
                         <outlet property="progressView" destination="xqb-lA-2pd" id="csf-SE-PwI"/>
                     </connections>
                 </viewController>
@@ -1043,6 +1005,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="Fuk-Nu-RQP">
+            <size key="intrinsicContentSize" width="-1" height="49"/>
+        </designable>
         <designable name="pLL-F7-Gxh">
             <size key="intrinsicContentSize" width="-1" height="83"/>
         </designable>

@@ -20,11 +20,6 @@ class LisSumSpoText: UIViewController, UITableViewDelegate, UITableViewDataSourc
         
         // Register the table view cell class and its reuse id
         self.tableSum.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        
-        // (optional) include this line if you want to remove the extra empty cell divider lines
-        // self.tableView.tableFooterView = UIView()
-
-        // This view controller itself will provide the delegate methods and row data for the table view.
         tableSum.delegate = self
         tableSum.dataSource = self
         self.registerTableViewCells()

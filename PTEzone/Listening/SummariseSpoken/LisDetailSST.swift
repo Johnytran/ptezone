@@ -18,12 +18,18 @@ class LisDetailSST: UIViewController{
     @IBOutlet weak var loadingLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        showModal()
         download()
+    }
+    func showModal() {
+        let modalViewController = LoadingAudioViewController()
+        modalViewController.modalPresentationStyle = .overCurrentContext
+        present(modalViewController, animated: true, completion: nil)
     }
     func download() {
         let videoUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first!
-        let destPath = NSString(string: documentPath).appendingPathComponent("SoundHelix-Song-13.mp3") as String
+        let destPath = NSString(string: documentPath).appendingPathComponent("SoundHelix-Song-16.mp3") as String
         if FileManager.default.fileExists(atPath: destPath) {
             print("file already exist at \(destPath)")
             self.playVideo(url: NSURL(fileURLWithPath: destPath))
@@ -45,16 +51,16 @@ class LisDetailSST: UIViewController{
     func playVideo(url:NSURL) {
         
         do {
+
             
             let avAsset = AVAsset(url: url as URL)
             let playerItem = AVPlayerItem(asset: avAsset)
             //Register as an observer of the player item's status property
                self.observer = playerItem.observe(\.status, options:  [.new, .old], changeHandler: { (playerItem, change) in
                    if playerItem.status == .readyToPlay {
-                    self.loadingLabel.text = "Ready"
+                       print("ready")
                    }
                })
-            
             self.player = try AVPlayer(playerItem:playerItem)
             player!.volume = 1.0
             player!.play()
