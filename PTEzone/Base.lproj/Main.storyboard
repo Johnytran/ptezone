@@ -241,7 +241,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAg-EJ-Zk5" customClass="CornerGradientView" customModule="PTEzone" customModuleProvider="target">
                                 <rect key="frame" x="20" y="275" width="374" height="44"/>
                                 <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="xqb-lA-2pd">
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xqb-lA-2pd">
                                         <rect key="frame" x="27" y="19" width="261" height="4"/>
                                         <color key="progressTintColor" red="0.73421066999999995" green="0.1213334959" blue="0.70776366769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="trackTintColor" red="0.8980392157" green="0.44705882349999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>

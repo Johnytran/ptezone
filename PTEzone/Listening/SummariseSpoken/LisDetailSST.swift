@@ -13,32 +13,36 @@ class LisDetailSST: UIViewController{
     var player:AVPlayer!
     var observer: NSKeyValueObservation?
     
+    
     @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet weak var loadingLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        showModal()
+        
         download()
     }
-    func showModal() {
-        let modalViewController = LoadingAudioViewController()
-        modalViewController.modalPresentationStyle = .overCurrentContext
-        present(modalViewController, animated: true, completion: nil)
-    }
+    
     func download() {
+        
+        let view = LoadingAudioView.instanceFromNib()
+        self.view.addSubview(view)
+        
         let videoUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first!
-        let destPath = NSString(string: documentPath).appendingPathComponent("SoundHelix-Song-16.mp3") as String
+        let destPath = NSString(string: documentPath).appendingPathComponent("SoundHelix-Song-17.mp3") as String
         if FileManager.default.fileExists(atPath: destPath) {
             print("file already exist at \(destPath)")
+            
             self.playVideo(url: NSURL(fileURLWithPath: destPath))
+            
             return
         }
         URLSession.shared.downloadTask(with: URL(string: videoUrl)!) { (location:URL?, response:URLResponse?, err:Error?) -> Void in
             if let _ = location {
                 do {
                     try FileManager.default.moveItem(at: location!, to: URL(fileURLWithPath: destPath))
+                    
                     self.playVideo(url: NSURL(fileURLWithPath: destPath))
                 }catch let error as NSError {
                     print("move file error: \(error.localizedDescription)")
