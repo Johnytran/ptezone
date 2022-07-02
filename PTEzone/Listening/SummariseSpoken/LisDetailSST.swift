@@ -30,10 +30,10 @@ class LisDetailSST: UIViewController{
         
         let videoUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first!
-        let destPath = NSString(string: documentPath).appendingPathComponent("SoundHelix-Song-17.mp3") as String
+        let destPath = NSString(string: documentPath).appendingPathComponent("SoundHelix-Song-22.mp3") as String
         if FileManager.default.fileExists(atPath: destPath) {
             print("file already exist at \(destPath)")
-            
+            view.removeFromSuperview()
             self.playVideo(url: NSURL(fileURLWithPath: destPath))
             
             return
@@ -44,6 +44,10 @@ class LisDetailSST: UIViewController{
                     try FileManager.default.moveItem(at: location!, to: URL(fileURLWithPath: destPath))
                     
                     self.playVideo(url: NSURL(fileURLWithPath: destPath))
+                    DispatchQueue.main.async {
+                        view.removeFromSuperview()
+                    }
+                    
                 }catch let error as NSError {
                     print("move file error: \(error.localizedDescription)")
                 }
@@ -69,13 +73,7 @@ class LisDetailSST: UIViewController{
             player!.volume = 1.0
             player!.play()
             
-            let duration:CMTime  = player.currentItem!.duration; //total time
-            let currentTime = player.currentItem!.currentTime(); //playing time
-            let dur:Float64 = CMTimeGetSeconds(duration);
-            let cur:Float64 = CMTimeGetSeconds(currentTime);
             
-            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateAudioProgressView), userInfo: nil, repeats: true)
-            progressView.setProgress(Float(cur/dur), animated: false)
             
         } catch let error as NSError {
             self.player = nil
@@ -83,6 +81,16 @@ class LisDetailSST: UIViewController{
         } catch {
             print("AVAudioPlayer init failed")
         }
+        DispatchQueue.main.async {
+            let duration:CMTime  = self.player.currentItem!.duration; //total time
+            let currentTime = self.player.currentItem!.currentTime(); //playing time
+            let dur:Float64 = CMTimeGetSeconds(duration);
+            let cur:Float64 = CMTimeGetSeconds(currentTime);
+
+            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.updateAudioProgressView), userInfo: nil, repeats: true)
+            self.progressView.setProgress(Float(cur/dur), animated: false)
+        }
+        
     }
     @objc func updateAudioProgressView()
     {
