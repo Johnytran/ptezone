@@ -8,15 +8,43 @@
 import UIKit
 import AVFoundation
 
-class LisDetailSST: UIViewController{
+class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        print("finished");
+        let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first!
+        let destPath = NSString(string: documentPath).appendingPathComponent(self.audioName) as String
+        do {
+            try FileManager.default.moveItem(at: location, to: URL(fileURLWithPath: destPath))
+
+            self.playVideo(url: NSURL(fileURLWithPath: destPath))
+            DispatchQueue.main.async {
+                self.messageView.removeFromSuperview()
+            }
+
+        }catch let error as NSError {
+            print("move file error: \(error.localizedDescription)")
+        }
+    }
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64){
+        let percentage = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
+                print("percentage : ", percentage)
+    }
     
     var player:AVPlayer!
     var observer: NSKeyValueObservation?
-    
+    private lazy var urlSession: URLSession = {
+            let config = URLSessionConfiguration.background(withIdentifier: "\(Bundle.main.bundleIdentifier ?? "").background")
+            config.isDiscretionary = true
+            config.sessionSendsLaunchEvents = true
+            return URLSession(configuration: config, delegate: self, delegateQueue: nil)
+        }()
+    var messageView = UIView()
+    var audioName:String!
     
     @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet weak var loadingLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,36 +53,25 @@ class LisDetailSST: UIViewController{
     
     func download() {
         
-        let view = LoadingAudioView.instanceFromNib()
-        self.view.addSubview(view)
+        self.messageView = LoadingAudioView.instanceFromNib()
+        self.view.addSubview(messageView)
+        self.audioName = "SoundHelix-Song-30.mp3"
         
         let videoUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first!
-        let destPath = NSString(string: documentPath).appendingPathComponent("SoundHelix-Song-22.mp3") as String
+        let destPath = NSString(string: documentPath).appendingPathComponent(self.audioName) as String
         if FileManager.default.fileExists(atPath: destPath) {
             print("file already exist at \(destPath)")
-            view.removeFromSuperview()
+            self.messageView.removeFromSuperview()
             self.playVideo(url: NSURL(fileURLWithPath: destPath))
             
             return
+        }else{
+            urlSession.downloadTask(with: URL(string: videoUrl)!)
         }
-        URLSession.shared.downloadTask(with: URL(string: videoUrl)!) { (location:URL?, response:URLResponse?, err:Error?) -> Void in
-            if let _ = location {
-                do {
-                    try FileManager.default.moveItem(at: location!, to: URL(fileURLWithPath: destPath))
-                    
-                    self.playVideo(url: NSURL(fileURLWithPath: destPath))
-                    DispatchQueue.main.async {
-                        view.removeFromSuperview()
-                    }
-                    
-                }catch let error as NSError {
-                    print("move file error: \(error.localizedDescription)")
-                }
-            } else {
-                print("location err: \(String(describing: location))")
-            }
-        }.resume()
+        
+        
+        
     }
     func playVideo(url:NSURL) {
         
