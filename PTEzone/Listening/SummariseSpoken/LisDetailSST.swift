@@ -27,7 +27,12 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     }
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64){
         let percentage = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
-                print("percentage : ", percentage)
+        let progressPercent = Int(percentage*100)
+        DispatchQueue.main.async {
+            self.messageView.msgLabel.text = "Loading audio: "+String(progressPercent)+" %"
+        }
+        
+        print("percentage : ", progressPercent)
     }
     
     var player:AVPlayer!
@@ -38,7 +43,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
             config.sessionSendsLaunchEvents = true
             return URLSession(configuration: config, delegate: self, delegateQueue: nil)
         }()
-    var messageView = UIView()
+    var messageView = LoadingAudioView()
     var audioName:String!
     
     @IBOutlet weak var progressView: UIProgressView!
@@ -47,17 +52,19 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        download()
+        self.audioName = "SoundHelix-Song-35.mp3"
+        download(url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3")
     }
-    
-    func download() {
+    func skipSession(){
+        print("skip");
+    }
+    func download(url:String) {
         
-        self.messageView = LoadingAudioView.instanceFromNib()
+        self.messageView = LoadingAudioView.instanceFromNib() as! LoadingAudioView
+        //self.messageView.getParent(refParent: self)
         self.view.addSubview(messageView)
-        self.audioName = "SoundHelix-Song-30.mp3"
         
-        let videoUrl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
+        
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first!
         let destPath = NSString(string: documentPath).appendingPathComponent(self.audioName) as String
         if FileManager.default.fileExists(atPath: destPath) {
@@ -67,7 +74,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
             
             return
         }else{
-            urlSession.downloadTask(with: URL(string: videoUrl)!)
+            urlSession.downloadTask(with: URL(string: url)!)
         }
         
         
