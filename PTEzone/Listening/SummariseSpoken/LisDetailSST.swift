@@ -45,6 +45,8 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
         }()
     var messageView = LoadingAudioView()
     var audioName:String!
+    var task = URLSessionDownloadTask()
+    var audioURl:String!
     
     @IBOutlet weak var progressView: UIProgressView!
     
@@ -52,16 +54,23 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.audioName = "SoundHelix-Song-35.mp3"
-        download(url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3")
+        self.audioName = "SoundHelix-Song-39.mp3"
+        self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
+        download(url: self.audioURl)
     }
     func skipSession(){
         print("skip");
+        task.cancel()
+        self.navigationController?.popViewController(animated: true)
+    }
+    func reloadAudio(){
+        self.messageView.removeFromSuperview()
+        download(url: self.audioURl)
     }
     func download(url:String) {
         
         self.messageView = LoadingAudioView.instanceFromNib() as! LoadingAudioView
-        //self.messageView.getParent(refParent: self)
+        self.messageView.setParent(refParent: self)
         self.view.addSubview(messageView)
         
         
@@ -74,7 +83,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
             
             return
         }else{
-            urlSession.downloadTask(with: URL(string: url)!)
+            task = urlSession.downloadTask(with: URL(string: url)!)
         }
         
         
