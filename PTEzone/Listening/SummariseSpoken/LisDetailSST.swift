@@ -9,6 +9,20 @@ import UIKit
 import AVFoundation
 
 class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
+    
+    
+    
+    @IBOutlet weak var fulltextView: CornerGradientView!
+    
+    @IBAction func ShowFullText(_ sender: Any) {
+        self.fulltextView.setIsHidden(false, animated: true)
+    }
+    
+    
+    
+    
+    
+    
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         print("finished");
         let documentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true).first!
@@ -54,7 +68,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.audioName = "SoundHelix-Song-39.mp3"
+        self.audioName = "SoundHelix-Song-40.mp3"
         self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
         download(url: self.audioURl)
     }
@@ -104,7 +118,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
                })
             self.player = try AVPlayer(playerItem:playerItem)
             player!.volume = 1.0
-            player!.play()
+//            player!.play()
             
             
             
@@ -153,5 +167,22 @@ extension String{
         }
         
         return uniqueString
+    }
+}
+extension UIView {
+    func setIsHidden(_ hidden: Bool, animated: Bool) {
+        if animated {
+            if self.isHidden && !hidden {
+                self.alpha = 0.0
+                self.isHidden = false
+            }
+            UIView.animate(withDuration: 0.25, animations: {
+                self.alpha = hidden ? 0.0 : 1.0
+            }) { (complete) in
+                self.isHidden = hidden
+            }
+        } else {
+            self.isHidden = hidden
+        }
     }
 }
