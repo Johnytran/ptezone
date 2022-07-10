@@ -482,6 +482,8 @@
                     <navigationItem key="navigationItem" title="Summarise Spoken Text" id="Mf1-g8-pgf"/>
                     <connections>
                         <outlet property="fulltextView" destination="sXi-F3-a36" id="qmJ-a7-kO6"/>
+                        <outlet property="instructView" destination="Dt8-Pn-DtZ" id="SlY-du-E5q"/>
+                        <outlet property="progressConstrant" destination="Fs8-Vm-PId" id="UlC-pu-3vD"/>
                         <outlet property="progressView" destination="xqb-lA-2pd" id="csf-SE-PwI"/>
                     </connections>
                 </viewController>

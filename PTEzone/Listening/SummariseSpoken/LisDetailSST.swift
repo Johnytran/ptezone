@@ -11,11 +11,16 @@ import AVFoundation
 class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     
     
+    @IBOutlet weak var progressConstrant: NSLayoutConstraint!
+    
+    @IBOutlet weak var instructView: CornerGradientView!
     
     @IBOutlet weak var fulltextView: CornerGradientView!
     
     @IBAction func ShowFullText(_ sender: Any) {
         self.fulltextView.setIsHidden(false, animated: true)
+        self.progressConstrant.constant = -150;
+        self.instructView.setIsHidden(true, animated: true)
     }
     
     

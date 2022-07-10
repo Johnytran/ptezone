@@ -26,6 +26,8 @@
 		EB80B5A02835015F00CFA29C /* LisDetailSST.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B59F2835015F00CFA29C /* LisDetailSST.swift */; };
 		EBC60DE42868652000C1802C /* LoadingAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC60DE32868652000C1802C /* LoadingAudioView.swift */; };
 		EBC60DE7286865E400C1802C /* LoadingSoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC60DE6286865E400C1802C /* LoadingSoundView.xib */; };
+		EBC60DEB287AE07D00C1802C /* ViewAnswerText.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC60DEA287AE07D00C1802C /* ViewAnswerText.xib */; };
+		EBC60DEE287AE09E00C1802C /* ViewAnswerText.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC60DED287AE09E00C1802C /* ViewAnswerText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		EB80B59F2835015F00CFA29C /* LisDetailSST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LisDetailSST.swift; sourceTree = "<group>"; };
 		EBC60DE32868652000C1802C /* LoadingAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAudioView.swift; sourceTree = "<group>"; };
 		EBC60DE6286865E400C1802C /* LoadingSoundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingSoundView.xib; sourceTree = "<group>"; };
+		EBC60DEA287AE07D00C1802C /* ViewAnswerText.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAnswerText.xib; sourceTree = "<group>"; };
+		EBC60DED287AE09E00C1802C /* ViewAnswerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnswerText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 				EB80B597282D02E200CFA29C /* LisSumTableViewCell.xib */,
 				EBC60DE32868652000C1802C /* LoadingAudioView.swift */,
 				EBC60DE6286865E400C1802C /* LoadingSoundView.xib */,
+				EBC60DEA287AE07D00C1802C /* ViewAnswerText.xib */,
+				EBC60DED287AE09E00C1802C /* ViewAnswerText.swift */,
 			);
 			path = SummariseSpoken;
 			sourceTree = "<group>";
@@ -198,6 +204,7 @@
 				EB1A6B3026493E590076A112 /* signin_bg.png in Resources */,
 				EB3F00E226479FFD0026CC31 /* LaunchScreen.storyboard in Resources */,
 				EB3F00F02647A4F60026CC31 /* welcome_bg.png in Resources */,
+				EBC60DEB287AE07D00C1802C /* ViewAnswerText.xib in Resources */,
 				EB3F00DF26479FFD0026CC31 /* Assets.xcassets in Resources */,
 				EB80B599282D02E200CFA29C /* LisSumTableViewCell.xib in Resources */,
 				EB3F00DD26479FFB0026CC31 /* Main.storyboard in Resources */,
@@ -224,6 +231,7 @@
 				EB3F00D826479FFB0026CC31 /* SceneDelegate.swift in Sources */,
 				EB80B56F28155C9500CFA29C /* VerticalMenuGradientView.swift in Sources */,
 				EB42191A280BA07000B94D02 /* MainMenuGradientView.swift in Sources */,
+				EBC60DEE287AE09E00C1802C /* ViewAnswerText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
