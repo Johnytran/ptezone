@@ -11,21 +11,22 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ViewAnswerText" customModule="PTEzone" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="390" height="163"/>
+            <rect key="frame" x="0.0" y="0.0" width="407" height="163"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyy-rE-rYt" customClass="CornerGradientView" customModule="PTEzone" customModuleProvider="target">
-                    <rect key="frame" x="7" y="6" width="374" height="157"/>
+                    <rect key="frame" x="7" y="6" width="391" height="157"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQn-vr-HJf">
-                            <rect key="frame" x="8" y="8" width="358" height="141"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dQn-vr-HJf">
+                            <rect key="frame" x="8" y="8" width="375" height="141"/>
+                            <color key="backgroundColor" systemColor="systemRedColor"/>
                             <attributedString key="attributedText">
                                 <fragment>
-                                    <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                    <mutableString key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                     <attributes>
-                                        <color key="NSColor" systemColor="labelColor"/>
-                                        <font key="NSFont" metaFont="system" size="16"/>
+                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                     </attributes>
                                 </fragment>
                             </attributedString>
@@ -35,7 +36,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="dQn-vr-HJf" secondAttribute="bottom" constant="8" id="4g0-Xb-Z7G"/>
-                        <constraint firstAttribute="trailing" secondItem="dQn-vr-HJf" secondAttribute="trailing" constant="32" id="MGH-uO-P1g"/>
+                        <constraint firstAttribute="trailing" secondItem="dQn-vr-HJf" secondAttribute="trailing" constant="8" id="MGH-uO-P1g"/>
                         <constraint firstItem="dQn-vr-HJf" firstAttribute="top" secondItem="Fyy-rE-rYt" secondAttribute="top" constant="8" id="R6C-EM-5kj"/>
                         <constraint firstItem="dQn-vr-HJf" firstAttribute="leading" secondItem="Fyy-rE-rYt" secondAttribute="leading" constant="8" id="WGe-1a-Q3A"/>
                         <constraint firstAttribute="height" constant="157" id="yEF-5Y-vXe"/>
@@ -57,19 +58,22 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="systemYellowColor"/>
             <constraints>
                 <constraint firstItem="Fyy-rE-rYt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="7" id="3Jo-DQ-kam"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Fyy-rE-rYt" secondAttribute="trailing" constant="9" id="8oa-Xa-HBb"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="Fyy-rE-rYt" secondAttribute="top" constant="38" id="eq0-B2-Vrk"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="114.49275362318842" y="368.63839285714283"/>
+            <point key="canvasLocation" x="212.31884057971016" y="533.37053571428567"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -15,14 +15,23 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     
     @IBOutlet weak var instructView: CornerGradientView!
     
-    @IBOutlet weak var fulltextView: CornerGradientView!
+    @IBOutlet weak var fullTextView: CornerGradientView!
+
     
     @IBAction func ShowFullText(_ sender: Any) {
-        self.fulltextView.setIsHidden(false, animated: true)
+        self.fullTextView.setIsHidden(false, animated: true)
         self.progressConstrant.constant = -150;
         self.instructView.setIsHidden(true, animated: true)
     }
     
+    @IBAction func ViewAnswer(_ sender: Any) {
+        let answerView = Bundle.main.loadNibNamed("ViewAnswerText", owner:
+        self, options: nil)?.first as? ViewAnswerText
+        self.view.addSubview(answerView!)
+        answerView?.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 200)
+        answerView?.translatesAutoresizingMaskIntoConstraints = false
+        answerView?.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20).isActive = true
+    }
     
     
     

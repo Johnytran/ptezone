@@ -348,6 +348,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="ViewAnswer:" destination="sgK-Tw-rS7" eventType="touchUpInside" id="Fa0-0S-r2w"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEa-0m-uRL">
                                         <rect key="frame" x="20" y="16" width="135" height="37"/>
@@ -481,7 +484,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Summarise Spoken Text" id="Mf1-g8-pgf"/>
                     <connections>
-                        <outlet property="fulltextView" destination="sXi-F3-a36" id="qmJ-a7-kO6"/>
+                        <outlet property="fullTextView" destination="sXi-F3-a36" id="g7n-5j-xgL"/>
                         <outlet property="instructView" destination="Dt8-Pn-DtZ" id="SlY-du-E5q"/>
                         <outlet property="progressConstrant" destination="Fs8-Vm-PId" id="UlC-pu-3vD"/>
                         <outlet property="progressView" destination="xqb-lA-2pd" id="csf-SE-PwI"/>
