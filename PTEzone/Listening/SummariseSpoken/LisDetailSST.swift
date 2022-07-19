@@ -28,9 +28,13 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
         let answerView = Bundle.main.loadNibNamed("ViewAnswerText", owner:
         self, options: nil)?.first as? ViewAnswerText
         self.view.addSubview(answerView!)
-        answerView?.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 200)
+//        answerView?.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 200)
         answerView?.translatesAutoresizingMaskIntoConstraints = false
-        answerView?.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20).isActive = true
+        answerView?.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 220).isActive = true
+        answerView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
+        answerView?.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
+        answerView?.heightAnchor.constraint(equalToConstant: 300).isActive = true
+
     }
     
     
