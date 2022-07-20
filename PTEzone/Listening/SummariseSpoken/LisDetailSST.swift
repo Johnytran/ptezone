@@ -15,8 +15,8 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     
     @IBOutlet weak var instructView: CornerGradientView!
     
+    @IBOutlet weak var ButtonView: CornerGradientView!
     @IBOutlet weak var fullTextView: CornerGradientView!
-
     
     @IBAction func ShowFullText(_ sender: Any) {
         self.fullTextView.setIsHidden(false, animated: true)
@@ -28,9 +28,13 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
         let answerView = Bundle.main.loadNibNamed("ViewAnswerText", owner:
         self, options: nil)?.first as? ViewAnswerText
         self.view.addSubview(answerView!)
-//        answerView?.frame = CGRect(x:0, y: 0, width: view.frame.width, height: 200)
         answerView?.translatesAutoresizingMaskIntoConstraints = false
-        answerView?.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 220).isActive = true
+        if(self.fullTextView.isHidden){
+            answerView?.topAnchor.constraint(equalTo: self.ButtonView.topAnchor, constant: 150).isActive = true
+        }else{
+            answerView?.topAnchor.constraint(equalTo: self.fullTextView.topAnchor, constant: 180).isActive = true
+        }
+    
         answerView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
         answerView?.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
         answerView?.heightAnchor.constraint(equalToConstant: 300).isActive = true
