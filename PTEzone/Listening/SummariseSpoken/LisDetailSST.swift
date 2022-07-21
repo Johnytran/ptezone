@@ -17,15 +17,15 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     
     @IBOutlet weak var ButtonView: CornerGradientView!
     @IBOutlet weak var fullTextView: CornerGradientView!
+    private var answerView:ViewAnswerText? = nil
     
     @IBAction func ShowFullText(_ sender: Any) {
         self.fullTextView.setIsHidden(false, animated: true)
         self.progressConstrant.constant = -150;
         self.instructView.setIsHidden(true, animated: true)
     }
-    
-    @IBAction func ViewAnswer(_ sender: Any) {
-        let answerView = Bundle.main.loadNibNamed("ViewAnswerText", owner:
+    func createAnswerView(){
+        answerView = Bundle.main.loadNibNamed("ViewAnswerText", owner:
         self, options: nil)?.first as? ViewAnswerText
         self.view.addSubview(answerView!)
         answerView?.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +38,14 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
         answerView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
         answerView?.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
         answerView?.heightAnchor.constraint(equalToConstant: 300).isActive = true
+    }
+    @IBAction func ViewAnswer(_ sender: Any) {
+        if(self.answerView != nil){
+            self.answerView!.removeFromSuperview()
+            createAnswerView()
+        }else{
+            createAnswerView()
+        }
 
     }
     
