@@ -92,15 +92,15 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     var task = URLSessionDownloadTask()
     var audioURl:String!
     
+    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var progressView: UIProgressView!
-    
-    @IBOutlet weak var loadingLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.audioName = "SoundHelix-Song-40.mp3"
-        self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
-        download(url: self.audioURl)
+        
+//        self.audioName = "SoundHelix-Song-40.mp3"
+//        self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
+//        download(url: self.audioURl)
     }
     func skipSession(){
         print("skip");
