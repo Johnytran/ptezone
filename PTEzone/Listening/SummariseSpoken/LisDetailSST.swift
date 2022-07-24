@@ -11,6 +11,7 @@ import AVFoundation
 class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     
     
+    
     @IBOutlet weak var progressConstrant: NSLayoutConstraint!
     
     @IBOutlet weak var instructView: CornerGradientView!
@@ -92,7 +93,6 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     var task = URLSessionDownloadTask()
     var audioURl:String!
     
-    @IBOutlet var scrollView: UIScrollView!
     @IBOutlet weak var progressView: UIProgressView!
     
     override func viewDidLoad() {
