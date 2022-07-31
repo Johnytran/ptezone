@@ -24,6 +24,10 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
         self.fullTextView.setIsHidden(false, animated: true)
         self.progressConstrant.constant = -150;
         self.instructView.setIsHidden(true, animated: true)
+        if(self.answerView != nil){
+            self.answerView!.removeFromSuperview()
+            createAnswerView()
+        }
     }
     func createAnswerView(){
         answerView = Bundle.main.loadNibNamed("ViewAnswerText", owner:
