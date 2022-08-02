@@ -40,9 +40,9 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
             answerView?.topAnchor.constraint(equalTo: self.fullTextView.topAnchor, constant: 180).isActive = true
         }
     
-        answerView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
-        answerView?.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
-        answerView?.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        answerView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
+        answerView?.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15).isActive = true
+        answerView?.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
     @IBAction func ViewAnswer(_ sender: Any) {
         if(self.answerView != nil){
