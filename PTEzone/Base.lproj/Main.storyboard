@@ -210,11 +210,15 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
-                                                                <string key="content">Summarise the lecture in 50 - 70 words in 10 minutes. Your response will be judged on the quality of your writing and on how well your response presents the key points presented in the lecture.</string>
+                                                                <string key="content">You will hear a short lecture. You should write 50-70 words.  You will have 10 minutes to finish this task. Your response will be judged on the quality of your writing and on how well your response presents the key points presented in the lecture.</string>
                                                                 <attributes>
                                                                     <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="10" headIndent="10" tighteningFactorForTruncation="0.0"/>
+                                                                    <font key="NSFont" size="15.800000000000001" name="Helvetica-BoldOblique"/>
+                                                                    <real key="NSKern" value="0.0"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" paragraphSpacing="42" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                                        <tabStops/>
+                                                                    </paragraphStyle>
+                                                                    <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
@@ -423,10 +427,11 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
-                                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                                <mutableString key="content">Why should we read the Republic? I met lots of students asked this question to themselves when they're given it as a set of books at the beginning of their university course. But in fact, there are many good reasons to read the republic. And the first one I would pick on is just that it is immensely readable. It's not Plato did not write philosophy like a dry textbook. He wrote it like a living conversation. The whole of the Republic which is a fairly fat book is a living conversation written in short almost soundbite type answers, but nevertheless, developing some very very important ideas. So, my first answer then we should read the Republic just because it is readable. It is readable it was written by a genius and it's worth reading. It's easy to read. It's not difficult. But then there's also obviously the thoughts, the content of the book and he's asking this absolutely fundamental question "why should we bother to be good? "what's in it for us effectively? ". It seems when we look at the world, it looks as though injustice pays. It looks as though crime pays whereas the good people get trodden down. So, Plato addresses this absolutely fundamental question "why should we be good". I'm not going to tell you his answer. Read the book</mutableString>
                                                                 <attributes>
-                                                                    <color key="NSColor" systemColor="labelColor"/>
-                                                                    <font key="NSFont" metaFont="system" size="16"/>
+                                                                    <color key="NSColor" red="1" green="0.14117647058823529" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="18" maximumLineHeight="18" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
@@ -512,6 +517,7 @@
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="ButtonView" destination="cuv-kP-bnu" id="qat-4f-g7L"/>
+                        <outlet property="answerText" destination="ZgM-f5-IoR" id="nY1-oD-1kW"/>
                         <outlet property="fullTextView" destination="KdV-SB-Tq7" id="IVj-um-ckj"/>
                         <outlet property="instructView" destination="pj4-Uq-Ltb" id="4Y9-Hv-11K"/>
                         <outlet property="progressConstrant" destination="09M-kK-RyR" id="Ivi-O5-4Sv"/>
@@ -1130,9 +1136,6 @@
         <image name="replay" width="170" height="170"/>
         <image name="speaking" width="88" height="89"/>
         <image name="writting" width="88" height="89"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

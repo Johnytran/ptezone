@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
+class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDelegate{
     
     
     
@@ -19,6 +19,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
     @IBOutlet weak var ButtonView: CornerGradientView!
     @IBOutlet weak var fullTextView: CornerGradientView!
     private var answerView:ViewAnswerText? = nil
+    @IBOutlet weak var answerText: UITextView!
     
     @IBAction func ShowFullText(_ sender: Any) {
         self.fullTextView.setIsHidden(false, animated: true)
@@ -28,6 +29,12 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
             self.answerView!.removeFromSuperview()
             createAnswerView()
         }
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if answerText.textColor == UIColor.purple {
+            answerText.text = ""
+            answerText.textColor = UIColor.black
+            }
     }
     func createAnswerView(){
         answerView = Bundle.main.loadNibNamed("ViewAnswerText", owner:
@@ -105,6 +112,10 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate{
 //        self.audioName = "SoundHelix-Song-40.mp3"
 //        self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
 //        download(url: self.audioURl)
+        
+        answerText.delegate = self
+        answerText.text = "Placeholder text goes right here..."
+        answerText.textColor = UIColor.purple
     }
     func skipSession(){
         print("skip");
