@@ -19,6 +19,8 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     @IBOutlet weak var ButtonView: CornerGradientView!
     @IBOutlet weak var fullTextView: CornerGradientView!
     private var answerView:ViewAnswerText? = nil
+    private var analyseView:LisSumAnalyse? = nil
+    
     @IBOutlet weak var answerText: UITextView!
     
     @IBAction func ShowFullText(_ sender: Any) {
@@ -62,6 +64,11 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     }
     
     
+    @IBAction func AnalyseTest(_ sender: Any) {
+        answerView = Bundle.main.loadNibNamed("ViewAnswerText", owner:
+        self, options: nil)?.first as? ViewAnswerText
+        self.view.addSubview(answerView!)
+    }
     
     
     
