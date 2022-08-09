@@ -10,11 +10,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LisSumAnalyse" customModule="PTEzone" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="438" height="618"/>
+            <rect key="frame" x="0.0" y="0.0" width="283" height="454"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="157.97101449275362" y="-16.741071428571427"/>
+            <point key="canvasLocation" x="45.652173913043484" y="38.169642857142854"/>
         </view>
     </objects>
     <resources>

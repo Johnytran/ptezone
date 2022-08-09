@@ -20,6 +20,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     @IBOutlet weak var fullTextView: CornerGradientView!
     private var answerView:ViewAnswerText? = nil
     private var analyseView:LisSumAnalyse? = nil
+    private var keywords = [String]()
     
     @IBOutlet weak var answerText: UITextView!
     
@@ -65,9 +66,15 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     
     
     @IBAction func AnalyseTest(_ sender: Any) {
-        answerView = Bundle.main.loadNibNamed("ViewAnswerText", owner:
-        self, options: nil)?.first as? ViewAnswerText
-        self.view.addSubview(answerView!)
+        analyseView = Bundle.main.loadNibNamed("LisSumAnalyse", owner:
+        self, options: nil)?.first as? LisSumAnalyse
+        self.view.addSubview(analyseView!)
+        
+        analyseView?.translatesAutoresizingMaskIntoConstraints = false
+        analyseView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
+        analyseView?.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
+        analyseView?.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive = true
+        analyseView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -150).isActive = true
     }
     
     
@@ -123,6 +130,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         answerText.delegate = self
         answerText.text = "Placeholder text goes right here..."
         answerText.textColor = UIColor.purple
+        self.keywords = ["","","",""]
     }
     func skipSession(){
         print("skip");
