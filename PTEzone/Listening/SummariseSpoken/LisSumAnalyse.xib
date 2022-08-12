@@ -12,14 +12,244 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LisSumAnalyse" customModule="PTEzone" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="283" height="454"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1T-r1-feA" customClass="CornerGradientView" customModule="PTEzone" customModuleProvider="target">
+                    <rect key="frame" x="6" y="7" width="271" height="437"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1te-mw-zZd">
+                            <rect key="frame" x="8" y="5" width="255" height="39"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gze-pT-cog">
+                                    <rect key="frame" x="4" y="4" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="GNM-b7-jwq"/>
+                                        <constraint firstAttribute="width" constant="30" id="try-oq-q8j"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="CloseView:" destination="iN0-l3-epB" eventType="touchUpInside" id="k8b-rw-Fy8"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="gze-pT-cog" firstAttribute="top" secondItem="1te-mw-zZd" secondAttribute="top" constant="4" id="U1B-nJ-b0g"/>
+                                <constraint firstItem="gze-pT-cog" firstAttribute="leading" secondItem="1te-mw-zZd" secondAttribute="leading" constant="4" id="b1j-yo-kC7"/>
+                                <constraint firstAttribute="height" constant="39" id="mwT-fj-EdT"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Analysis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJo-52-7Dq">
+                            <rect key="frame" x="8" y="58" width="255" height="33"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="33" id="Dfc-1v-bLc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                            <color key="textColor" systemColor="systemPurpleColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jj2-Oi-cAX">
+                            <rect key="frame" x="8" y="127" width="143" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="aRo-N2-hce"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orh-KW-IWc" customClass="KDCircularProgress" customModule="PTEzone" customModuleProvider="target">
+                            <rect key="frame" x="159" y="106" width="74" height="62"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="74" id="IZ8-uI-Bv6"/>
+                                <constraint firstAttribute="height" constant="62" id="Pcw-sC-dyu"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="lerpColorMode" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="clockwise" value="YES"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                    <color key="value" red="0.93572386129999996" green="0.23038062170000001" blue="0.9409303617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="progressInsideFillColor">
+                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="IBColor1">
+                                    <color key="value" systemColor="systemOrangeColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="trackThickness">
+                                    <real key="value" value="0.29999999999999999"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="progressThickness">
+                                    <real key="value" value="0.29999999999999999"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="glowAmount">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                    <real key="value" value="180"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                    <real key="value" value="270"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grammar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYX-Vq-fUN">
+                            <rect key="frame" x="8" y="208" width="71" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="qII-JB-sEu"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijt-29-udy" customClass="KDCircularProgress" customModule="PTEzone" customModuleProvider="target">
+                            <rect key="frame" x="159" y="187" width="74" height="62"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="62" id="70u-mu-NfC"/>
+                                <constraint firstAttribute="width" constant="74" id="k3r-8j-XDw"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="lerpColorMode" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="clockwise" value="YES"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                    <color key="value" red="0.93572386129999996" green="0.23038062170000001" blue="0.9409303617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="progressInsideFillColor">
+                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="IBColor1">
+                                    <color key="value" systemColor="systemOrangeColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="trackThickness">
+                                    <real key="value" value="0.29999999999999999"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="progressThickness">
+                                    <real key="value" value="0.29999999999999999"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="glowAmount">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                    <real key="value" value="180"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                    <real key="value" value="270"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nft-s5-jQM">
+                            <rect key="frame" x="8" y="286" width="71" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="8t8-wj-Gdh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ej9-07-pjD" customClass="KDCircularProgress" customModule="PTEzone" customModuleProvider="target">
+                            <rect key="frame" x="159" y="265" width="74" height="62"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="62" id="oYH-f4-sa6"/>
+                                <constraint firstAttribute="width" constant="74" id="x7l-Io-oqw"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="roundedCorners" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="lerpColorMode" value="YES"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="clockwise" value="YES"/>
+                                <userDefinedRuntimeAttribute type="color" keyPath="trackColor">
+                                    <color key="value" red="0.93572386129999996" green="0.23038062170000001" blue="0.9409303617" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="progressInsideFillColor">
+                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="IBColor1">
+                                    <color key="value" systemColor="systemOrangeColor"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="trackThickness">
+                                    <real key="value" value="0.29999999999999999"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="progressThickness">
+                                    <real key="value" value="0.29999999999999999"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="glowAmount">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="angle">
+                                    <real key="value" value="180"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="startAngle">
+                                    <real key="value" value="270"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Nft-s5-jQM" firstAttribute="leading" secondItem="C1T-r1-feA" secondAttribute="leading" constant="8" id="0Ka-LO-erm"/>
+                        <constraint firstItem="dJo-52-7Dq" firstAttribute="leading" secondItem="C1T-r1-feA" secondAttribute="leading" constant="8" id="67x-Ik-4Sl"/>
+                        <constraint firstItem="QYX-Vq-fUN" firstAttribute="top" secondItem="Jj2-Oi-cAX" secondAttribute="bottom" constant="60" id="7ev-id-qpV"/>
+                        <constraint firstAttribute="trailing" secondItem="1te-mw-zZd" secondAttribute="trailing" constant="8" id="CSf-I4-NsG"/>
+                        <constraint firstItem="Nft-s5-jQM" firstAttribute="top" secondItem="QYX-Vq-fUN" secondAttribute="bottom" constant="57" id="G5G-C2-3qc"/>
+                        <constraint firstItem="Ej9-07-pjD" firstAttribute="leading" secondItem="Nft-s5-jQM" secondAttribute="trailing" constant="80" id="GCH-tR-uE8"/>
+                        <constraint firstAttribute="trailing" secondItem="orh-KW-IWc" secondAttribute="trailing" constant="38" id="GJO-97-Q1m"/>
+                        <constraint firstItem="Jj2-Oi-cAX" firstAttribute="top" secondItem="dJo-52-7Dq" secondAttribute="bottom" constant="36" id="LfZ-EU-P6q"/>
+                        <constraint firstItem="orh-KW-IWc" firstAttribute="top" secondItem="dJo-52-7Dq" secondAttribute="bottom" constant="15" id="MXm-Oc-dNv"/>
+                        <constraint firstItem="QYX-Vq-fUN" firstAttribute="leading" secondItem="C1T-r1-feA" secondAttribute="leading" constant="8" id="Phj-Zt-USe"/>
+                        <constraint firstItem="1te-mw-zZd" firstAttribute="top" secondItem="C1T-r1-feA" secondAttribute="top" constant="5" id="QhP-pg-Lj9"/>
+                        <constraint firstItem="dJo-52-7Dq" firstAttribute="top" secondItem="1te-mw-zZd" secondAttribute="bottom" constant="14" id="TPs-Jg-YpF"/>
+                        <constraint firstAttribute="trailing" secondItem="ijt-29-udy" secondAttribute="trailing" constant="38" id="Uek-gv-8hC"/>
+                        <constraint firstItem="Ej9-07-pjD" firstAttribute="top" secondItem="ijt-29-udy" secondAttribute="bottom" constant="16" id="Yyx-7e-c7r"/>
+                        <constraint firstItem="ijt-29-udy" firstAttribute="top" secondItem="orh-KW-IWc" secondAttribute="bottom" constant="19" id="Zt3-Iw-1sd"/>
+                        <constraint firstItem="1te-mw-zZd" firstAttribute="leading" secondItem="C1T-r1-feA" secondAttribute="leading" constant="8" id="d6O-Vq-Cci"/>
+                        <constraint firstItem="orh-KW-IWc" firstAttribute="leading" secondItem="Jj2-Oi-cAX" secondAttribute="trailing" constant="8" symbolic="YES" id="ks2-db-Ofl"/>
+                        <constraint firstAttribute="trailing" secondItem="dJo-52-7Dq" secondAttribute="trailing" constant="8" id="pRK-rp-ZCo"/>
+                        <constraint firstItem="ijt-29-udy" firstAttribute="leading" secondItem="QYX-Vq-fUN" secondAttribute="trailing" constant="80" id="sCT-gT-zmW"/>
+                        <constraint firstItem="Jj2-Oi-cAX" firstAttribute="leading" secondItem="C1T-r1-feA" secondAttribute="leading" constant="8" id="wqt-WK-s5n"/>
+                        <constraint firstAttribute="trailing" secondItem="Ej9-07-pjD" secondAttribute="trailing" constant="38" id="xWH-rW-cAQ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="angleº">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="C1T-r1-feA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="DIG-q7-fOZ"/>
+                <constraint firstAttribute="trailing" secondItem="C1T-r1-feA" secondAttribute="trailing" constant="6" id="NWl-rR-hHD"/>
+                <constraint firstAttribute="bottom" secondItem="C1T-r1-feA" secondAttribute="bottom" constant="10" id="TGj-WJ-4jc"/>
+                <constraint firstItem="C1T-r1-feA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="7" id="m20-k6-rX4"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="45.652173913043484" y="38.169642857142854"/>
         </view>
+        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" id="8ys-cV-W3n">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="4"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <point key="canvasLocation" x="-51" y="-159"/>
+        </progressView>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

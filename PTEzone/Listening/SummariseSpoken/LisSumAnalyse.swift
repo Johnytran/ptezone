@@ -10,5 +10,8 @@ import UIKit
 class LisSumAnalyse: UIView {
 
    
-
+    @IBAction func CloseView(_ sender: Any) {
+        self.removeFromSuperview()
+    }
+    
 }
