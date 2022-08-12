@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EB114AA728A60C39005D078B /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB114AA628A60C39005D078B /* KDCircularProgress.swift */; };
+		EB114AAA28A654A0005D078B /* CornerGradientView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB114AA928A654A0005D078B /* CornerGradientView2.swift */; };
 		EB1A6B3026493E590076A112 /* signin_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = EB1A6B2F26493E590076A112 /* signin_bg.png */; };
 		EB3F00D626479FFB0026CC31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F00D526479FFB0026CC31 /* AppDelegate.swift */; };
 		EB3F00D826479FFB0026CC31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F00D726479FFB0026CC31 /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		EB114AA628A60C39005D078B /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
+		EB114AA928A654A0005D078B /* CornerGradientView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerGradientView2.swift; sourceTree = "<group>"; };
 		EB1A6B2F26493E590076A112 /* signin_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signin_bg.png; sourceTree = "<group>"; };
 		EB3F00D226479FFB0026CC31 /* PTEzone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PTEzone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB3F00D526479FFB0026CC31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		EB80B58F282CFE5A00CFA29C /* library */ = {
 			isa = PBXGroup;
 			children = (
+				EB114AA928A654A0005D078B /* CornerGradientView2.swift */,
 				EB80B56E28155C9500CFA29C /* VerticalMenuGradientView.swift */,
 				EB80B57C28288DCF00CFA29C /* CornerGradientView.swift */,
 				EB421913280ACB5400B94D02 /* HomeGradientView.swift */,
@@ -234,6 +237,7 @@
 				EB80B574281BF47300CFA29C /* NeumorphicView.swift in Sources */,
 				EB80B5772823C20A00CFA29C /* LisSumSpoText.swift in Sources */,
 				EB421914280ACB5400B94D02 /* HomeGradientView.swift in Sources */,
+				EB114AAA28A654A0005D078B /* CornerGradientView2.swift in Sources */,
 				EB80B5A02835015F00CFA29C /* LisDetailSST.swift in Sources */,
 				EB114AA728A60C39005D078B /* KDCircularProgress.swift in Sources */,
 				EB80B57D28288DCF00CFA29C /* CornerGradientView.swift in Sources */,

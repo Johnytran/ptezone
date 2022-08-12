@@ -69,6 +69,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         analyseView = Bundle.main.loadNibNamed("LisSumAnalyse", owner:
         self, options: nil)?.first as? LisSumAnalyse
         self.view.addSubview(analyseView!)
+        analyseView?.progContent.angle = 270
         
         analyseView?.translatesAutoresizingMaskIntoConstraints = false
         analyseView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
