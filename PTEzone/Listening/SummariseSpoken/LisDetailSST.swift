@@ -27,14 +27,22 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     @IBAction func SubmitTest(_ sender: Any) {
         let stringUser = userAnswer.text
         var countKeyWord: Int = 0
-        var enteredWord = [String]()
+        
         for word in keywords{
             if stringUser!.contains(word) {
                 countKeyWord+=1
-                enteredWord.append(word)
+                
             }
         }
-        print(countKeyWord)
+        let attributed = NSMutableAttributedString(string: stringUser!)
+            do
+            {
+                let regex = try! NSRegularExpression(pattern: "book",options: .caseInsensitive)
+                for match in regex.matches(in: stringUser!, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: stringUser!.utf16.count)) as [NSTextCheckingResult] {
+                    attributed.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.yellow, range: match.range)
+                }
+                self.userAnswer.attributedText = attributed
+            }
     }
     
     @IBAction func ShowFullText(_ sender: Any) {
