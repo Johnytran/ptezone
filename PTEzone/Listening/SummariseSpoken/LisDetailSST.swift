@@ -12,6 +12,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     
     
     
+    @IBOutlet weak var userAnswer: UITextView!
     @IBOutlet weak var progressConstrant: NSLayoutConstraint!
     
     @IBOutlet weak var instructView: CornerGradientView!
@@ -23,6 +24,18 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     private var keywords = [String]()
     
     @IBOutlet weak var answerText: UITextView!
+    @IBAction func SubmitTest(_ sender: Any) {
+        let stringUser = userAnswer.text
+        var countKeyWord: Int = 0
+        var enteredWord = [String]()
+        for word in keywords{
+            if stringUser!.contains(word) {
+                countKeyWord+=1
+                enteredWord.append(word)
+            }
+        }
+        print(countKeyWord)
+    }
     
     @IBAction func ShowFullText(_ sender: Any) {
         self.fullTextView.setIsHidden(false, animated: true)
@@ -45,7 +58,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         self.view.addSubview(answerView!)
         answerView?.translatesAutoresizingMaskIntoConstraints = false
         if(self.fullTextView.isHidden){
-            answerView?.topAnchor.constraint(equalTo: self.ButtonView.topAnchor, constant: 150).isActive = true
+            answerView?.topAnchor.constraint(equalTo: self.ButtonView.topAnchor, constant: 200).isActive = true
         }else{
             answerView?.topAnchor.constraint(equalTo: self.fullTextView.topAnchor, constant: 180).isActive = true
         }
@@ -131,7 +144,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         answerText.delegate = self
         answerText.text = "Placeholder text goes right here..."
         answerText.textColor = UIColor.purple
-        self.keywords = ["","","",""]
+        self.keywords = ["book","the Republic","readable","living conversation","important ideas", "thoughts", "fundamental questions", "answer"]
     }
     func skipSession(){
         print("skip");
