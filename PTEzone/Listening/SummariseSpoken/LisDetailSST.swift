@@ -24,25 +24,38 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     private var keywords = [String]()
     
     @IBOutlet weak var answerText: UITextView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        self.audioName = "SoundHelix-Song-40.mp3"
+//        self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
+//        download(url: self.audioURl)
+        
+        answerText.delegate = self
+        answerText.text = "Type your answer here."
+        answerText.textColor = UIColor.purple
+        self.keywords = ["book","the Republic","readable","living conversation","important ideas", "thoughts", "fundamental questions", "answer"]
+    }
     @IBAction func SubmitTest(_ sender: Any) {
-        let stringUser = userAnswer.text
+        
         var countKeyWord: Int = 0
+        let attributedText = NSMutableAttributedString(attributedString: userAnswer.attributedText!)
+
+        let text = userAnswer.text! as NSString
+        
+        
         
         for word in keywords{
-            if stringUser!.contains(word) {
+            if text.contains(word) {
                 countKeyWord+=1
-                
+                let smallRange = text.range(of: word)
+
+                attributedText.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.yellow, range: smallRange)
             }
         }
-        let attributed = NSMutableAttributedString(string: stringUser!)
-            do
-            {
-                let regex = try! NSRegularExpression(pattern: "book",options: .caseInsensitive)
-                for match in regex.matches(in: stringUser!, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: stringUser!.utf16.count)) as [NSTextCheckingResult] {
-                    attributed.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.yellow, range: match.range)
-                }
-                self.userAnswer.attributedText = attributed
-            }
+        self.userAnswer.attributedText = attributedText
+        
+        
     }
     
     @IBAction func ShowFullText(_ sender: Any) {
@@ -142,18 +155,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     
     @IBOutlet weak var progressView: UIProgressView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        self.audioName = "SoundHelix-Song-40.mp3"
-//        self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
-//        download(url: self.audioURl)
-        
-        answerText.delegate = self
-        answerText.text = "Placeholder text goes right here..."
-        answerText.textColor = UIColor.purple
-        self.keywords = ["book","the Republic","readable","living conversation","important ideas", "thoughts", "fundamental questions", "answer"]
-    }
+    
     func skipSession(){
         print("skip");
         task.cancel()
