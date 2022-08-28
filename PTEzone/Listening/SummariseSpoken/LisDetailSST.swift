@@ -22,6 +22,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     private var answerView:ViewAnswerText? = nil
     private var analyseView:LisSumAnalyse? = nil
     private var keywords = [String]()
+    private var countKeyWord: Int = 0
     
     @IBOutlet weak var answerText: UITextView!
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     }
     @IBAction func SubmitTest(_ sender: Any) {
         
-        var countKeyWord: Int = 0
+        
         let attributedText = NSMutableAttributedString(attributedString: userAnswer.attributedText!)
 
         let text = userAnswer.text! as NSString
@@ -103,6 +104,12 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         analyseView = Bundle.main.loadNibNamed("LisSumAnalyse", owner:
         self, options: nil)?.first as? LisSumAnalyse
         self.view.addSubview(analyseView!)
+        
+        var percentContent:Int = countKeyWord*100/keywords.count;
+        
+        var degreeContent:Int = 360*percentContent/100
+        print(degreeContent)
+        
         analyseView?.progContent.angle = 270
         
         analyseView?.translatesAutoresizingMaskIntoConstraints = false
