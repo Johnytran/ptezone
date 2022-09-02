@@ -105,12 +105,25 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         self, options: nil)?.first as? LisSumAnalyse
         self.view.addSubview(analyseView!)
         
-        var percentContent:Int = countKeyWord*100/keywords.count;
+        let text = userAnswer.text! as NSString
         
-        var degreeContent:Int = 360*percentContent/100
-        print(degreeContent)
+        countKeyWord = 0;
         
-        analyseView?.progContent.angle = 270
+        for word in keywords{
+            if text.contains(word) {
+                countKeyWord+=1
+            }
+        }
+        
+        let percentContent:Int = countKeyWord*100/keywords.count;
+        
+        let degreeContent:Int = 360*percentContent/100
+        
+//        print("count: ", countKeyWord)
+//        print("percent: ",percentContent)
+//        print(" degree: ",degreeContent)
+        
+        analyseView?.progContent.angle = Double(degreeContent)
         
         analyseView?.translatesAutoresizingMaskIntoConstraints = false
         analyseView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
