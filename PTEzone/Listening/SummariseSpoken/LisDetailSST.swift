@@ -7,6 +7,9 @@
 
 import UIKit
 import AVFoundation
+#if canImport(FoundationNetworking)
+  import FoundationNetworking
+#endif
 
 class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDelegate{
     
@@ -101,6 +104,40 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     
     
     @IBAction func AnalyseTest(_ sender: Any) {
+        
+        
+
+        let json: [String: Any] = [
+            "key": "4W9GQMVV0DEYL2E5MTSKP6R7BO2FYRIX",
+            "text": "Lets get started!",
+            "session_id": "Test Document UUID"
+        ]
+        do{
+            let jsonData = try JSONSerialization.data(withJSONObject: json)
+
+            let url = URL(string: "https://api.sapling.ai/api/v1/edits")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("\(String(describing: `jsonData`.count))", forHTTPHeaderField: "Content-Length")
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = jsonData
+
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                print("URLSession dataTask")
+                guard let data = data, error == nil else {
+                  print("No data")
+                  return;
+                }
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let responseJSON = responseJSON as? [String: Any] {
+                    print(responseJSON)
+                }
+            }
+            task.resume()
+        }catch{
+            print(error)
+        }
+        
         analyseView = Bundle.main.loadNibNamed("LisSumAnalyse", owner:
         self, options: nil)?.first as? LisSumAnalyse
         self.view.addSubview(analyseView!)
