@@ -106,10 +106,10 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     @IBAction func AnalyseTest(_ sender: Any) {
         
         
-
+//sapling.ai/programming-language/swift
         let json: [String: Any] = [
             "key": "4W9GQMVV0DEYL2E5MTSKP6R7BO2FYRIX",
-            "text": "Lets get started!",
+            "text": "I walked to the store and I bought milk. I will eat fish for dinner and drank milk. We all eat the fish and then made dessert.",
             "session_id": "Test Document UUID"
         ]
         do{
@@ -128,10 +128,11 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
                   print("No data")
                   return;
                 }
-                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-                if let responseJSON = responseJSON as? [String: Any] {
-                    print(responseJSON)
-                }
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: NSArray]
+                print(responseJSON?["edits"]?.count as Any)
+//                if let responseJSON = responseJSON as? [String: Any] {
+//                    print(responseJSON)
+//                }
             }
             task.resume()
         }catch{
