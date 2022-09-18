@@ -107,11 +107,18 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         
         
 //sapling.ai/programming-language/swift
+        let textPressed = "I walked to the store and I bought milk. I will eat fish for dinner and drank milk. We all eat the fish and then made dessert."
         let json: [String: Any] = [
             "key": "4W9GQMVV0DEYL2E5MTSKP6R7BO2FYRIX",
-            "text": "I walked to the store and I bought milk. I will eat fish for dinner and drank milk. We all eat the fish and then made dessert.",
+            "text": textPressed,
             "session_id": "Test Document UUID"
         ]
+        var sentences: [String] = []
+        textPressed.enumerateSubstrings(in: textPressed.startIndex..., options: .bySentences) { (string, range, enclosingRamge, stop) in
+            sentences.append(string!)
+        }
+        //print(sentences.count)
+        
         do{
             let jsonData = try JSONSerialization.data(withJSONObject: json)
 
@@ -129,7 +136,11 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
                   return;
                 }
                 let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: NSArray]
-                print(responseJSON?["edits"]?.count as Any)
+                let errorSentences:Int =  responseJSON?["edits"]?.count as Any as! Int
+                let percentGrammar: Int = (errorSentences*100)/sentences.count
+//                print(errorSentences)
+//                print(sentences.count)
+//                print(percentGrammar)
 //                if let responseJSON = responseJSON as? [String: Any] {
 //                    print(responseJSON)
 //                }
