@@ -138,18 +138,28 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
                 let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: NSArray]
                 let errorSentences:Int =  responseJSON?["edits"]?.count as Any as! Int
                 let percentGrammar: Int = (errorSentences*100)/sentences.count
+                let degreeGrammar: Int = 360*percentGrammar/100
 //                print(errorSentences)
 //                print(sentences.count)
 //                print(percentGrammar)
 //                if let responseJSON = responseJSON as? [String: Any] {
 //                    print(responseJSON)
 //                }
+                DispatchQueue.main.async {
+                    self.analyseView = self.setupAnalyse()
+                    self.analyseView?.progGrammar.angle = Double(degreeGrammar)
+                }
+                
             }
             task.resume()
         }catch{
             print(error)
         }
         
+        
+    }
+    
+    func setupAnalyse()->LisSumAnalyse{
         analyseView = Bundle.main.loadNibNamed("LisSumAnalyse", owner:
         self, options: nil)?.first as? LisSumAnalyse
         self.view.addSubview(analyseView!)
@@ -179,9 +189,9 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         analyseView?.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
         analyseView?.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive = true
         analyseView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -150).isActive = true
+        
+        return analyseView!
     }
-    
-    
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         print("finished");
