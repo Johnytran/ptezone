@@ -139,7 +139,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nft-s5-jQM">
-                            <rect key="frame" x="15" y="286" width="136" height="21"/>
+                            <rect key="frame" x="15" y="328" width="136" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="8t8-wj-Gdh"/>
                             </constraints>
@@ -148,7 +148,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ej9-07-pjD" customClass="KDCircularProgress" customModule="PTEzone" customModuleProvider="target">
-                            <rect key="frame" x="159" y="265" width="74" height="62"/>
+                            <rect key="frame" x="159" y="307" width="74" height="62"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="62" id="oYH-f4-sa6"/>
@@ -184,28 +184,53 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVs-3a-t9v">
+                            <rect key="frame" x="15" y="257" width="240" height="42"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhH-dR-dz6">
+                                    <rect key="frame" x="8" y="0.0" width="25" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="KUg-st-mxi"/>
+                                        <constraint firstAttribute="height" constant="25" id="jrV-aL-Pji"/>
+                                    </constraints>
+                                    <state key="normal" image="expand"/>
+                                    <connections>
+                                        <action selector="expandGrammar:" destination="iN0-l3-epB" eventType="touchUpInside" id="Oa3-Wj-y0i"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <constraints>
+                                <constraint firstItem="uhH-dR-dz6" firstAttribute="leading" secondItem="LVs-3a-t9v" secondAttribute="leading" constant="8" id="IaN-4O-Zzw"/>
+                                <constraint firstItem="uhH-dR-dz6" firstAttribute="top" secondItem="LVs-3a-t9v" secondAttribute="top" id="WmQ-Wv-Lar"/>
+                                <constraint firstAttribute="height" constant="42" id="wkf-km-Ce7"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.59302761130136983" green="0.096596218597178693" blue="0.88792273116438358" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="Nft-s5-jQM" firstAttribute="leading" secondItem="C1T-r1-feA" secondAttribute="leading" constant="15" id="0Ka-LO-erm"/>
+                        <constraint firstAttribute="trailing" secondItem="LVs-3a-t9v" secondAttribute="trailing" constant="16" id="13S-K9-bQv"/>
                         <constraint firstItem="dJo-52-7Dq" firstAttribute="leading" secondItem="C1T-r1-feA" secondAttribute="leading" constant="8" id="67x-Ik-4Sl"/>
                         <constraint firstItem="QYX-Vq-fUN" firstAttribute="top" secondItem="Jj2-Oi-cAX" secondAttribute="bottom" constant="60" id="7ev-id-qpV"/>
                         <constraint firstAttribute="trailing" secondItem="1te-mw-zZd" secondAttribute="trailing" constant="8" id="CSf-I4-NsG"/>
-                        <constraint firstItem="Nft-s5-jQM" firstAttribute="top" secondItem="QYX-Vq-fUN" secondAttribute="bottom" constant="57" id="G5G-C2-3qc"/>
                         <constraint firstItem="Ej9-07-pjD" firstAttribute="leading" secondItem="Nft-s5-jQM" secondAttribute="trailing" constant="8" id="GCH-tR-uE8"/>
                         <constraint firstAttribute="trailing" secondItem="orh-KW-IWc" secondAttribute="trailing" constant="38" id="GJO-97-Q1m"/>
+                        <constraint firstItem="LVs-3a-t9v" firstAttribute="leading" secondItem="C1T-r1-feA" secondAttribute="leading" constant="15" id="Hrs-la-rw3"/>
                         <constraint firstItem="Jj2-Oi-cAX" firstAttribute="top" secondItem="dJo-52-7Dq" secondAttribute="bottom" constant="36" id="LfZ-EU-P6q"/>
                         <constraint firstItem="orh-KW-IWc" firstAttribute="top" secondItem="dJo-52-7Dq" secondAttribute="bottom" constant="15" id="MXm-Oc-dNv"/>
+                        <constraint firstItem="LVs-3a-t9v" firstAttribute="top" secondItem="QYX-Vq-fUN" secondAttribute="bottom" constant="28" id="NS9-ux-WGB"/>
                         <constraint firstItem="QYX-Vq-fUN" firstAttribute="leading" secondItem="C1T-r1-feA" secondAttribute="leading" constant="15" id="Phj-Zt-USe"/>
                         <constraint firstItem="1te-mw-zZd" firstAttribute="top" secondItem="C1T-r1-feA" secondAttribute="top" constant="5" id="QhP-pg-Lj9"/>
                         <constraint firstItem="dJo-52-7Dq" firstAttribute="top" secondItem="1te-mw-zZd" secondAttribute="bottom" constant="14" id="TPs-Jg-YpF"/>
                         <constraint firstAttribute="trailing" secondItem="ijt-29-udy" secondAttribute="trailing" constant="38" id="Uek-gv-8hC"/>
-                        <constraint firstItem="Ej9-07-pjD" firstAttribute="top" secondItem="ijt-29-udy" secondAttribute="bottom" constant="16" id="Yyx-7e-c7r"/>
+                        <constraint firstItem="Nft-s5-jQM" firstAttribute="top" secondItem="LVs-3a-t9v" secondAttribute="bottom" constant="29" id="XYs-jq-8lJ"/>
                         <constraint firstItem="ijt-29-udy" firstAttribute="top" secondItem="orh-KW-IWc" secondAttribute="bottom" constant="19" id="Zt3-Iw-1sd"/>
                         <constraint firstItem="1te-mw-zZd" firstAttribute="leading" secondItem="C1T-r1-feA" secondAttribute="leading" constant="8" id="d6O-Vq-Cci"/>
                         <constraint firstItem="orh-KW-IWc" firstAttribute="leading" secondItem="Jj2-Oi-cAX" secondAttribute="trailing" constant="8" symbolic="YES" id="ks2-db-Ofl"/>
                         <constraint firstAttribute="trailing" secondItem="dJo-52-7Dq" secondAttribute="trailing" constant="8" id="pRK-rp-ZCo"/>
                         <constraint firstItem="ijt-29-udy" firstAttribute="leading" secondItem="QYX-Vq-fUN" secondAttribute="trailing" constant="8" id="sCT-gT-zmW"/>
+                        <constraint firstItem="Ej9-07-pjD" firstAttribute="top" secondItem="LVs-3a-t9v" secondAttribute="bottom" constant="8" symbolic="YES" id="t72-vF-OL5"/>
                         <constraint firstItem="Jj2-Oi-cAX" firstAttribute="leading" secondItem="C1T-r1-feA" secondAttribute="leading" constant="15" id="wqt-WK-s5n"/>
                         <constraint firstAttribute="trailing" secondItem="Ej9-07-pjD" secondAttribute="trailing" constant="38" id="xWH-rW-cAQ"/>
                     </constraints>
@@ -234,6 +259,8 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="expandGrammarHeight" destination="wkf-km-Ce7" id="QwI-C0-0kJ"/>
+                <outlet property="expandGrammarView" destination="LVs-3a-t9v" id="e59-6w-Pa7"/>
                 <outlet property="progContent" destination="orh-KW-IWc" id="zmd-Y7-mUh"/>
                 <outlet property="progForm" destination="Ej9-07-pjD" id="lrF-CO-Apn"/>
                 <outlet property="progGrammar" destination="ijt-29-udy" id="T33-2V-9pK"/>
@@ -247,6 +274,7 @@
         </progressView>
     </objects>
     <resources>
+        <image name="expand" width="25" height="25"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -258,6 +286,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
