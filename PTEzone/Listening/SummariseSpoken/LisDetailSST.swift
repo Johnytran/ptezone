@@ -24,6 +24,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     @IBOutlet weak var fullTextView: CornerGradientView!
     private var answerView:ViewAnswerText? = nil
     private var analyseView:LisSumAnalyse? = nil
+    private var loadingView:Loading? = nil
     private var keywords = [String]()
     private var countKeyWord: Int = 0
     
@@ -135,6 +136,15 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
                   print("No data")
                   return;
                 }
+                DispatchQueue.main.async {
+                    self.loadingView = Bundle.main.loadNibNamed("Loading", owner:
+                    self, options: nil)?.first as? Loading
+                    self.loadingView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height);
+                    self.loadingView!.circularPercentView.animate(fromAngle: 0, toAngle: 270, duration: 1, completion: nil)
+                    self.view.addSubview(self.loadingView!)
+                    self.view.bringSubviewToFront(self.loadingView!)
+                }
+                
                 let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: NSArray]
                 let errorSentences:Int =  responseJSON?["edits"]?.count as Any as! Int
                 let percentGrammar: Int = (errorSentences*100)/sentences.count
@@ -145,11 +155,11 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
 //                if let responseJSON = responseJSON as? [String: Any] {
 //                    print(responseJSON)
 //                }
-                DispatchQueue.main.async {
-                    self.analyseView = self.setupAnalyse()
-                    //self.analyseView?.progGrammar.angle = Double(degreeGrammar)
-                    self.analyseView?.progGrammar.animate(fromAngle: 0, toAngle: Double(degreeGrammar), duration: 1, completion: nil)
-                }
+//                DispatchQueue.main.async {
+//                    self.analyseView = self.setupAnalyse()
+//                    //self.analyseView?.progGrammar.angle = Double(degreeGrammar)
+//                    self.analyseView?.progGrammar.animate(fromAngle: 0, toAngle: Double(degreeGrammar), duration: 1, completion: nil)
+//                }
                 
             }
             task.resume()

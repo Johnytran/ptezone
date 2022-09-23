@@ -26,6 +26,8 @@
 		EB80B598282D02E200CFA29C /* LisSumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B596282D02E200CFA29C /* LisSumTableViewCell.swift */; };
 		EB80B599282D02E200CFA29C /* LisSumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB80B597282D02E200CFA29C /* LisSumTableViewCell.xib */; };
 		EB80B5A02835015F00CFA29C /* LisDetailSST.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB80B59F2835015F00CFA29C /* LisDetailSST.swift */; };
+		EB88809428DDADC100B45F03 /* Loading.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB88809328DDADC100B45F03 /* Loading.xib */; };
+		EB88809728DDADD700B45F03 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB88809628DDADD700B45F03 /* Loading.swift */; };
 		EBC60DE42868652000C1802C /* LoadingAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC60DE32868652000C1802C /* LoadingAudioView.swift */; };
 		EBC60DE7286865E400C1802C /* LoadingSoundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC60DE6286865E400C1802C /* LoadingSoundView.xib */; };
 		EBC60DEB287AE07D00C1802C /* ViewAnswerText.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBC60DEA287AE07D00C1802C /* ViewAnswerText.xib */; };
@@ -56,6 +58,8 @@
 		EB80B596282D02E200CFA29C /* LisSumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisSumTableViewCell.swift; sourceTree = "<group>"; };
 		EB80B597282D02E200CFA29C /* LisSumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LisSumTableViewCell.xib; sourceTree = "<group>"; };
 		EB80B59F2835015F00CFA29C /* LisDetailSST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LisDetailSST.swift; sourceTree = "<group>"; };
+		EB88809328DDADC100B45F03 /* Loading.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Loading.xib; sourceTree = "<group>"; };
+		EB88809628DDADD700B45F03 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		EBC60DE32868652000C1802C /* LoadingAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAudioView.swift; sourceTree = "<group>"; };
 		EBC60DE6286865E400C1802C /* LoadingSoundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingSoundView.xib; sourceTree = "<group>"; };
 		EBC60DEA287AE07D00C1802C /* ViewAnswerText.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewAnswerText.xib; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 		EB3F00D426479FFB0026CC31 /* PTEzone */ = {
 			isa = PBXGroup;
 			children = (
+				EB88809228DDAD9200B45F03 /* module */,
 				EB80B58F282CFE5A00CFA29C /* library */,
 				EB80B58C282CFCEE00CFA29C /* Listening */,
 				EB3F00EA2647A0770026CC31 /* images */,
@@ -154,6 +159,15 @@
 				EB114AA628A60C39005D078B /* KDCircularProgress.swift */,
 			);
 			path = library;
+			sourceTree = "<group>";
+		};
+		EB88809228DDAD9200B45F03 /* module */ = {
+			isa = PBXGroup;
+			children = (
+				EB88809328DDADC100B45F03 /* Loading.xib */,
+				EB88809628DDADD700B45F03 /* Loading.swift */,
+			);
+			path = module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +235,7 @@
 				EB3F00DF26479FFD0026CC31 /* Assets.xcassets in Resources */,
 				EB80B599282D02E200CFA29C /* LisSumTableViewCell.xib in Resources */,
 				EB3F00DD26479FFB0026CC31 /* Main.storyboard in Resources */,
+				EB88809428DDADC100B45F03 /* Loading.xib in Resources */,
 				EBC60DE7286865E400C1802C /* LoadingSoundView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB80B598282D02E200CFA29C /* LisSumTableViewCell.swift in Sources */,
+				EB88809728DDADD700B45F03 /* Loading.swift in Sources */,
 				EB3F00DA26479FFB0026CC31 /* ViewController.swift in Sources */,
 				EB80B574281BF47300CFA29C /* NeumorphicView.swift in Sources */,
 				EB80B5772823C20A00CFA29C /* LisSumSpoText.swift in Sources */,
