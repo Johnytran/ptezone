@@ -114,6 +114,8 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
             "text": textPressed,
             "session_id": "Test Document UUID"
         ]
+        
+        // figure the number of sentences
         var sentences: [String] = []
         textPressed.enumerateSubstrings(in: textPressed.startIndex..., options: .bySentences) { (string, range, enclosingRamge, stop) in
             sentences.append(string!)
