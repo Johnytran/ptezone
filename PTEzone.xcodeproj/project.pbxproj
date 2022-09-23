@@ -103,7 +103,6 @@
 				EB3F00DB26479FFB0026CC31 /* Main.storyboard */,
 				EB3F00DE26479FFD0026CC31 /* Assets.xcassets */,
 				EB3F00E026479FFD0026CC31 /* LaunchScreen.storyboard */,
-				EB114AA628A60C39005D078B /* KDCircularProgress.swift */,
 				EB3F00E326479FFD0026CC31 /* Info.plist */,
 				EB80B573281BF47300CFA29C /* NeumorphicView.swift */,
 			);
@@ -152,6 +151,7 @@
 				EB80B57C28288DCF00CFA29C /* CornerGradientView.swift */,
 				EB421913280ACB5400B94D02 /* HomeGradientView.swift */,
 				EB421919280BA07000B94D02 /* MainMenuGradientView.swift */,
+				EB114AA628A60C39005D078B /* KDCircularProgress.swift */,
 			);
 			path = library;
 			sourceTree = "<group>";

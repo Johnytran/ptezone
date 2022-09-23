@@ -261,7 +261,7 @@
             <connections>
                 <outlet property="expandGrammarHeight" destination="wkf-km-Ce7" id="QwI-C0-0kJ"/>
                 <outlet property="expandGrammarView" destination="LVs-3a-t9v" id="e59-6w-Pa7"/>
-                <outlet property="progContent" destination="orh-KW-IWc" id="zmd-Y7-mUh"/>
+                <outlet property="progContent" destination="orh-KW-IWc" id="Dfy-y7-Mlg"/>
                 <outlet property="progForm" destination="Ej9-07-pjD" id="lrF-CO-Apn"/>
                 <outlet property="progGrammar" destination="ijt-29-udy" id="T33-2V-9pK"/>
             </connections>

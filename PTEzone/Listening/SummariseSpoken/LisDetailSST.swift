@@ -147,7 +147,8 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
 //                }
                 DispatchQueue.main.async {
                     self.analyseView = self.setupAnalyse()
-                    self.analyseView?.progGrammar.angle = Double(degreeGrammar)
+                    //self.analyseView?.progGrammar.angle = Double(degreeGrammar)
+                    self.analyseView?.progGrammar.animate(fromAngle: 0, toAngle: Double(degreeGrammar), duration: 1, completion: nil)
                 }
                 
             }
@@ -182,7 +183,8 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
 //        print("percent: ",percentContent)
 //        print(" degree: ",degreeContent)
         
-        analyseView?.progContent.angle = Double(degreeContent)
+        //analyseView?.progContent.angle = Double(degreeContent)
+        analyseView?.progContent.animate(fromAngle: 0, toAngle: Double(degreeContent), duration: 1.5, completion: nil)
         
         analyseView?.translatesAutoresizingMaskIntoConstraints = false
         analyseView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true

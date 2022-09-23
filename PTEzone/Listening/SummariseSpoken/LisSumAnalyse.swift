@@ -9,6 +9,7 @@ import UIKit
 
 class LisSumAnalyse: UIView {
 
+ 
     @IBOutlet weak var progContent: KDCircularProgress!
     
     @IBOutlet weak var progGrammar: KDCircularProgress!
