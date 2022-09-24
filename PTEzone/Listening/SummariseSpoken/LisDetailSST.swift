@@ -32,7 +32,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.audioName = "SoundHelix-Song-50.mp3"
+        self.audioName = "SoundHelix-Song-55.mp3"
         self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
         download(url: self.audioURl)
         
@@ -42,7 +42,11 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         self.keywords = ["book","the Republic","readable","living conversation","important ideas", "thoughts", "fundamental questions", "answer"]
     }
     @IBAction func PlayAudio(_ sender: Any) {
-        player!.play()
+        if((player) != nil){
+            player!.play()
+        }else{
+            
+        }
     }
     @IBAction func SubmitTest(_ sender: Any) {
         
@@ -254,7 +258,11 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     
     func skipSession(){
         print("skip");
+        
+        
+        
         task.cancel()
+        urlSession.invalidateAndCancel()
         //print(task.originalRequest)
         //print(task.state)
         self.messageView.removeFromSuperview()
