@@ -252,20 +252,12 @@
                                                 <rect key="frame" x="10" y="200" width="390" height="44"/>
                                                 <subviews>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uag-NI-faX">
-                                                        <rect key="frame" x="27" y="19" width="232" height="4"/>
+                                                        <rect key="frame" x="27" y="19" width="276" height="4"/>
                                                         <color key="progressTintColor" red="0.73421066999999995" green="0.1213334959" blue="0.70776366769999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="trackTintColor" red="0.8980392157" green="0.44705882349999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </progressView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4s-X0-CIq">
-                                                        <rect key="frame" x="334" y="0.0" width="38" height="38"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="38" id="1TB-sI-cjm"/>
-                                                            <constraint firstAttribute="height" constant="38" id="ztn-9g-MBS"/>
-                                                        </constraints>
-                                                        <state key="normal" image="replay"/>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sq-KE-3Zs">
-                                                        <rect key="frame" x="288" y="0.0" width="38" height="38"/>
+                                                        <rect key="frame" x="332" y="0.0" width="38" height="38"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="38" id="EqA-oT-7PJ"/>
                                                             <constraint firstAttribute="height" constant="38" id="cTB-w6-GJ0"/>
@@ -273,19 +265,20 @@
                                                         <state key="normal" image="play">
                                                             <color key="titleColor" red="0.92217761279999999" green="0.0209760274" blue="0.96793478730000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="PlayAudio:" destination="sgK-Tw-rS7" eventType="touchUpInside" id="aZd-zY-ATv"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="9sq-KE-3Zs" firstAttribute="top" secondItem="wf9-3v-e0q" secondAttribute="top" id="65J-BE-9dD"/>
-                                                    <constraint firstItem="s4s-X0-CIq" firstAttribute="leading" secondItem="9sq-KE-3Zs" secondAttribute="trailing" constant="8" symbolic="YES" id="6SX-nT-g4o"/>
                                                     <constraint firstItem="uag-NI-faX" firstAttribute="top" secondItem="wf9-3v-e0q" secondAttribute="top" constant="19" id="I1N-u0-VAc"/>
-                                                    <constraint firstAttribute="trailing" secondItem="s4s-X0-CIq" secondAttribute="trailing" constant="18" id="fei-Zx-xRm"/>
                                                     <constraint firstAttribute="bottom" secondItem="uag-NI-faX" secondAttribute="bottom" constant="21" id="gU4-VG-dJc"/>
                                                     <constraint firstItem="9sq-KE-3Zs" firstAttribute="leading" secondItem="uag-NI-faX" secondAttribute="trailing" constant="29" id="iMs-Jz-2Y7"/>
-                                                    <constraint firstItem="s4s-X0-CIq" firstAttribute="top" secondItem="wf9-3v-e0q" secondAttribute="top" id="nUx-zD-LDL"/>
                                                     <constraint firstAttribute="height" constant="44" id="oTl-kX-54O"/>
                                                     <constraint firstItem="uag-NI-faX" firstAttribute="leading" secondItem="wf9-3v-e0q" secondAttribute="leading" constant="27" id="uQY-LK-DEC"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9sq-KE-3Zs" secondAttribute="trailing" constant="20" symbolic="YES" id="zdQ-Uu-VJM"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="angleº">
@@ -1160,9 +1153,6 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="Fuk-Nu-RQP">
-            <size key="intrinsicContentSize" width="-1" height="49"/>
-        </designable>
         <designable name="pLL-F7-Gxh">
             <size key="intrinsicContentSize" width="-1" height="83"/>
         </designable>
@@ -1175,7 +1165,6 @@
         <image name="practice" width="50" height="40"/>
         <image name="practice_on" width="50" height="40"/>
         <image name="reading" width="88" height="89"/>
-        <image name="replay" width="170" height="170"/>
         <image name="speaking" width="88" height="89"/>
         <image name="writting" width="88" height="89"/>
         <systemColor name="systemBackgroundColor">

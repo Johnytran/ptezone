@@ -32,14 +32,17 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.audioName = "SoundHelix-Song-40.mp3"
-//        self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
-//        download(url: self.audioURl)
+        self.audioName = "SoundHelix-Song-50.mp3"
+        self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
+        download(url: self.audioURl)
         
         answerText.delegate = self
         answerText.text = "Type your answer here."
         answerText.textColor = UIColor.purple
         self.keywords = ["book","the Republic","readable","living conversation","important ideas", "thoughts", "fundamental questions", "answer"]
+    }
+    @IBAction func PlayAudio(_ sender: Any) {
+        player!.play()
     }
     @IBAction func SubmitTest(_ sender: Any) {
         
@@ -252,7 +255,10 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     func skipSession(){
         print("skip");
         task.cancel()
-        self.navigationController?.popViewController(animated: true)
+        //print(task.originalRequest)
+        //print(task.state)
+        self.messageView.removeFromSuperview()
+        //self.navigationController?.popViewController(animated: true)
     }
     func reloadAudio(){
         self.messageView.removeFromSuperview()
@@ -275,6 +281,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
             return
         }else{
             task = urlSession.downloadTask(with: URL(string: url)!)
+            print("downloading audio")
         }
         
         
