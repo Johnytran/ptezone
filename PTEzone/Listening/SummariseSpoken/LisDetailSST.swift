@@ -46,6 +46,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
             player!.play()
         }else{
             
+            download(url: self.audioURl)
         }
     }
     @IBAction func SubmitTest(_ sender: Any) {
@@ -243,7 +244,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     var player:AVPlayer!
     var observer: NSKeyValueObservation?
     private lazy var urlSession: URLSession = {
-            let config = URLSessionConfiguration.background(withIdentifier: "\(Bundle.main.bundleIdentifier ?? "").background")
+            let config = URLSessionConfiguration.background(withIdentifier: UUID().uuidString)
             config.isDiscretionary = true
             config.sessionSendsLaunchEvents = true
             return URLSession(configuration: config, delegate: self, delegateQueue: nil)
@@ -263,13 +264,13 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         
         task.cancel()
         urlSession.invalidateAndCancel()
-        //print(task.originalRequest)
-        //print(task.state)
+        
         self.messageView.removeFromSuperview()
         //self.navigationController?.popViewController(animated: true)
     }
     func reloadAudio(){
-        self.messageView.removeFromSuperview()
+        skipSession()
+        //self.messageView.removeFromSuperview()
         download(url: self.audioURl)
     }
     func download(url:String) {
@@ -289,6 +290,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
             return
         }else{
             task = urlSession.downloadTask(with: URL(string: url)!)
+            task.resume()
             print("downloading audio")
         }
         
