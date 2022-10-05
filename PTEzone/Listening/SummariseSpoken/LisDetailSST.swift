@@ -27,6 +27,10 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     private var loadingView:Loading? = nil
     private var keywords = [String]()
     private var countKeyWord: Int = 0
+    private var observation: NSKeyValueObservation?
+    deinit {
+        observation?.invalidate()
+      }
     
     @IBOutlet weak var answerText: UITextView!
     override func viewDidLoad() {
@@ -146,14 +150,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
                   print("No data")
                   return;
                 }
-                DispatchQueue.main.async {
-                    self.loadingView = Bundle.main.loadNibNamed("Loading", owner:
-                    self, options: nil)?.first as? Loading
-                    self.loadingView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height);
-                    self.loadingView!.circularPercentView.animate(fromAngle: 0, toAngle: 270, duration: 1, completion: nil)
-                    self.view.addSubview(self.loadingView!)
-                    self.view.bringSubviewToFront(self.loadingView!)
-                }
+                
                 
                 let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: NSArray]
                 let errorSentences:Int =  responseJSON?["edits"]?.count as Any as! Int
@@ -162,16 +159,52 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
 //                print(errorSentences)
 //                print(sentences.count)
 //                print(percentGrammar)
-//                if let responseJSON = responseJSON as? [String: Any] {
-//                    print(responseJSON)
-//                }
-//                DispatchQueue.main.async {
-//                    self.analyseView = self.setupAnalyse()
-//                    //self.analyseView?.progGrammar.angle = Double(degreeGrammar)
-//                    self.analyseView?.progGrammar.animate(fromAngle: 0, toAngle: Double(degreeGrammar), duration: 1, completion: nil)
-//                }
+                if let responseJSON = responseJSON as? [String: Any] {
+                    print(responseJSON)
+                }
+                DispatchQueue.main.async {
+                    self.analyseView = self.setupAnalyse()
+                    //self.analyseView?.progGrammar.angle = Double(degreeGrammar)
+                    self.analyseView?.progGrammar.animate(fromAngle: 0, toAngle: Double(degreeGrammar), duration: 1, completion: nil)
+                }
                 
             }
+            
+            observation = task.progress.observe(\.fractionCompleted) { progress, _ in
+                print("progress: ", progress.fractionCompleted*100)
+                let percentPro = progress.fractionCompleted*100
+                let radProg = 360*progress.fractionCompleted
+                DispatchQueue.main.async {
+                    self.loadingView = Bundle.main.loadNibNamed("Loading", owner:
+                    self, options: nil)?.first as? Loading
+                    self.loadingView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height);
+                    self.loadingView!.circularPercentView.animate(fromAngle: 0, toAngle: radProg, duration: 1, completion: nil)
+                    self.view.addSubview(self.loadingView!)
+                    self.view.bringSubviewToFront(self.loadingView!)
+                    if(percentPro == 100){
+                        self.loadingView!.removeFromSuperview()
+                    }
+                }
+            }
+            
+            // another way
+//            import PlaygroundSupport
+//
+//            let page = PlaygroundPage.current
+//            page.needsIndefiniteExecution = true
+//
+//            let url = URL(string: "https://source.unsplash.com/random/4000x4000")!
+//            let task = URLSession.shared.dataTask(with: url) { _, _, _ in
+//              page.finishExecution()
+//            }
+//
+//            // Don't forget to invalidate the observation when you don't need it anymore.
+//            let observation = task.progress.observe(\.fractionCompleted) { progress, _ in
+//              print(progress.fractionCompleted)
+//            }
+//
+//            task.resume()
+            
             task.resume()
         }catch{
             print(error)
