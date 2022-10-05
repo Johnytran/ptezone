@@ -144,13 +144,24 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonData
 
+            self.loadingView = Bundle.main.loadNibNamed("Loading", owner:
+            self, options: nil)?.first as? Loading
+            self.loadingView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height);
+            self.loadingView!.circularPercentView.animate(fromAngle: 0, toAngle: 0, duration: 1, completion: nil)
+            
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 print("URLSession dataTask")
                 guard let data = data, error == nil else {
                   print("No data")
                   return;
                 }
-                
+                DispatchQueue.main.async {
+                    
+                    self.view.addSubview(self.loadingView!)
+                    self.view.bringSubviewToFront(self.loadingView!)
+                    
+                   
+                }
                 
                 let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: NSArray]
                 let errorSentences:Int =  responseJSON?["edits"]?.count as Any as! Int
@@ -159,34 +170,28 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
 //                print(errorSentences)
 //                print(sentences.count)
 //                print(percentGrammar)
-                if let responseJSON = responseJSON as? [String: Any] {
-                    print(responseJSON)
-                }
-                DispatchQueue.main.async {
-                    self.analyseView = self.setupAnalyse()
-                    //self.analyseView?.progGrammar.angle = Double(degreeGrammar)
-                    self.analyseView?.progGrammar.animate(fromAngle: 0, toAngle: Double(degreeGrammar), duration: 1, completion: nil)
-                }
+//                if let responseJSON = responseJSON as? [String: Any] {
+//                    print(responseJSON)
+//                }
+//                DispatchQueue.main.async {
+//                    self.analyseView = self.setupAnalyse()
+//                    //self.analyseView?.progGrammar.angle = Double(degreeGrammar)
+//                    self.analyseView?.progGrammar.animate(fromAngle: 0, toAngle: Double(degreeGrammar), duration: 1, completion: nil)
+//                }
                 
+                    
+                    
             }
             
             observation = task.progress.observe(\.fractionCompleted) { progress, _ in
-                print("progress: ", progress.fractionCompleted*100)
-                let percentPro = progress.fractionCompleted*100
+                //print("progress: ", progress.fractionCompleted*100)
+                //let percentPro = progress.fractionCompleted*100
                 let radProg = 360*progress.fractionCompleted
-                DispatchQueue.main.async {
-                    self.loadingView = Bundle.main.loadNibNamed("Loading", owner:
-                    self, options: nil)?.first as? Loading
-                    self.loadingView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height);
-                    self.loadingView!.circularPercentView.animate(fromAngle: 0, toAngle: radProg, duration: 1, completion: nil)
-                    self.view.addSubview(self.loadingView!)
-                    self.view.bringSubviewToFront(self.loadingView!)
-                    if(percentPro == 100){
-                        self.loadingView!.removeFromSuperview()
-                    }
-                }
+                
+                self.loadingView!.circularPercentView.animate(fromAngle: 0, toAngle: radProg, duration: 1, completion: nil)
+                
             }
-            
+            self.loadingView!.removeFromSuperview()
             // another way
 //            import PlaygroundSupport
 //
