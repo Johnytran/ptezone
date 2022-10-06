@@ -148,19 +148,14 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
             self, options: nil)?.first as? Loading
             self.loadingView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height);
             self.loadingView!.circularPercentView.animate(fromAngle: 0, toAngle: 0, duration: 1, completion: nil)
+            self.view.addSubview(self.loadingView!)
+            self.view.bringSubviewToFront(self.loadingView!)
             
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 print("URLSession dataTask")
                 guard let data = data, error == nil else {
                   print("No data")
                   return;
-                }
-                DispatchQueue.main.async {
-                    
-                    self.view.addSubview(self.loadingView!)
-                    self.view.bringSubviewToFront(self.loadingView!)
-                    
-                   
                 }
                 
                 let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: NSArray]
@@ -173,11 +168,11 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
 //                if let responseJSON = responseJSON as? [String: Any] {
 //                    print(responseJSON)
 //                }
-//                DispatchQueue.main.async {
-//                    self.analyseView = self.setupAnalyse()
-//                    //self.analyseView?.progGrammar.angle = Double(degreeGrammar)
-//                    self.analyseView?.progGrammar.animate(fromAngle: 0, toAngle: Double(degreeGrammar), duration: 1, completion: nil)
-//                }
+                DispatchQueue.main.async {
+                    self.analyseView = self.setupAnalyse()
+                    //self.analyseView?.progGrammar.angle = Double(degreeGrammar)
+                    self.analyseView?.progGrammar.animate(fromAngle: 0, toAngle: Double(degreeGrammar), duration: 1, completion: nil)
+                }
                 
                     
                     
@@ -185,13 +180,16 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
             
             observation = task.progress.observe(\.fractionCompleted) { progress, _ in
                 //print("progress: ", progress.fractionCompleted*100)
-                //let percentPro = progress.fractionCompleted*100
+                let percentPro = progress.fractionCompleted*100
                 let radProg = 360*progress.fractionCompleted
-                
-                self.loadingView!.circularPercentView.animate(fromAngle: 0, toAngle: radProg, duration: 1, completion: nil)
-                
+                DispatchQueue.main.async {
+                    self.loadingView!.circularPercentView.animate(fromAngle: 0, toAngle: radProg, duration: 1, completion: nil)
+                    if(percentPro==100){
+                        self.loadingView!.removeFromSuperview()
+                    }
+                }
             }
-            self.loadingView!.removeFromSuperview()
+            
             // another way
 //            import PlaygroundSupport
 //
