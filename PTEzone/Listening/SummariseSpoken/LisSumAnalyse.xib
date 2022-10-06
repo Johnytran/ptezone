@@ -199,7 +199,7 @@
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="uhH-dR-dz6" firstAttribute="leading" secondItem="LVs-3a-t9v" secondAttribute="leading" constant="8" id="IaN-4O-Zzw"/>
                                 <constraint firstItem="uhH-dR-dz6" firstAttribute="top" secondItem="LVs-3a-t9v" secondAttribute="top" id="WmQ-Wv-Lar"/>
@@ -286,9 +286,6 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

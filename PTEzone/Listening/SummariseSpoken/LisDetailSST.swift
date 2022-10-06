@@ -172,6 +172,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
                     self.analyseView = self.setupAnalyse()
                     //self.analyseView?.progGrammar.angle = Double(degreeGrammar)
                     self.analyseView?.progGrammar.animate(fromAngle: 0, toAngle: Double(degreeGrammar), duration: 1, completion: nil)
+                    self.analyseView?.setTextGrammarDes(text: "fdasf")
                 }
                 
                     
