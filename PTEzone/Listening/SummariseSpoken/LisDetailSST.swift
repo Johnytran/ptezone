@@ -159,7 +159,8 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
                 }
                 
                 let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: NSArray]
-                let errorSentences:Int =  responseJSON?["edits"]?.count as Any as! Int
+                //let errorSentences:Int =  responseJSON?["edits"]?.count as Any as! Int
+                let errorSentences = 2
                 let percentGrammar: Int = (errorSentences*100)/sentences.count
                 let degreeGrammar: Int = 360*percentGrammar/100
 //                print(errorSentences)
