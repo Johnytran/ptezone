@@ -9,4 +9,9 @@ import UIKit
 
 class LisSumSokenCollectionCell: UICollectionViewCell{
     
+    @IBOutlet weak var lbltest: UILabel!
+    override func awakeFromNib() {
+        super.awakeFromNib()
+         
+    }
 }

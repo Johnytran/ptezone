@@ -572,23 +572,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Fet-cK-dmw">
-                                <rect key="frame" x="0.0" y="119" width="414" height="679"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YsX-Zt-RMb">
+                                <rect key="frame" x="20" y="130" width="374" height="683"/>
                                 <color key="backgroundColor" name="AccentColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EGi-In-ocU">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0q7-UK-o4P">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="liscell" id="23y-qR-QJg" customClass="LisSumSokenCollectionCell" customModule="PTEzone" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="liscell" id="WHP-y6-gpO" customClass="LisSumSokenCollectionCell" customModule="PTEzone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eTa-Hb-liB">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="y9Q-nw-Hh9">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -596,10 +597,10 @@
                         <viewLayoutGuide key="safeArea" id="Tsn-ar-AWq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Fet-cK-dmw" firstAttribute="leading" secondItem="Tsn-ar-AWq" secondAttribute="leading" id="5Mf-8c-DjD"/>
-                            <constraint firstItem="Fet-cK-dmw" firstAttribute="width" secondItem="C0E-QD-PHc" secondAttribute="width" id="Eyo-wn-15a"/>
-                            <constraint firstItem="Fet-cK-dmw" firstAttribute="top" secondItem="Tsn-ar-AWq" secondAttribute="top" constant="27" id="c5g-8G-dxx"/>
-                            <constraint firstItem="Tsn-ar-AWq" firstAttribute="bottom" secondItem="Fet-cK-dmw" secondAttribute="bottom" constant="15" id="gi4-2l-dwc"/>
+                            <constraint firstItem="YsX-Zt-RMb" firstAttribute="top" secondItem="Tsn-ar-AWq" secondAttribute="top" constant="38" id="9xn-bd-WQi"/>
+                            <constraint firstItem="Tsn-ar-AWq" firstAttribute="trailing" secondItem="YsX-Zt-RMb" secondAttribute="trailing" constant="20" id="XSZ-ic-8VU"/>
+                            <constraint firstItem="YsX-Zt-RMb" firstAttribute="leading" secondItem="Tsn-ar-AWq" secondAttribute="leading" constant="20" id="Xi2-HI-B6n"/>
+                            <constraint firstItem="Tsn-ar-AWq" firstAttribute="bottom" secondItem="YsX-Zt-RMb" secondAttribute="bottom" id="cYw-RI-sMn"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="angleº">
@@ -615,7 +616,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Listening" id="TSM-8f-hJi"/>
                     <connections>
-                        <outlet property="LisCollectionView" destination="Fet-cK-dmw" id="sp1-Z5-RlA"/>
+                        <outlet property="LisCollectionView" destination="YsX-Zt-RMb" id="i49-cf-3vv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d38-re-vJF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -779,6 +780,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
