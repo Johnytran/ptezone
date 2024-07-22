@@ -22,7 +22,6 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     
     @IBOutlet weak var ButtonView: CornerGradientView!
     @IBOutlet weak var fullTextView: CornerGradientView!
-    @IBOutlet weak var btnButtonPlay: UIButton!
     private var answerView:ViewAnswerText? = nil
     private var analyseView:LisSumAnalyse? = nil
     private var loadingView:Loading? = nil
@@ -32,10 +31,6 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     deinit {
         observation?.invalidate()
       }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        player!.pause();
-    }
     
     @IBOutlet weak var answerText: UITextView!
     override func viewDidLoad() {
@@ -52,14 +47,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     }
     @IBAction func PlayAudio(_ sender: Any) {
         if((player) != nil){
-            if(player.isPlaying){
-                player!.pause()
-                btnButtonPlay.setImage(UIImage(named: "play.png"), for: .normal)
-            }else{
-                player!.play()
-                btnButtonPlay.setImage(UIImage(named: "pause.png"), for: .normal)
-            }
-            
+            player!.play()
         }else{
             
             download(url: self.audioURl)
@@ -430,4 +418,3 @@ extension UIView {
         }
     }
 }
-
