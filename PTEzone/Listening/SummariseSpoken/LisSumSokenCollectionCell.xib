@@ -14,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="529" height="382"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Om1-ye-Wjc">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Om1-ye-Wjc" customClass="NeumorphicView" customModule="PTEzone" customModuleProvider="target">
                     <rect key="frame" x="20" y="59" width="489" height="289"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbI-Vr-TFm">
@@ -32,13 +32,6 @@
                             <color key="shadowColor" red="0.86539534408940344" green="0.7655309068822983" blue="0.87907692820755479" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <size key="shadowOffset" width="0.0" height="3"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="summarise" translatesAutoresizingMaskIntoConstraints="NO" id="biz-bu-ggF">
-                            <rect key="frame" x="8" y="28" width="140" height="140"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="140" id="Ldj-0V-eNo"/>
-                                <constraint firstAttribute="height" constant="140" id="ctg-nv-W5E"/>
-                            </constraints>
-                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5N-Qn-Snc">
                             <rect key="frame" x="163" y="115" width="318" height="45"/>
                             <constraints>
@@ -48,6 +41,20 @@
                                 <backgroundConfiguration key="background" image="button_learning" imageContentMode="center" strokeWidth="0.0" strokeOutset="0.0"/>
                             </buttonConfiguration>
                         </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scroll" translatesAutoresizingMaskIntoConstraints="NO" id="ORi-Z8-2Wc">
+                            <rect key="frame" x="15" y="35" width="127" height="127"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="127" id="61p-bj-lwS"/>
+                                <constraint firstAttribute="height" constant="127" id="uK1-KB-P2Q"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="frame" translatesAutoresizingMaskIntoConstraints="NO" id="biz-bu-ggF">
+                            <rect key="frame" x="8" y="28" width="140" height="140"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="140" id="Ldj-0V-eNo"/>
+                                <constraint firstAttribute="height" constant="140" id="ctg-nv-W5E"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="1" green="0.80777016959599079" blue="0.99431813204024211" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
@@ -55,23 +62,34 @@
                         <constraint firstItem="HbI-Vr-TFm" firstAttribute="top" secondItem="Om1-ye-Wjc" secondAttribute="top" constant="28" id="AZ7-SL-D3R"/>
                         <constraint firstAttribute="trailing" secondItem="HbI-Vr-TFm" secondAttribute="trailing" constant="8" id="CwK-Db-YeF"/>
                         <constraint firstItem="HbI-Vr-TFm" firstAttribute="leading" secondItem="biz-bu-ggF" secondAttribute="trailing" constant="15" id="E7x-Eh-72P"/>
+                        <constraint firstItem="ORi-Z8-2Wc" firstAttribute="leading" secondItem="biz-bu-ggF" secondAttribute="trailing" constant="-133" id="PiZ-JR-E8j"/>
                         <constraint firstItem="t5N-Qn-Snc" firstAttribute="top" secondItem="HbI-Vr-TFm" secondAttribute="bottom" constant="14" id="StG-Cr-Mdf"/>
                         <constraint firstAttribute="trailing" secondItem="t5N-Qn-Snc" secondAttribute="trailing" constant="8" id="gfA-9g-HAB"/>
                         <constraint firstItem="biz-bu-ggF" firstAttribute="leading" secondItem="Om1-ye-Wjc" secondAttribute="leading" constant="8" id="nci-WI-mg5"/>
+                        <constraint firstItem="ORi-Z8-2Wc" firstAttribute="top" secondItem="biz-bu-ggF" secondAttribute="bottom" constant="-133" id="olb-IQ-GDQ"/>
                         <constraint firstItem="t5N-Qn-Snc" firstAttribute="leading" secondItem="biz-bu-ggF" secondAttribute="trailing" constant="15" id="sa4-8k-WdA"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="angleº">
-                            <real key="value" value="30"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shapeType">
+                            <integer key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="colorRatio">
-                            <real key="value" value="0.5"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="fadeIntensity">
-                            <real key="value" value="0.5"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="directionType">
+                            <integer key="value" value="0"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="10"/>
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="opacity">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="offset">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="intensity">
+                            <real key="value" value="20"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
@@ -87,12 +105,14 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="lblTitle" destination="HbI-Vr-TFm" id="64S-Sy-fqk"/>
+                <outlet property="neuView" destination="Om1-ye-Wjc" id="U5H-FA-h4P"/>
             </connections>
             <point key="canvasLocation" x="-341.2213740458015" y="30.985915492957748"/>
         </view>
     </objects>
     <resources>
-        <image name="button_learning" width="109" height="44"/>
-        <image name="summarise" width="240" height="240"/>
+        <image name="button_learning" width="145" height="66"/>
+        <image name="frame" width="140" height="139"/>
+        <image name="scroll" width="150" height="150"/>
     </resources>
 </document>

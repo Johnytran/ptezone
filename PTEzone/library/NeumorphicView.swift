@@ -1,10 +1,10 @@
 //
 //  NeumorphicView.swift
-//  PTEzone
+//  Neumorphic-View
 //
-//  Created by Owner on 29/4/22.
+//  Created by Yonghyun on 2020/09/24.
+//  Copyright © 2020 Yonghyun. All rights reserved.
 //
-// github.com/lygon55555/neumorphic-view
 
 import Foundation
 import UIKit

@@ -10,7 +10,8 @@ import UIKit
 class LisSumSpoken: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     let reuseIdentifier = "liscell" // also enter this string as the cell identifier in the storyboard
-    var items = ["1", "2", "3"]
+    var items = ["Summarize Spoken Text", "Fill In The Blank", "MC, Choose Single Answer", "MC, Choose Multiple Answer",
+                 "Highlight Correct Summarry", "Select Missing Word", "Highlight Incorrect Words", "Write From Dictation"]
         
     @IBOutlet weak var LisCollectionView: UICollectionView!
     
@@ -18,6 +19,7 @@ class LisSumSpoken: UIViewController, UICollectionViewDataSource, UICollectionVi
         self.LisCollectionView.dataSource = self
         self.LisCollectionView.delegate = self;
         self.LisCollectionView.register(UINib(nibName: "LisSumSokenCollectionCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)//important to recognise label and everything in cell
+        self.LisCollectionView!.contentInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -36,7 +38,7 @@ class LisSumSpoken: UIViewController, UICollectionViewDataSource, UICollectionVi
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! LisSumSokenCollectionCell
         
-        
+        cell.lblTitle.text = items[indexPath.row]
         return cell;
     }
  
