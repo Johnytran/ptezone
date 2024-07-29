@@ -104,6 +104,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="imgSkill" destination="ORi-Z8-2Wc" id="Jhs-rG-M9t"/>
                 <outlet property="lblTitle" destination="HbI-Vr-TFm" id="64S-Sy-fqk"/>
                 <outlet property="neuView" destination="Om1-ye-Wjc" id="U5H-FA-h4P"/>
             </connections>

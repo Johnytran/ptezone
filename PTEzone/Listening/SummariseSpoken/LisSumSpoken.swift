@@ -10,8 +10,22 @@ import UIKit
 class LisSumSpoken: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
     
     let reuseIdentifier = "liscell" // also enter this string as the cell identifier in the storyboard
-    var items = ["Summarize Spoken Text", "Fill In The Blank", "MC, Choose Single Answer", "MC, Choose Multiple Answer",
-                 "Highlight Correct Summarry", "Select Missing Word", "Highlight Incorrect Words", "Write From Dictation"]
+    var items = ["Summarize Spoken Text", 
+                 "Fill In The Blank",
+                 "MC, Choose Single Answer",
+                 "MC, Choose Multiple Answer",
+                 "Highlight Correct Summarry", 
+                 "Select Missing Word",
+                 "Highlight Incorrect Words",
+                 "Write From Dictation"]
+    var image = ["scroll",
+                 "fill",
+                 "scroll",
+                 "scroll",
+                 "scroll",
+                 "scroll",
+                 "scroll",
+                 "scroll"]
         
     @IBOutlet weak var LisCollectionView: UICollectionView!
     
@@ -39,6 +53,9 @@ class LisSumSpoken: UIViewController, UICollectionViewDataSource, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! LisSumSokenCollectionCell
         
         cell.lblTitle.text = items[indexPath.row]
+        
+        let cellImage = UIImage(named: self.image[indexPath.row])
+        cell.imgSkill.image = cellImage
         return cell;
     }
  

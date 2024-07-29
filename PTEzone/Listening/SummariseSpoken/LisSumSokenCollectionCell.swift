@@ -10,6 +10,7 @@ import SwiftUI
 
 class LisSumSokenCollectionCell: UICollectionViewCell{
     
+    @IBOutlet weak var imgSkill: UIImageView!
     @IBOutlet weak var neuView: UIView!
     @IBOutlet weak var lblTitle: UILabel!
     
