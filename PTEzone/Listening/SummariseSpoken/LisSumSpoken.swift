@@ -20,12 +20,12 @@ class LisSumSpoken: UIViewController, UICollectionViewDataSource, UICollectionVi
                  "Write From Dictation"]
     var image = ["scroll",
                  "fill",
-                 "scroll",
-                 "scroll",
-                 "scroll",
-                 "scroll",
-                 "scroll",
-                 "scroll"]
+                 "single",
+                 "multiple",
+                 "correct",
+                 "select",
+                 "incorrect",
+                 "dictation"]
         
     @IBOutlet weak var LisCollectionView: UICollectionView!
     
