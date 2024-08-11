@@ -7,7 +7,11 @@
 
 import UIKit
 
-class LisSumSpoken: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
+class LisSumSpoken: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, YourCellDelegate{
+    func buttonPressed() {
+        performSegue(withIdentifier: "SummariseLisSegue", sender: nil)
+    }
+    
     
     let reuseIdentifier = "liscell" // also enter this string as the cell identifier in the storyboard
     var items = ["Summarize Spoken Text", 
@@ -56,6 +60,8 @@ class LisSumSpoken: UIViewController, UICollectionViewDataSource, UICollectionVi
         
         let cellImage = UIImage(named: self.image[indexPath.row])
         cell.imgSkill.image = cellImage
+        cell.setIDChoose(newID: indexPath.row)
+        cell.delegate = self
         return cell;
     }
  

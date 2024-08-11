@@ -154,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zGp-yL-f57">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
                                 <color key="backgroundColor" red="1" green="0.55055388380000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.8980392157" green="0.44705882349999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -195,11 +195,11 @@
             <objects>
                 <viewController id="sgK-Tw-rS7" customClass="LisDetailSST" customModule="PTEzone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pwg-XN-F7R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1490"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxl-tT-UT2">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="1490"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="1325"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gto-Hm-yKx" customClass="HomeGradientView" customModule="PTEzone" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -547,6 +547,7 @@
                             <constraint firstItem="Bxl-tT-UT2" firstAttribute="leading" secondItem="qzH-uP-fgO" secondAttribute="leading" id="fuO-Wh-dqB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="XOa-wU-shj"/>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="ButtonView" destination="cuv-kP-bnu" id="qat-4f-g7L"/>
@@ -587,6 +588,22 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="y9Q-nw-Hh9">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBT-C5-ucY">
+                                                    <rect key="frame" x="27" y="47" width="75" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <segue destination="yw4-Am-C0U" kind="show" identifier="SummariseLisSegue" id="gUi-42-mM1"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="lBT-C5-ucY" secondAttribute="bottom" constant="46" id="Smu-f4-jpj"/>
+                                                <constraint firstItem="lBT-C5-ucY" firstAttribute="leading" secondItem="y9Q-nw-Hh9" secondAttribute="leading" constant="27" id="j0c-d2-bLq"/>
+                                                <constraint firstItem="lBT-C5-ucY" firstAttribute="top" secondItem="y9Q-nw-Hh9" secondAttribute="top" constant="47" id="uDm-2I-uxC"/>
+                                                <constraint firstAttribute="trailing" secondItem="lBT-C5-ucY" secondAttribute="trailing" constant="26" id="vay-G2-TOU"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                                     </collectionViewCell>

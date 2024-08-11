@@ -40,6 +40,9 @@
                             <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
                                 <backgroundConfiguration key="background" image="button_learning" imageContentMode="center" strokeWidth="0.0" strokeOutset="0.0"/>
                             </buttonConfiguration>
+                            <connections>
+                                <action selector="OpenSkill:" destination="iN0-l3-epB" eventType="touchUpInside" id="C5a-yp-NAr"/>
+                            </connections>
                         </button>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scroll" translatesAutoresizingMaskIntoConstraints="NO" id="ORi-Z8-2Wc">
                             <rect key="frame" x="15" y="35" width="127" height="127"/>
