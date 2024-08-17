@@ -26,5 +26,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:584751039687:ios:5cd9eb8f9e8aa623b9eae2</string>
+	<key>DATABASE_URL</key>
+	<string>https://ptezone-bebb7-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

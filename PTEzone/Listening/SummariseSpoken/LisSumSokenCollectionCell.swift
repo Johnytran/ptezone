@@ -30,11 +30,20 @@ class LisSumSokenCollectionCell: UICollectionViewCell{
     }
     
     @IBAction func OpenSkill(_ sender: Any) {
-        
-        delegate?.buttonPressed()
+        var segString:String
+        switch self.idChoose {
+        case 0:
+            segString = "SummariseLisSegue"
+        default:
+            segString = ""
+        }
+        if(!segString.isEmpty){
+            delegate?.buttonPressed(segName: segString)
+        }
+            
     }
 }
 
 protocol YourCellDelegate {
-    func buttonPressed()
+    func buttonPressed(segName:String)
 }

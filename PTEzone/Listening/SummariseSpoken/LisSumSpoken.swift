@@ -8,8 +8,8 @@
 import UIKit
 
 class LisSumSpoken: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, YourCellDelegate{
-    func buttonPressed() {
-        performSegue(withIdentifier: "SummariseLisSegue", sender: nil)
+    func buttonPressed(segName:String) {
+        performSegue(withIdentifier: segName, sender: nil)
     }
     
     

@@ -7,12 +7,14 @@
 
 
 import UIKit
+import FirebaseDatabaseInternal
 
 class LisSumSpoText: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     let listSum: [String] = ["Abstraction","DNA","English","Business Freedom","Survey","AI"]
     let cellReuseIdentifier = "sumCell"
+    
     
     @IBOutlet weak var tableSum: UITableView!
     override func viewDidLoad() {
@@ -23,6 +25,21 @@ class LisSumSpoText: UIViewController, UITableViewDelegate, UITableViewDataSourc
         tableSum.delegate = self
         tableSum.dataSource = self
         self.registerTableViewCells()
+        
+        let ref = Database.database().reference().child("SummarySpokenText")
+
+
+            ref.observeSingleEvent(of: .value, with: { (snap : DataSnapshot)  in
+
+                print("\(String(describing:  snap.value))")
+
+
+            }) { (err: Error) in
+
+
+                print("\(err.localizedDescription)")
+
+            }
     }
     
     private func registerTableViewCells() {
