@@ -40,7 +40,8 @@ class LisSumSpoText: UIViewController, UITableViewDelegate, UITableViewDataSourc
                         tmpSummary.setValue(tmpID: sn.key,
                                             tmpTilte: lesson["title"] as! String,
                                             tmpAudio: lesson["audio"] as! String,
-                                            tmpAnswer: lesson["answer"] as! String)
+                                            tmpAnswer: lesson["answer"] as! String,
+                                            tmpUrl: lesson["url"] as! String)
                         self.messages.append(tmpSummary)
 //                        print(lesson["title"]!)
                     }
@@ -91,7 +92,7 @@ class LisSumSpoText: UIViewController, UITableViewDelegate, UITableViewDataSourc
             let destination = segue.destination as! LisDetailSST
             destination.objSummaryLiss = sender as? SummaryLiss
             let e = sender as! SummaryLiss
-            print(e)
+            //print(e.getTitle())
         }
     }
     

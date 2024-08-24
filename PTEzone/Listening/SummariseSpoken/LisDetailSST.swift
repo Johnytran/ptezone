@@ -42,7 +42,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(self.objSummaryLiss);
+        print(self.objSummaryLiss?.getUrl());
         
         self.audioName = "SoundHelix-Song-55.mp3"
         self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"

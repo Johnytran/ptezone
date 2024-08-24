@@ -12,12 +12,14 @@ class SummaryLiss{
     private var title:String = ""
     private var audio: String = ""
     private var answer: String = ""
+    private var url: String = ""
     
-    func setValue(tmpID:String, tmpTilte:String, tmpAudio:String, tmpAnswer:String){
+    func setValue(tmpID:String, tmpTilte:String, tmpAudio:String, tmpAnswer:String, tmpUrl:String){
         self.id = tmpID
         self.title = tmpTilte
         self.audio = tmpAudio
         self.answer = tmpAnswer
+        self.url = tmpUrl
     }
     func getID()->String{
         return self.id
@@ -30,5 +32,8 @@ class SummaryLiss{
     }
     func getAnswer()->String{
         return self.answer
+    }
+    func getUrl()->String{
+        return self.url
     }
 }
