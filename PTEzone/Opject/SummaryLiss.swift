@@ -19,4 +19,16 @@ class SummaryLiss{
         self.audio = tmpAudio
         self.answer = tmpAnswer
     }
+    func getID()->String{
+        return self.id
+    }
+    func getTitle()->String{
+        return self.title
+    }
+    func getAudio()->String{
+        return self.audio
+    }
+    func getAnswer()->String{
+        return self.answer
+    }
 }

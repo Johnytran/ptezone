@@ -29,6 +29,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     private var keywords = [String]()
     private var countKeyWord: Int = 0
     private var observation: NSKeyValueObservation?
+    public var objSummaryLiss:SummaryLiss?
     deinit {
         observation?.invalidate()
       }
@@ -40,6 +41,8 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     @IBOutlet weak var answerText: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(self.objSummaryLiss);
         
         self.audioName = "SoundHelix-Song-55.mp3"
         self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"

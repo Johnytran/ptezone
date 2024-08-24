@@ -36,16 +36,17 @@ class LisSumSpoText: UIViewController, UITableViewDelegate, UITableViewDataSourc
             if let snapshots = snap.children.allObjects as? [DataSnapshot] {
                 for sn in snapshots {
                     if let lesson = sn.value as? Dictionary<String, AnyObject> {
-//                        var tmpSummary:SummaryLiss?
-//                        tmpSummary!.setValue(tmpID: sn.key,
-//                                            tmpTilte: lesson["title"] as! String,
-//                                            tmpAudio: lesson["audio"] as! String,
-//                                            tmpAnswer: lesson["answer"] as! String)
-                        print(lesson["title"]!)
+                        let tmpSummary = SummaryLiss()
+                        tmpSummary.setValue(tmpID: sn.key,
+                                            tmpTilte: lesson["title"] as! String,
+                                            tmpAudio: lesson["audio"] as! String,
+                                            tmpAnswer: lesson["answer"] as! String)
+                        self.messages.append(tmpSummary)
+//                        print(lesson["title"]!)
                     }
                 }
             }
-            //self.messages.append(snap)
+            
             self.tableSum.reloadData()
             }) { (err: Error) in
 
@@ -69,9 +70,10 @@ class LisSumSpoText: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        print(self.messages.count)
+        
         if let cell = tableSum.dequeueReusableCell(withIdentifier: "LisSumTableViewCell") as? LisSumTableViewCell {
-            //cell.lblTitle?.text = self.listSum[indexPath.row]
+            let tmpObj: SummaryLiss = self.messages[indexPath.row]
+            cell.lblTitle?.text = tmpObj.getTitle()
            
             
             return cell
@@ -80,8 +82,17 @@ class LisSumSpoText: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        self.performSegue(withIdentifier: "dlsst", sender: self)
+        
+        let tmpObj: SummaryLiss = self.messages[indexPath.row]
+        self.performSegue(withIdentifier: "dlsst", sender: tmpObj)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "dlsst" && sender is SummaryLiss {
+            let destination = segue.destination as! LisDetailSST
+            destination.objSummaryLiss = sender as? SummaryLiss
+            let e = sender as! SummaryLiss
+            print(e)
+        }
     }
     
 
