@@ -53,7 +53,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         answerText.delegate = self
         answerText.text = "Type your answer here."
         answerText.textColor = UIColor.purple
-        self.keywords = ["book","the Republic","readable","living conversation","important ideas", "thoughts", "fundamental questions", "answer"]
+        self.keywords = ["pandemic","catastrophic","unprecedented","preparation","affects", "public health", "treatment", "prevention"]
     }
     @IBAction func PlayAudio(_ sender: Any) {
         if((player) != nil){
