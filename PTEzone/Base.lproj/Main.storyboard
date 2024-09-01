@@ -553,6 +553,7 @@
                         <outlet property="ButtonView" destination="cuv-kP-bnu" id="qat-4f-g7L"/>
                         <outlet property="answerText" destination="ZgM-f5-IoR" id="nY1-oD-1kW"/>
                         <outlet property="btnButtonPlay" destination="9sq-KE-3Zs" id="3mm-2E-ACv"/>
+                        <outlet property="fullTextInput" destination="SuE-bq-5O8" id="pfh-nI-qJr"/>
                         <outlet property="fullTextView" destination="KdV-SB-Tq7" id="IVj-um-ckj"/>
                         <outlet property="instructView" destination="pj4-Uq-Ltb" id="4Y9-Hv-11K"/>
                         <outlet property="progressConstrant" destination="09M-kK-RyR" id="Ivi-O5-4Sv"/>

@@ -21,6 +21,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     @IBOutlet weak var instructView: CornerGradientView!
     
     @IBOutlet weak var ButtonView: CornerGradientView!
+    @IBOutlet weak var fullTextInput: UITextView!
     @IBOutlet weak var fullTextView: CornerGradientView!
     @IBOutlet weak var btnButtonPlay: UIButton!
     private var answerView:ViewAnswerText? = nil
@@ -42,10 +43,11 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(self.objSummaryLiss?.getUrl());
+        //print(self.objSummaryLiss?.getUrl());
         
-        self.audioName = "SoundHelix-Song-55.mp3"
-        self.audioURl = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
+        self.audioName = self.objSummaryLiss?.getAudio()
+        self.audioURl = self.objSummaryLiss?.getUrl()
+        self.fullTextInput.text = self.objSummaryLiss?.getAnswer()
         download(url: self.audioURl)
         
         answerText.delegate = self
@@ -108,6 +110,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     func createAnswerView(){
         answerView = Bundle.main.loadNibNamed("ViewAnswerText", owner:
         self, options: nil)?.first as? ViewAnswerText
+        answerView?.contentTextView.text = self.userAnswer.text
         self.view.addSubview(answerView!)
         answerView?.translatesAutoresizingMaskIntoConstraints = false
         if(self.fullTextView.isHidden){
@@ -133,102 +136,6 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     
     @IBAction func AnalyseTest(_ sender: Any) {
         
-        
-//sapling.ai/programming-language/swift
-        let textPressed = "I walked to the store and I bought milk. I will eat fish for dinner and drank milk. We all eat the fish and then made dessert."
-        let json: [String: Any] = [
-            "key": "4W9GQMVV0DEYL2E5MTSKP6R7BO2FYRIX",
-            "text": textPressed,
-            "session_id": "Test Document UUID"
-        ]
-        
-        // figure the number of sentences
-        var sentences: [String] = []
-        textPressed.enumerateSubstrings(in: textPressed.startIndex..., options: .bySentences) { (string, range, enclosingRamge, stop) in
-            sentences.append(string!)
-        }
-        //print(sentences.count)
-        
-        do{
-            let jsonData = try JSONSerialization.data(withJSONObject: json)
-
-            let url = URL(string: "https://api.sapling.ai/api/v1/edits")!
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("\(String(describing: `jsonData`.count))", forHTTPHeaderField: "Content-Length")
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpBody = jsonData
-
-            self.loadingView = Bundle.main.loadNibNamed("Loading", owner:
-            self, options: nil)?.first as? Loading
-            self.loadingView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height);
-            self.loadingView!.circularPercentView.animate(fromAngle: 0, toAngle: 0, duration: 1, completion: nil)
-            self.view.addSubview(self.loadingView!)
-            self.view.bringSubviewToFront(self.loadingView!)
-            
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                print("URLSession dataTask")
-                guard let data = data, error == nil else {
-                  print("No data")
-                  return;
-                }
-                
-                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: NSArray]
-                //let errorSentences:Int =  responseJSON?["edits"]?.count as Any as! Int
-                let errorSentences = 2
-                let percentGrammar: Int = (errorSentences*100)/sentences.count
-                let degreeGrammar: Int = 360*percentGrammar/100
-//                print(errorSentences)
-//                print(sentences.count)
-//                print(percentGrammar)
-//                if let responseJSON = responseJSON as? [String: Any] {
-//                    print(responseJSON)
-//                }
-                DispatchQueue.main.async {
-                    self.analyseView = self.setupAnalyse()
-                    //self.analyseView?.progGrammar.angle = Double(degreeGrammar)
-                    self.analyseView?.progGrammar.animate(fromAngle: 0, toAngle: Double(degreeGrammar), duration: 1, completion: nil)
-                    self.analyseView?.setTextGrammarDes(text: "fdasf")
-                }
-                
-                    
-                    
-            }
-            
-            observation = task.progress.observe(\.fractionCompleted) { progress, _ in
-                //print("progress: ", progress.fractionCompleted*100)
-                let percentPro = progress.fractionCompleted*100
-                let radProg = 360*progress.fractionCompleted
-                DispatchQueue.main.async {
-                    self.loadingView!.circularPercentView.animate(fromAngle: 0, toAngle: radProg, duration: 1, completion: nil)
-                    if(percentPro==100){
-                        self.loadingView!.removeFromSuperview()
-                    }
-                }
-            }
-            
-            // another way
-//            import PlaygroundSupport
-//
-//            let page = PlaygroundPage.current
-//            page.needsIndefiniteExecution = true
-//
-//            let url = URL(string: "https://source.unsplash.com/random/4000x4000")!
-//            let task = URLSession.shared.dataTask(with: url) { _, _, _ in
-//              page.finishExecution()
-//            }
-//
-//            // Don't forget to invalidate the observation when you don't need it anymore.
-//            let observation = task.progress.observe(\.fractionCompleted) { progress, _ in
-//              print(progress.fractionCompleted)
-//            }
-//
-//            task.resume()
-            
-            task.resume()
-        }catch{
-            print(error)
-        }
         
         
     }

@@ -9,5 +9,6 @@ import UIKit
 
 class ViewAnswerText: UIView {
 
+    @IBOutlet weak var contentTextView: UITextView!
     
 }
