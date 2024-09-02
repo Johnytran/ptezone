@@ -73,21 +73,7 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     @IBAction func SubmitTest(_ sender: Any) {
         
         
-        let attributedText = NSMutableAttributedString(attributedString: userAnswer.attributedText!)
-
-        let text = userAnswer.text! as NSString
         
-        
-        
-        for word in keywords{
-            if text.contains(word) {
-                countKeyWord+=1
-                let smallRange = text.range(of: word)
-
-                attributedText.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.yellow, range: smallRange)
-            }
-        }
-        self.userAnswer.attributedText = attributedText
         
         
     }
@@ -122,6 +108,24 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         answerView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 10).isActive = true
         answerView?.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15).isActive = true
         answerView?.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        
+        let tmpTextView:UITextView = (answerView?.contentTextView)!
+        
+        let attributedText = NSMutableAttributedString(attributedString: tmpTextView.attributedText!)
+
+        let text = userAnswer.text! as NSString
+        
+        
+        
+        for word in keywords{
+            if text.contains(word) {
+                countKeyWord+=1
+                let smallRange = text.range(of: word)
+
+                attributedText.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.yellow, range: smallRange)
+            }
+        }
+        tmpTextView.attributedText = attributedText
     }
     @IBAction func ViewAnswer(_ sender: Any) {
         if(self.answerView != nil){
@@ -137,6 +141,15 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     @IBAction func AnalyseTest(_ sender: Any) {
         
         
+        analyseView = Bundle.main.loadNibNamed("LisSumAnalyse", owner:
+        self, options: nil)?.first as? LisSumAnalyse
+        self.view.addSubview(analyseView!)
+
+        analyseView?.translatesAutoresizingMaskIntoConstraints = false
+        analyseView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
+        analyseView?.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
+        analyseView?.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive = true
+        analyseView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -150).isActive = true
         
     }
     
