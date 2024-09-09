@@ -10,6 +10,7 @@ import AVFoundation
 #if canImport(FoundationNetworking)
   import FoundationNetworking
 #endif
+import NaturalLanguage
 
 class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDelegate{
     
@@ -54,6 +55,40 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         answerText.text = "Type your answer here."
         answerText.textColor = UIColor.purple
         self.keywords = ["pandemic","catastrophic","unprecedented","preparation","affects", "public health", "treatment", "prevention"]
+        print(partsOfSpeech("She has three dogs"));
+    }
+    public func partsOfSpeech(_ text: String) -> [(word: String, tag: NLTag)]
+    {
+        //https://developer.apple.com/documentation/naturallanguage/identifying_parts_of_speech
+        let tagger = NLTagger(tagSchemes: [.lexicalClass])
+        tagger.string = text
+
+        let options: NLTagger.Options = [.omitPunctuation, .omitWhitespace]
+
+        var taggedWords = [(String, NLTag)]()
+        
+        //https://developer.apple.com/documentation/naturallanguage/nltagger/2976623-enumeratetags
+        tagger.enumerateTags(
+            in: text.startIndex ..< text.endIndex,
+            unit: .word,
+            scheme: .lexicalClass,
+            options: options)
+        {
+            tag, tokenRange in
+            
+            if let tag = tag
+            {
+                let word = text[tokenRange]
+    //            print("\(word): \(tag.rawValue)")
+                let pair = (String(word), tag)
+                
+                taggedWords.append(pair)
+            }
+
+            return true
+        }
+
+        return taggedWords
     }
     @IBAction func PlayAudio(_ sender: Any) {
         if((player) != nil){
