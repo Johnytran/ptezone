@@ -55,41 +55,48 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         answerText.text = "Type your answer here."
         answerText.textColor = UIColor.purple
         self.keywords = ["pandemic","catastrophic","unprecedented","preparation","affects", "public health", "treatment", "prevention"]
-        print(partsOfSpeech("She has three dogs"));
-    }
-    public func partsOfSpeech(_ text: String) -> [(word: String, tag: NLTag)]
-    {
-        //https://developer.apple.com/documentation/naturallanguage/identifying_parts_of_speech
-        let tagger = NLTagger(tagSchemes: [.lexicalClass])
-        tagger.string = text
-
-        let options: NLTagger.Options = [.omitPunctuation, .omitWhitespace]
-
-        var taggedWords = [(String, NLTag)]()
+        let verbArr = getVerbs(from: "She has three dogs")
+        //print(verbArr[0]);
         
-        //https://developer.apple.com/documentation/naturallanguage/nltagger/2976623-enumeratetags
-        tagger.enumerateTags(
-            in: text.startIndex ..< text.endIndex,
-            unit: .word,
-            scheme: .lexicalClass,
-            options: options)
-        {
-            tag, tokenRange in
-            
-            if let tag = tag
-            {
-                let word = text[tokenRange]
-    //            print("\(word): \(tag.rawValue)")
-                let pair = (String(word), tag)
-                
-                taggedWords.append(pair)
+        
+        
+    }
+    func grammarCheck(text:String){
+        
+        if(text.isEmpty){
+            return
+        } else {
+            let sentences = getAllSentences(content: text)
+            for sent in sentences{
+                print("["+sent+"]")
             }
+        }
+    }
+    func getAllSentences(content: String)->[String]{
+        let arrSentent = content.components(separatedBy: ".")
+        return arrSentent
+    }
+    func tags(for text: String, tagScheme: NLTagScheme) -> [(word: String, tag: NLTag)] {
+        var taggedWords: [(String, NLTag)] = []
 
+        let tagger = NLTagger(tagSchemes: [tagScheme])
+        tagger.string = text
+        tagger.enumerateTags(in: text.startIndex..<text.endIndex,
+                                unit: .word,
+                                scheme: tagScheme,
+                                options: [.omitPunctuation, .omitWhitespace]) { tag, tokenRange in
+            if let tag = tag {
+                taggedWords.append((String(text[tokenRange]), tag))
+            }
             return true
         }
-
         return taggedWords
     }
+    func getVerbs(from text: String) -> [String] {
+        let tags = tags(for: text, tagScheme: .lexicalClass)
+        return tags.filter { $0.tag == .verb }.map { $0.word }
+    }
+    
     @IBAction func PlayAudio(_ sender: Any) {
         if((player) != nil){
             if(player.isPlaying){
@@ -175,16 +182,16 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
     
     @IBAction func AnalyseTest(_ sender: Any) {
         
-        
-        analyseView = Bundle.main.loadNibNamed("LisSumAnalyse", owner:
-        self, options: nil)?.first as? LisSumAnalyse
-        self.view.addSubview(analyseView!)
-
-        analyseView?.translatesAutoresizingMaskIntoConstraints = false
-        analyseView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
-        analyseView?.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
-        analyseView?.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive = true
-        analyseView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -150).isActive = true
+        grammarCheck(text: answerText.text)
+//        analyseView = Bundle.main.loadNibNamed("LisSumAnalyse", owner:
+//        self, options: nil)?.first as? LisSumAnalyse
+//        self.view.addSubview(analyseView!)
+//
+//        analyseView?.translatesAutoresizingMaskIntoConstraints = false
+//        analyseView?.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
+//        analyseView?.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20).isActive = true
+//        analyseView?.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 150).isActive = true
+//        analyseView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -150).isActive = true
         
     }
     
@@ -388,4 +395,3 @@ extension UIView {
         }
     }
 }
-
