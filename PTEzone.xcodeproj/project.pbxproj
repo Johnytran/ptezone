@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27EF90B1DD3973F460C2994F /* Pods_PTEzone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F842AD78EF27EE6BA670F38A /* Pods_PTEzone.framework */; };
 		5F97984B2C5650EA00C1799A /* NeumorphicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F97984A2C5650EA00C1799A /* NeumorphicView.swift */; };
 		5F97984E2C7213DC00C1799A /* SummaryLiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F97984D2C7213DC00C1799A /* SummaryLiss.swift */; };
 		5FA4E2712B9C67BC002D87EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FA4E2702B9C67BC002D87EA /* GoogleService-Info.plist */; };
@@ -68,12 +69,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44C455305D917EC4CDB07A33 /* Pods-PTEzone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTEzone.debug.xcconfig"; path = "Target Support Files/Pods-PTEzone/Pods-PTEzone.debug.xcconfig"; sourceTree = "<group>"; };
 		5F97984A2C5650EA00C1799A /* NeumorphicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeumorphicView.swift; sourceTree = "<group>"; };
 		5F97984D2C7213DC00C1799A /* SummaryLiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryLiss.swift; sourceTree = "<group>"; };
 		5FA4E2702B9C67BC002D87EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FC993CC2BA28E51000A645C /* LisSumSpoken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisSumSpoken.swift; sourceTree = "<group>"; };
 		5FC993CE2BA28F7A000A645C /* LisSumSokenCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisSumSokenCollectionCell.swift; sourceTree = "<group>"; };
 		5FC993D02BA6DEBD000A645C /* LisSumSokenCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LisSumSokenCollectionCell.xib; sourceTree = "<group>"; };
+		60EBE63C7709E21222E21803 /* Pods-PTEzone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PTEzone.release.xcconfig"; path = "Target Support Files/Pods-PTEzone/Pods-PTEzone.release.xcconfig"; sourceTree = "<group>"; };
 		EB114AA628A60C39005D078B /* KDCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDCircularProgress.swift; sourceTree = "<group>"; };
 		EB114AA928A654A0005D078B /* CornerGradientView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerGradientView2.swift; sourceTree = "<group>"; };
 		EB1A6B2F26493E590076A112 /* signin_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = signin_bg.png; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 		EBC60DED287AE09E00C1802C /* ViewAnswerText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAnswerText.swift; sourceTree = "<group>"; };
 		EBC60DF0289F9BDF00C1802C /* LisSumAnalyse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LisSumAnalyse.swift; sourceTree = "<group>"; };
 		EBC60DF3289F9BF700C1802C /* LisSumAnalyse.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LisSumAnalyse.xib; sourceTree = "<group>"; };
+		F842AD78EF27EE6BA670F38A /* Pods_PTEzone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PTEzone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,12 +139,21 @@
 				5FA4E28E2B9C6A2E002D87EA /* FirebaseFirestoreCombine-Community in Frameworks */,
 				5FA4E29E2B9C6A2E002D87EA /* FirebaseMessaging in Frameworks */,
 				5FA4E29A2B9C6A2E002D87EA /* FirebaseInstallations in Frameworks */,
+				27EF90B1DD3973F460C2994F /* Pods_PTEzone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5AEFA3E468443FE924A0F61E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F842AD78EF27EE6BA670F38A /* Pods_PTEzone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5F97984C2C7213B400C1799A /* Opject */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,11 +162,23 @@
 			path = Opject;
 			sourceTree = "<group>";
 		};
+		7B8751ECBB2A79DE2655FC18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44C455305D917EC4CDB07A33 /* Pods-PTEzone.debug.xcconfig */,
+				60EBE63C7709E21222E21803 /* Pods-PTEzone.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EB3F00C926479FFB0026CC31 = {
 			isa = PBXGroup;
 			children = (
 				EB3F00D426479FFB0026CC31 /* PTEzone */,
 				EB3F00D326479FFB0026CC31 /* Products */,
+				7B8751ECBB2A79DE2655FC18 /* Pods */,
+				5AEFA3E468443FE924A0F61E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,6 +276,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB3F00E626479FFD0026CC31 /* Build configuration list for PBXNativeTarget "PTEzone" */;
 			buildPhases = (
+				4964CF1595E3B79E0719F6E3 /* [CP] Check Pods Manifest.lock */,
 				EB3F00CE26479FFB0026CC31 /* Sources */,
 				EB3F00CF26479FFB0026CC31 /* Frameworks */,
 				EB3F00D026479FFB0026CC31 /* Resources */,
@@ -348,6 +374,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4964CF1595E3B79E0719F6E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PTEzone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EB3F00CE26479FFB0026CC31 /* Sources */ = {
@@ -517,6 +568,7 @@
 		};
 		EB3F00E726479FFD0026CC31 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44C455305D917EC4CDB07A33 /* Pods-PTEzone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -537,6 +589,7 @@
 		};
 		EB3F00E826479FFD0026CC31 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60EBE63C7709E21222E21803 /* Pods-PTEzone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
