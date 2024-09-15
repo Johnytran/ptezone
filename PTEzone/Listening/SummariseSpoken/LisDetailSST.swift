@@ -11,6 +11,7 @@ import AVFoundation
   import FoundationNetworking
 #endif
 import NaturalLanguage
+//import Pluralize_swift
 
 class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDelegate{
     
@@ -55,10 +56,6 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         answerText.text = "Type your answer here."
         answerText.textColor = UIColor.purple
         self.keywords = ["pandemic","catastrophic","unprecedented","preparation","affects", "public health", "treatment", "prevention"]
-        let verbArr = getVerbs(from: "She has three dogs")
-        //print(verbArr[0]);
-        
-        
         
     }
     func grammarCheck(text:String){
@@ -68,7 +65,21 @@ class LisDetailSST: UIViewController, URLSessionDownloadDelegate, UITextViewDele
         } else {
             let sentences = getAllSentences(content: text)
             for sent in sentences{
-                print("["+sent+"]")
+                let subj = getSubject(sentence: sent)
+                print(subj)
+            }
+        }
+    }
+    func getSubject(sentence: String) -> String{
+        if(sentence.isEmpty){
+            return ""
+        } else {
+            let verb = getVerbs(from: sentence)
+            if(verb.isEmpty){
+                return ""
+            }else{
+                let tagSente = sentence.components(separatedBy: verb[0])
+                return tagSente[0]
             }
         }
     }

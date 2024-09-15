@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="0ef-uE-xMF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome_bg" translatesAutoresizingMaskIntoConstraints="NO" id="0ef-uE-xMF">
                                 <rect key="frame" x="-87" y="0.0" width="581" height="916"/>
                             </imageView>
                         </subviews>
@@ -37,7 +37,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="welcome_bg.png" width="1152" height="2494"/>
+        <image name="welcome_bg" width="1125" height="2436"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
